@@ -1,12 +1,19 @@
 {
   "name": "today-we-sit",
-  "version": "0.1.0",
+  "version": "1.0.0-dev.1",
   "private": true,
   "description": "Original cozy seating puzzle for WeChat Mini Games and browsers",
   "scripts": {
     "test": "node --test tests/*.test.js",
     "build": "node scripts/build.js",
-    "dev": "node scripts/build.js && node scripts/serve.js"
+    "dev": "node scripts/build.js && node scripts/serve.js",
+    "content:validate": "node scripts/validate-content.js --release",
+    "content:build": "node scripts/build-content.js",
+    "audio:generate": "python3 scripts/generate-audio.py",
+    "release:check": "node scripts/check-release.js",
+    "build:release": "node scripts/check-release.js && node scripts/build.js"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -1,0 +1,13 @@
+{
+  "status": "local-candidate-not-published",
+  "updatedAt": "2026-09-15",
+  "platformEligibility": false,
+  "wechatDevices": false,
+  "adsLive": false,
+  "cloudLive": false,
+  "manualContentQA": false,
+  "rights": false,
+  "privacyReview": false,
+  "releaseRegression": false,
+  "note": "仅在对应真实验收完成并记录证据后更新；自动化测试和程序生成资源不能替代这些验收。"
+}

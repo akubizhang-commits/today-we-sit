@@ -16,10 +16,10 @@
     .rule{border-top:1px solid #294d4329;margin-top:44px;padding-top:23px;font-size:13px;color:#667568}
     .steps{display:flex;gap:19px;margin-top:24px;font-size:12px}.steps span{display:flex;align-items:center;gap:7px}.steps b{display:inline-grid;place-items:center;border:1px solid #bdc7b6;width:25px;height:25px;border-radius:50%;font-weight:500}
     .note{font-size:11px;color:#71816f;margin-top:56px;letter-spacing:1px}
-    .phone{width:min(390px,calc((100dvh - 60px)*390/844));height:min(844px,calc(100dvh - 60px));border-radius:29px;overflow:hidden;box-shadow:0 25px 65px #24423424,0 0 0 8px #f4f4eb,0 0 0 9px #cdd4c3;background:#f7f3e8;flex:none}
+    .phone{width:390px;height:min(844px,calc(100dvh - 60px));min-height:568px;border-radius:29px;overflow:hidden;box-shadow:0 25px 65px #24423424,0 0 0 8px #f4f4eb,0 0 0 9px #cdd4c3;background:#f7f3e8;flex:none}
     canvas{display:block;width:100%;height:100%;touch-action:none;cursor:pointer;outline:none}
     canvas:focus-visible{outline:3px solid #c66949;outline-offset:-5px}
-    @media(max-width:800px){main{padding:0;display:block}aside{display:none}.phone{width:100vw;height:100dvh;max-width:500px;border-radius:0;box-shadow:none}}
+    @media(max-width:800px){main{padding:0;display:block}aside{display:none}.phone{width:100vw;height:min(100dvh,932px);min-height:0;max-width:430px;border-radius:0;box-shadow:none}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
   </style>
 </head>
@@ -31,10 +31,10 @@
       <p class="lead">有人喜欢靠窗，有人想挨着朋友。<br>听听大家的小偏好，把平凡的一天，<br>安排得温柔一点。</p>
       <div class="rule">不赶时间，也没有标准人生。</div>
       <div class="steps"><span><b>1</b>听听偏好</span><span><b>2</b>安排座位</span><span><b>3</b>皆大欢喜</span></div>
-      <p class="note">3 个原创场景 / 30 个生活谜题 / 随时保存</p>
+      <p class="note">3 个原创场景 / 90 关主线 / 14 道轮换日题<br>开发候选版 · <a href="/editor">关卡编辑器</a></p>
     </aside>
     <div class="phone">
-      <canvas id="game" tabindex="0" aria-label="今天怎么坐游戏。用鼠标或触控点选人物，再选择座位；也可以拖动人物。Canvas原型暂不支持屏幕阅读器完整操作。"></canvas>
+      <canvas id="game" tabindex="0" aria-label="今天怎么坐游戏。用鼠标或触控点选人物，再选择座位；也可以拖动人物。当前版本暂不支持屏幕阅读器完整操作。"></canvas>
     </div>
   </main>
   <script src="game.bundle.js"></script>

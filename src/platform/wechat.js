@@ -1,4 +1,4 @@
-function createWechatPlatform(wx){
+function createWechatPlatform(wx,config={}){
   const canvas=wx.createCanvas();
   const getInfo=()=>typeof wx.getWindowInfo==='function'?wx.getWindowInfo():wx.getSystemInfoSync();
   const info=getInfo();
@@ -14,7 +14,10 @@ function createWechatPlatform(wx){
   const platform={
     canvas,width:info.windowWidth,height:info.windowHeight,dpr:Math.min(info.pixelRatio||1,3),
     insets:getInsets(info),
-    storage:{get:key=>wx.getStorageSync(key)||undefined,set:(key,value)=>wx.setStorageSync(key,value)},
+    storage:{get:key=>wx.getStorageSync(key)||undefined,set:(key,value)=>wx.setStorageSync(key,value),remove:key=>wx.removeStorageSync(key)},
+    createAudio(src){if(!wx.createInnerAudioContext)return null;const audio=wx.createInnerAudioContext();audio.src=src;return audio;},
+    vibrate(){if(wx.vibrateShort)wx.vibrateShort({type:'light',fail(){}});},
+    ...(config.adUnitId&&wx.createRewardedVideoAd?{createRewardedAd:()=>wx.createRewardedVideoAd({adUnitId:config.adUnitId,multiton:true})}:{}),
     onPointer(fn){
       for(const [method,type] of [['onTouchStart','down'],['onTouchMove','move'],['onTouchEnd','up'],['onTouchCancel','cancel']]){
         wx[method](e=>{
@@ -35,6 +38,7 @@ function createWechatPlatform(wx){
       });
     },
     onHide:fn=>wx.onHide(()=>{active=null;fn();}),
+    onShow:fn=>{if(wx.onShow)wx.onShow(fn);},
     requestFrame:fn=>requestAnimationFrame(fn),
   };
   return platform;

@@ -1,0 +1,5808 @@
+[
+  {
+    "id": "bus-001",
+    "chapter": 0,
+    "title": "车窗里的云",
+    "intro": "小满想看云。左侧靠窗，右侧是车门旁。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "back",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "back",
+          "door"
+        ],
+        "zone": "front"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小满",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "只有左席带窗边标签，从环境找到第一个落点。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-002",
+    "chapter": 0,
+    "title": "早餐别吹凉",
+    "intro": "阿穗想靠窗，阿陶想避开窗边，各找一个座位吧。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "back",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "back",
+          "door"
+        ],
+        "zone": "front"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿穗",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿陶",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "window",
+            "text": "不坐靠窗的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "一正一反的窗边条件把两席分开。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-003",
+    "chapter": 0,
+    "title": "后排悄悄话",
+    "intro": "把两位朋友安排到后排。同排左右挨着才算相邻。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "圆圆",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "back",
+            "text": "想坐车厢后排"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小岚",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和圆圆左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s3",
+      "p2": "s4"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "后排条件沿相邻关系传给第二人，左右交换也是合法解。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-004",
+    "chapter": 0,
+    "title": "下一站花市",
+    "intro": "花篮已经放好，三位邻居准备去逛花市。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "青禾",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "zone",
+            "value": "front",
+            "text": "想坐车厢前排"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿榆",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和青禾左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "林叔",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "door",
+            "text": "不坐车门旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "前排窗位确定后，相邻者占门边，第三人排除门边。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-005",
+    "chapter": 0,
+    "title": "给纸风车留空",
+    "intro": "小游手里的纸风车需要一点空间，空位也能帮上忙。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "middle",
+          "window"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "middle"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 2,
+        "tags": [
+          "row3",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 2,
+        "tags": [
+          "row3",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿杏",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "zone",
+            "value": "back",
+            "text": "想坐车厢后排"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小游",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "middle",
+            "text": "想坐车厢中排"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "苏苏",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "front",
+            "text": "想坐车厢前排"
+          },
+          {
+            "type": "notTag",
+            "value": "window",
+            "text": "不坐靠窗的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s5",
+      "p2": "s3",
+      "p3": "s2"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "中排空邻需求占整排容量，不能把前后排空位当邻居。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-006",
+    "chapter": 0,
+    "title": "两种聊天声",
+    "intro": "小桥想和豆豆聊天，也想与正在讲电话的阿麦分开。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "middle",
+          "window"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "middle"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 2,
+        "tags": [
+          "row3",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 2,
+        "tags": [
+          "row3",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿麦",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "door",
+            "text": "想坐车门旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小桥",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和阿麦左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "豆豆",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和小桥左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "安姨",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "back",
+            "text": "想坐车厢后排"
+          },
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s2",
+      "p2": "s3",
+      "p3": "s4",
+      "p4": "s5"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "门边来电者排除同排窗席，聊天搭档转到中排。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-007",
+    "chapter": 0,
+    "title": "中排的画筒",
+    "intro": "两对朋友各坐一排，把中排的空位留给画筒。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "middle",
+          "window"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "middle"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 2,
+        "tags": [
+          "row3",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 2,
+        "tags": [
+          "row3",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "叶叶",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "front",
+            "text": "想坐车厢前排"
+          },
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿谷",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和叶叶左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "石青",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "middle",
+            "text": "想坐车厢中排"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "洛洛",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "back",
+            "text": "想坐车厢后排"
+          },
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "南南",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和洛洛左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3",
+      "p4": "s5",
+      "p5": "s6"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "中排独占一排，两组同行分别填前后排。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-008",
+    "chapter": 0,
+    "title": "三组同行人",
+    "intro": "座位刚好坐满。先找到中排的搭档，再安排其他两组。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "middle",
+          "window"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "middle"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 2,
+        "tags": [
+          "row3",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 2,
+        "tags": [
+          "row3",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿棠",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "zone",
+            "value": "front",
+            "text": "想坐车厢前排"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "米粒",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿棠左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "小北",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "notTag",
+            "value": "front",
+            "text": "不坐第一排的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿冬",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和小北左右相邻"
+          },
+          {
+            "type": "zone",
+            "value": "middle",
+            "text": "想坐车厢中排"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "知夏",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和阿棠左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "川川",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p5",
+            "text": "想和知夏左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "door",
+            "text": "不坐车门旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3",
+      "p4": "s4",
+      "p5": "s5",
+      "p6": "s6"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "阿冬的中排条件反向定位小北，最后一对通过占位排除。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-009",
+    "chapter": 0,
+    "title": "两份小小留白",
+    "intro": "前排和中排各有人需要空位，后排的朋友正好结伴。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "middle",
+          "window"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "middle"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 2,
+        "tags": [
+          "row3",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 2,
+        "tags": [
+          "row3",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿黎",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "door",
+            "text": "想坐车门旁的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "可可",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "middle",
+            "text": "想坐车厢中排"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "松松",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "zone",
+            "value": "back",
+            "text": "想坐车厢后排"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小竹",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和松松左右相邻"
+          },
+          {
+            "type": "apart",
+            "person": "p2",
+            "text": "不和可可左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s2",
+      "p2": "s3",
+      "p3": "s5",
+      "p4": "s6"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "两份空邻需求分别锁住前中排，后排才能容纳成对乘客。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "bus-010",
+    "chapter": 0,
+    "title": "开往周末",
+    "intro": "五位乘客只留一个空位。让它留在需要它的人身旁。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "window"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "door"
+        ],
+        "zone": "front"
+      },
+      {
+        "id": "s3",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "middle",
+          "window"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s4",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "middle"
+        ],
+        "zone": "middle"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 2,
+        "tags": [
+          "row3",
+          "left",
+          "back",
+          "window"
+        ],
+        "zone": "back"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 2,
+        "tags": [
+          "row3",
+          "right",
+          "back"
+        ],
+        "zone": "back"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小禾",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和阿朔左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿朔",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "front",
+            "text": "想坐车厢前排"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "雨点",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "window",
+            "text": "想坐靠窗的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和小禾左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿简",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和雨点左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "door",
+            "text": "不坐车门旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "星子",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "back",
+            "text": "想坐车厢后排"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3",
+      "p4": "s4",
+      "p5": "s6"
+    },
+    "revision": 1,
+    "chapterId": "bus",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "前排关系确定第一对，剩下完整一排留第二对，空位归后排。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-001",
+    "chapter": 1,
+    "title": "树下开席",
+    "intro": "两排野餐席每排三个座位：左侧树荫，右侧取餐，中间能邻接两人。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小桑",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿贝",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和小桑左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "小梨",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "serving",
+            "text": "想坐取餐侧的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和小桑左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "树荫和取餐端并不相邻，中间席可以连接其中一端。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-002",
+    "chapter": 1,
+    "title": "花香和饭香",
+    "intro": "第一排朝花园，第二排靠餐台。灯笼挂在第二排中间。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿芷",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小溪",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿芷左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "橙橙",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "kitchen",
+            "text": "想坐餐台侧"
+          },
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿粟",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "kitchen",
+            "text": "想坐餐台侧"
+          },
+          {
+            "type": "tag",
+            "value": "serving",
+            "text": "想坐取餐侧的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s4",
+      "p4": "s6"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "用花园与餐台区分两处树荫，再放各自同伴。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-003",
+    "chapter": 1,
+    "title": "给面包篮让座",
+    "intro": "小麦要挨着朋友坐，还想让另一侧留空。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小麦",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿桃",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和小麦左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "苔苔",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "zone",
+            "value": "kitchen",
+            "text": "想坐餐台侧"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿葵",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "serving",
+            "text": "想坐取餐侧的位置"
+          },
+          {
+            "type": "zone",
+            "value": "kitchen",
+            "text": "想坐餐台侧"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s2",
+      "p2": "s1",
+      "p3": "s4",
+      "p4": "s6"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "既有同伴又要空邻的人需占中间，另一排两端独立安排。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-004",
+    "chapter": 1,
+    "title": "夹在笑声中间",
+    "intro": "小芽想同时挨着两位朋友。哪一个中间位还能留给她？",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小芽",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和阿茉左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿栗左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿茉",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿栗",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "serving",
+            "text": "想坐取餐侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小夕",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "lantern",
+            "text": "想坐灯笼旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "团团",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和小夕左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "shade",
+            "text": "不坐树荫下的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s2",
+      "p2": "s1",
+      "p3": "s3",
+      "p4": "s5",
+      "p5": "s6"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "双相邻只能落中间，灯笼占掉另一中间位。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-005",
+    "chapter": 1,
+    "title": "同排也能不相邻",
+    "intro": "花园侧两端隔着一个座位；不相邻的人也可以坐在同一排。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿蓝",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          },
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小柚",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和阿蓝左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿萤",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "lantern",
+            "text": "想坐灯笼旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "月月",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿萤左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "serving",
+            "text": "不坐取餐侧的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s3",
+      "p3": "s5",
+      "p4": "s4"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "不相邻不等于不同排，同排两端满足分开。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-006",
+    "chapter": 1,
+    "title": "共用一格晚风",
+    "intro": "花园侧的两人都想邻接空位，餐台侧则要坐满。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿蒲",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          },
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小芹",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "暖暖",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "lantern",
+            "text": "想坐灯笼旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿澄",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和暖暖左右相邻"
+          },
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "蓉蓉",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和暖暖左右相邻"
+          },
+          {
+            "type": "tag",
+            "value": "serving",
+            "text": "想坐取餐侧的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s3",
+      "p3": "s5",
+      "p4": "s4",
+      "p5": "s6"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "两端共享中间空席，剩下三人填满灯笼排。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-007",
+    "chapter": 1,
+    "title": "传一盘青梅",
+    "intro": "餐台侧需要三个人连着坐，另一排的两个人还想留一点空。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿梅",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "lantern",
+            "text": "想坐灯笼旁的位置"
+          },
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和小枫左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小枫",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿泉",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿梅左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "shade",
+            "text": "不坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小露",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿芽",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          },
+          {
+            "type": "apart",
+            "person": "p4",
+            "text": "不和小露左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s5",
+      "p2": "s4",
+      "p3": "s6",
+      "p4": "s1",
+      "p5": "s3"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "灯笼组三连占餐台排，另一排利用端点分开。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-008",
+    "chapter": 1,
+    "title": "餐巾的顺序",
+    "intro": "六人满席。灯笼和花园里的树荫，是两条线索的起点。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿荷",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小舟",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿荷左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿栀左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿栀",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "shade",
+            "text": "不坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小灯",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "lantern",
+            "text": "想坐灯笼旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿棋",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和小灯左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "serving",
+            "text": "不坐取餐侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "小团",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和小灯左右相邻"
+          },
+          {
+            "type": "apart",
+            "person": "p2",
+            "text": "不和小舟左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3",
+      "p4": "s5",
+      "p5": "s4",
+      "p6": "s6"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "两条三人链依靠不同环境锚点定向。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-009",
+    "chapter": 1,
+    "title": "灯下留个位置",
+    "intro": "灯笼旁的人既要挨着朋友，也要挨着空位。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿萱",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "lantern",
+            "text": "想坐灯笼旁的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小茴",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿萱左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "serving",
+            "text": "不坐取餐侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿芒",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "serving",
+            "text": "想坐取餐侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小晴",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿芒左右相邻"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和阿萱左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿榛",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p2",
+            "text": "不和小茴左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s5",
+      "p2": "s4",
+      "p3": "s3",
+      "p4": "s2",
+      "p5": "s1"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "灯笼同时要朋友和空位，排除一端后迫使另一组去前排。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "garden-010",
+    "chapter": 1,
+    "title": "最后一道甜汤",
+    "intro": "两排都坐满：一排由灯笼定中心，另一排从树荫传到取餐侧。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "shade"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "serving"
+        ],
+        "zone": "garden"
+      },
+      {
+        "id": "s4",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "shade"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s5",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "lantern"
+        ],
+        "zone": "kitchen"
+      },
+      {
+        "id": "s6",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "serving"
+        ],
+        "zone": "kitchen"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s4",
+        "s5"
+      ],
+      [
+        "s5",
+        "s6"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小糯",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "lantern",
+            "text": "想坐灯笼旁的位置"
+          },
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和阿枣左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和小莲左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿枣",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "serving",
+            "text": "不坐取餐侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "小莲",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "apart",
+            "person": "p4",
+            "text": "不和阿茶左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿茶",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "zone",
+            "value": "garden",
+            "text": "想坐花园侧"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "小酥",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和阿茶左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p6",
+            "text": "想和阿糖左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "阿糖",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "serving",
+            "text": "想坐取餐侧的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p2",
+            "text": "不和阿枣左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s5",
+      "p2": "s4",
+      "p3": "s6",
+      "p4": "s1",
+      "p5": "s2",
+      "p6": "s3"
+    },
+    "revision": 1,
+    "chapterId": "garden",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "灯笼双邻和树荫链各占整排，再用禁取餐条件定方向。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-001",
+    "chapter": 2,
+    "title": "银幕刚刚亮",
+    "intro": "每排四个座位。第一排靠银幕，每排最右侧靠音箱，两端有边座标记。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小影",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿映",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和小影左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "小幕",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "notTag",
+            "value": "speaker",
+            "text": "不坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿声",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p3",
+            "text": "不和小幕左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s5",
+      "p4": "s4"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "银幕左端带出同伴，音箱标签可跨排选择。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-002",
+    "chapter": 2,
+    "title": "后排树影",
+    "intro": "后排左边两个座位在树荫下。两位朋友想一起坐在那里。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿杉",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "tag",
+            "value": "edge",
+            "text": "想坐排的两端的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小杉",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿杉左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿远",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "notTag",
+            "value": "edge",
+            "text": "不坐排的两端的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小遥",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿远左右相邻"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿羽",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和阿杉左右相邻"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s5",
+      "p2": "s6",
+      "p3": "s3",
+      "p4": "s4",
+      "p5": "s8"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "easy",
+    "designIntent": "后排树荫边座唯一，银幕同伴反向由音箱定位。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-003",
+    "chapter": 2,
+    "title": "一串爆米花",
+    "intro": "三位朋友想连成一串，坐中间的阿米要同时挨着另外两人。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿米",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和小苞左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿粒左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小苞",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿粒",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "speaker",
+            "text": "不坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小穗",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿露",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          },
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s2",
+      "p2": "s1",
+      "p3": "s3",
+      "p4": "s5",
+      "p5": "s8"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "双邻者不能占端点，树荫空邻需求独立保留后排空间。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-004",
+    "chapter": 2,
+    "title": "前排的一格空白",
+    "intro": "前排三人中有两人需要空位，试着让同一个空位照顾他们。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小帆",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿航",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "notTag",
+            "value": "edge",
+            "text": "不坐排的两端的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "小港",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和阿航左右相邻"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿汐",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "小潮",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和阿汐左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "edge",
+            "text": "不坐排的两端的位置"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "阿湾",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s3",
+      "p3": "s4",
+      "p4": "s5",
+      "p5": "s6",
+      "p6": "s8"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "前排两位共享空席而非分别留空，后排另有搭档。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-005",
+    "chapter": 2,
+    "title": "音箱边的搭档",
+    "intro": "两对朋友都需要内侧座位，后排还有一位想挨着空位的观众。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿弦",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          },
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小音",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿弦左右相邻"
+          },
+          {
+            "type": "apart",
+            "person": "p3",
+            "text": "不和阿拍左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿拍",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小调",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿拍左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿笛",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "tag",
+            "value": "edge",
+            "text": "想坐排的两端的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "小鼓",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s4",
+      "p2": "s3",
+      "p3": "s1",
+      "p4": "s2",
+      "p5": "s5",
+      "p6": "s8"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "前排两对从相反端点向内填，后排树荫者独享空邻。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-006",
+    "chapter": 2,
+    "title": "后排四人组",
+    "intro": "一条四人链要放进后排。前排的空位可以留在不同方向。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小松",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿柏",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和小松左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和小梧左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "小梧",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和阿桐左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "speaker",
+            "text": "不坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿桐",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "小榕",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "阿槐",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p5",
+            "text": "不和小榕左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s5",
+      "p2": "s6",
+      "p3": "s7",
+      "p4": "s8",
+      "p5": "s1",
+      "p6": "s4"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "四人链刚好占后排，前排两人不相邻且保留空位。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-007",
+    "chapter": 2,
+    "title": "七张电影票",
+    "intro": "只有一个空位：先安顿树影下的两个人，再考虑前排的四位朋友。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿星",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小月",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿星左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿辰左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿辰",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和小晖左右相邻"
+          },
+          {
+            "type": "notTag",
+            "value": "edge",
+            "text": "不坐排的两端的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小晖",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿夜",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "tag",
+            "value": "edge",
+            "text": "想坐排的两端的位置"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "小晚",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p5",
+            "text": "想和阿夜左右相邻"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p7",
+        "name": "阿暮",
+        "color": "#AD96BA",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3",
+      "p4": "s4",
+      "p5": "s5",
+      "p6": "s6",
+      "p7": "s8"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "前排四人链填满，唯一空席由后排同伴的空邻需求确定。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-008",
+    "chapter": 2,
+    "title": "同一片空座",
+    "intro": "后排两个人都想邻接空位，其中一位还想挨着朋友。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小墨",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿砚",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "notTag",
+            "value": "edge",
+            "text": "不坐排的两端的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和小宣左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "小宣",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿笔",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "小书",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和阿笔左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p6",
+            "text": "想和阿页左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "阿页",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "speaker",
+            "text": "不坐音箱旁的位置"
+          }
+        ]
+      },
+      {
+        "id": "p7",
+        "name": "小笺",
+        "color": "#AD96BA",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s5",
+      "p2": "s7",
+      "p3": "s8",
+      "p4": "s1",
+      "p5": "s2",
+      "p6": "s3",
+      "p7": "s4"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "normal",
+    "designIntent": "后排两个空邻者共享一席，一侧还能连接音箱朋友。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-009",
+    "chapter": 2,
+    "title": "满场之前",
+    "intro": "八人全部入座。两条朋友链从左端展开，注意谁不能挨着谁。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "阿晨",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "小曦",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p1",
+            "text": "想和阿晨左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p3",
+            "text": "想和阿曜左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "阿曜",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和小灿左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "小灿",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p2",
+            "text": "不和小曦左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "阿宁",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "tag",
+            "value": "edge",
+            "text": "想坐排的两端的位置"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "小静",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p5",
+            "text": "想和阿宁左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p7",
+            "text": "想和阿悠左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p7",
+        "name": "阿悠",
+        "color": "#AD96BA",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "speaker",
+            "text": "不坐音箱旁的位置"
+          },
+          {
+            "type": "apart",
+            "person": "p1",
+            "text": "不和阿晨左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p8",
+        "name": "小然",
+        "color": "#C68C80",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p7",
+            "text": "想和阿悠左右相邻"
+          },
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s3",
+      "p4": "s4",
+      "p5": "s5",
+      "p6": "s6",
+      "p7": "s7",
+      "p8": "s8"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "challenge",
+    "designIntent": "两条四人链通过端点定向，跨组不相邻条件检查连接对象。",
+    "manualPhoneQA": "pending"
+  },
+  {
+    "id": "cinema-010",
+    "chapter": 2,
+    "title": "星光留给大家",
+    "intro": "两个空位需求、两组同行人，只有一格能留空。先找出它该在哪一排。",
+    "seats": [
+      {
+        "id": "s1",
+        "x": 0,
+        "y": 0,
+        "tags": [
+          "row1",
+          "left",
+          "front",
+          "screen",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s2",
+        "x": 1,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s3",
+        "x": 2,
+        "y": 0,
+        "tags": [
+          "row1",
+          "center",
+          "front",
+          "screen"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s4",
+        "x": 3,
+        "y": 0,
+        "tags": [
+          "row1",
+          "right",
+          "front",
+          "screen",
+          "speaker",
+          "edge"
+        ],
+        "zone": "screen"
+      },
+      {
+        "id": "s5",
+        "x": 0,
+        "y": 1,
+        "tags": [
+          "row2",
+          "left",
+          "back",
+          "edge",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s6",
+        "x": 1,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back",
+          "shade"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s7",
+        "x": 2,
+        "y": 1,
+        "tags": [
+          "row2",
+          "center",
+          "back"
+        ],
+        "zone": "rear"
+      },
+      {
+        "id": "s8",
+        "x": 3,
+        "y": 1,
+        "tags": [
+          "row2",
+          "right",
+          "back",
+          "speaker",
+          "edge"
+        ],
+        "zone": "rear"
+      }
+    ],
+    "adjacency": [
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s2",
+        "s3"
+      ],
+      [
+        "s3",
+        "s4"
+      ],
+      [
+        "s5",
+        "s6"
+      ],
+      [
+        "s6",
+        "s7"
+      ],
+      [
+        "s7",
+        "s8"
+      ]
+    ],
+    "people": [
+      {
+        "id": "p1",
+        "name": "小禾",
+        "color": "#D5986D",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "screen",
+            "text": "想坐银幕前排的位置"
+          },
+          {
+            "type": "tag",
+            "value": "left",
+            "text": "想坐最左侧的位置"
+          },
+          {
+            "type": "adjacent",
+            "person": "p2",
+            "text": "想和阿朔左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "阿朔",
+        "color": "#8FAE92",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "edge",
+            "text": "不坐排的两端的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "雨点",
+        "color": "#819CB8",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "speaker",
+            "text": "想坐音箱旁的位置"
+          },
+          {
+            "type": "emptyNeighbor",
+            "text": "左右至少留一个相邻空位"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "name": "阿简",
+        "color": "#BB88A0",
+        "rules": [
+          {
+            "type": "tag",
+            "value": "shade",
+            "text": "想坐树荫下的位置"
+          },
+          {
+            "type": "tag",
+            "value": "edge",
+            "text": "想坐排的两端的位置"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "name": "星子",
+        "color": "#C4AA61",
+        "rules": [
+          {
+            "type": "adjacent",
+            "person": "p4",
+            "text": "想和阿简左右相邻"
+          },
+          {
+            "type": "adjacent",
+            "person": "p6",
+            "text": "想和小糯左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "name": "小糯",
+        "color": "#91AAA7",
+        "rules": [
+          {
+            "type": "notTag",
+            "value": "speaker",
+            "text": "不坐音箱旁的位置"
+          },
+          {
+            "type": "adjacent",
+            "person": "p7",
+            "text": "想和阿茶左右相邻"
+          }
+        ]
+      },
+      {
+        "id": "p7",
+        "name": "阿茶",
+        "color": "#AD96BA",
+        "rules": [
+          {
+            "type": "zone",
+            "value": "rear",
+            "text": "想坐观影后排"
+          },
+          {
+            "type": "apart",
+            "person": "p5",
+            "text": "不和星子左右相邻"
+          }
+        ]
+      }
+    ],
+    "reference": {
+      "p1": "s1",
+      "p2": "s2",
+      "p3": "s4",
+      "p4": "s5",
+      "p5": "s6",
+      "p6": "s7",
+      "p7": "s8"
+    },
+    "revision": 1,
+    "chapterId": "cinema",
+    "kind": "campaign",
+    "difficulty": "challenge",
+    "designIntent": "唯一空位同时服务前排两人，后排四人链不能被拆开。",
+    "manualPhoneQA": "pending"
+  }
+]

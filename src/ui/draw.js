@@ -43,8 +43,18 @@ function person(ctx,x,y,size,color,index=0,mood='neutral') {
   circle(ctx,0,-4,17,skin);
   ctx.fillStyle=['#4D4B3F','#6E493C','#354A44','#94704C'][index%4];
   ctx.beginPath();ctx.arc(0,-8,17,Math.PI,Math.PI*2);ctx.lineTo(15,-7);ctx.lineTo(7,-12);ctx.lineTo(-10,-5);ctx.closePath();ctx.fill();
-  if(index%4===1){circle(ctx,14,-18,7,'#6E493C');}
-  if(index%4===2){round(ctx,-21,-20,42,8,4,C.ink);round(ctx,-13,-30,26,16,6,C.sage);}
+  const profile=index%12,hair=['#4D4B3F','#6E493C','#354A44','#94704C'][index%4];
+  if(profile===1){circle(ctx,14,-18,7,hair);}
+  if(profile===2){round(ctx,-21,-20,42,8,4,C.ink);round(ctx,-13,-30,26,16,6,C.sage);}
+  if(profile===3){round(ctx,-19,-12,7,24,4,hair);round(ctx,12,-12,7,24,4,hair);}
+  if(profile===4){for(let i=0;i<5;i++)circle(ctx,-14+i*7,-21-(i%2)*3,6,hair);}
+  if(profile===5){round(ctx,-18,-25,36,13,6,C.orange);round(ctx,3,-17,22,5,2,C.orange);}
+  if(profile===6){circle(ctx,-16,-16,7,hair);circle(ctx,16,-16,7,hair);line(ctx,-13,-15,13,-15,'#DDB677',3);}
+  if(profile===7){round(ctx,-18,-22,36,8,4,'#B7B8A5');line(ctx,-17,-14,-17,1,'#B7B8A5',4);}
+  if(profile===8){round(ctx,-18,-26,36,14,5,'#D3B575');circle(ctx,0,-30,5,'#D3B575');}
+  if(profile===9){line(ctx,-15,-15,-19,6,hair,6);line(ctx,15,-15,19,6,hair,6);circle(ctx,-19,10,4,C.orange);}
+  if(profile===10){round(ctx,-20,-18,40,7,3,'#819CB8');round(ctx,-7,13,14,18,4,'#E8C89A');}
+  if(profile===11){circle(ctx,-12,-21,8,hair);circle(ctx,0,-25,9,hair);circle(ctx,12,-21,8,hair);}
   circle(ctx,-6,-3,1.6,C.ink);circle(ctx,6,-3,1.6,C.ink);
   if(index%4===0){
     ctx.strokeStyle=C.ink;ctx.lineWidth=1;ctx.beginPath();ctx.arc(-6,-3,5,0,Math.PI*2);ctx.stroke();

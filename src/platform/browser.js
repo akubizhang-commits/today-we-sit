@@ -5,10 +5,14 @@ function createBrowserPlatform(canvas){
     storage:{
       get(key){const value=localStorage.getItem(key);return value===null?undefined:JSON.parse(value);},
       set(key,value){localStorage.setItem(key,JSON.stringify(value));},
+      remove(key){localStorage.removeItem(key);},
     },
+    createAudio(src){const audio=new Audio('/'+src);audio.preload='none';audio.destroy=()=>{audio.pause();audio.removeAttribute('src');audio.load();};return audio;},
+    vibrate(){if(navigator.vibrate)navigator.vibrate(8);},
     onPointer(fn){pointerCallback=fn;},
     onResize(fn){resizeCallback=fn;},
     onHide(fn){document.addEventListener('visibilitychange',()=>{if(document.hidden)fn();});window.addEventListener('pagehide',fn);},
+    onShow(fn){document.addEventListener('visibilitychange',()=>{if(!document.hidden)fn();});},
     requestFrame(fn){return window.requestAnimationFrame(fn);},
   };
   for(const [dom,type] of [['pointerdown','down'],['pointermove','move'],['pointerup','up'],['pointercancel','cancel']]){

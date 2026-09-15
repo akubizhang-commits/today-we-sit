@@ -1,0 +1,887 @@
+{
+  "ok": true,
+  "errors": [],
+  "report": {
+    "counts": {
+      "campaign": 90,
+      "daily": 14,
+      "reserve": 20
+    },
+    "difficulty": {
+      "easy": 36,
+      "normal": 40,
+      "challenge": 14
+    },
+    "levels": [
+      {
+        "id": "bus-001",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 1
+      },
+      {
+        "id": "bus-002",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 2
+      },
+      {
+        "id": "bus-003",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 8
+      },
+      {
+        "id": "bus-004",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 6
+      },
+      {
+        "id": "bus-005",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 4
+      },
+      {
+        "id": "bus-006",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "bus-007",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 12
+      },
+      {
+        "id": "bus-008",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 9
+      },
+      {
+        "id": "bus-009",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 10
+      },
+      {
+        "id": "bus-010",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 17
+      },
+      {
+        "id": "bus-011",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 8
+      },
+      {
+        "id": "bus-012",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 3
+      },
+      {
+        "id": "bus-013",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 8
+      },
+      {
+        "id": "bus-014",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "bus-015",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 6
+      },
+      {
+        "id": "bus-016",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "bus-017",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 3
+      },
+      {
+        "id": "bus-018",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 14
+      },
+      {
+        "id": "bus-019",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 5
+      },
+      {
+        "id": "bus-020",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 6
+      },
+      {
+        "id": "bus-021",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 5
+      },
+      {
+        "id": "bus-022",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 4
+      },
+      {
+        "id": "bus-023",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 6
+      },
+      {
+        "id": "bus-024",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 8
+      },
+      {
+        "id": "bus-025",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 8
+      },
+      {
+        "id": "bus-026",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "bus-027",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "bus-028",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 8
+      },
+      {
+        "id": "bus-029",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 14
+      },
+      {
+        "id": "bus-030",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 16
+      },
+      {
+        "id": "garden-001",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 10
+      },
+      {
+        "id": "garden-002",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 6
+      },
+      {
+        "id": "garden-003",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 9
+      },
+      {
+        "id": "garden-004",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 19
+      },
+      {
+        "id": "garden-005",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 6
+      },
+      {
+        "id": "garden-006",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "garden-007",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 15
+      },
+      {
+        "id": "garden-008",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 14
+      },
+      {
+        "id": "garden-009",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 15
+      },
+      {
+        "id": "garden-010",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 13
+      },
+      {
+        "id": "garden-011",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "garden-012",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 4
+      },
+      {
+        "id": "garden-013",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 9
+      },
+      {
+        "id": "garden-014",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 5
+      },
+      {
+        "id": "garden-015",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 4
+      },
+      {
+        "id": "garden-016",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 3
+      },
+      {
+        "id": "garden-017",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 4
+      },
+      {
+        "id": "garden-018",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "garden-019",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 11
+      },
+      {
+        "id": "garden-020",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "garden-021",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 15
+      },
+      {
+        "id": "garden-022",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 18
+      },
+      {
+        "id": "garden-023",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 15
+      },
+      {
+        "id": "garden-024",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "garden-025",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "garden-026",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "garden-027",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 10
+      },
+      {
+        "id": "garden-028",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 11
+      },
+      {
+        "id": "garden-029",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 12
+      },
+      {
+        "id": "garden-030",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 11
+      },
+      {
+        "id": "cinema-001",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 10
+      },
+      {
+        "id": "cinema-002",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "cinema-003",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 13
+      },
+      {
+        "id": "cinema-004",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 12
+      },
+      {
+        "id": "cinema-005",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 11
+      },
+      {
+        "id": "cinema-006",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 19
+      },
+      {
+        "id": "cinema-007",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 13
+      },
+      {
+        "id": "cinema-008",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 13
+      },
+      {
+        "id": "cinema-009",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 25
+      },
+      {
+        "id": "cinema-010",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 32
+      },
+      {
+        "id": "cinema-011",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 8
+      },
+      {
+        "id": "cinema-012",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 13
+      },
+      {
+        "id": "cinema-013",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 3
+      },
+      {
+        "id": "cinema-014",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 7
+      },
+      {
+        "id": "cinema-015",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 15
+      },
+      {
+        "id": "cinema-016",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 13
+      },
+      {
+        "id": "cinema-017",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 8
+      },
+      {
+        "id": "cinema-018",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 5
+      },
+      {
+        "id": "cinema-019",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 19
+      },
+      {
+        "id": "cinema-020",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 11
+      },
+      {
+        "id": "cinema-021",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 5
+      },
+      {
+        "id": "cinema-022",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 12
+      },
+      {
+        "id": "cinema-023",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 22
+      },
+      {
+        "id": "cinema-024",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 9
+      },
+      {
+        "id": "cinema-025",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 11
+      },
+      {
+        "id": "cinema-026",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 26
+      },
+      {
+        "id": "cinema-027",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 14
+      },
+      {
+        "id": "cinema-028",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 16
+      },
+      {
+        "id": "cinema-029",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 21
+      },
+      {
+        "id": "cinema-030",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 29
+      },
+      {
+        "id": "daily-001",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "daily-002",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "daily-003",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "daily-004",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 4
+      },
+      {
+        "id": "daily-005",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 12
+      },
+      {
+        "id": "daily-006",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "daily-007",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 9
+      },
+      {
+        "id": "daily-008",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 11
+      },
+      {
+        "id": "daily-009",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 22
+      },
+      {
+        "id": "daily-010",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 5
+      },
+      {
+        "id": "daily-011",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 20
+      },
+      {
+        "id": "daily-012",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 4
+      },
+      {
+        "id": "daily-013",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 4
+      },
+      {
+        "id": "daily-014",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 12
+      },
+      {
+        "id": "reserve-001",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "reserve-002",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 9
+      },
+      {
+        "id": "reserve-003",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 24
+      },
+      {
+        "id": "reserve-004",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "reserve-005",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 5
+      },
+      {
+        "id": "reserve-006",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 30
+      },
+      {
+        "id": "reserve-007",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 10
+      },
+      {
+        "id": "reserve-008",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 5
+      },
+      {
+        "id": "reserve-009",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 6
+      },
+      {
+        "id": "reserve-010",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 7
+      },
+      {
+        "id": "reserve-011",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 13
+      },
+      {
+        "id": "reserve-012",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 9
+      },
+      {
+        "id": "reserve-013",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 6
+      },
+      {
+        "id": "reserve-014",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 23
+      },
+      {
+        "id": "reserve-015",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 15
+      },
+      {
+        "id": "reserve-016",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 6
+      },
+      {
+        "id": "reserve-017",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 12
+      },
+      {
+        "id": "reserve-018",
+        "solutionCount": 2,
+        "solutionCountCapped": true,
+        "searchStatus": "multiple",
+        "nodes": 20
+      },
+      {
+        "id": "reserve-019",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 8
+      },
+      {
+        "id": "reserve-020",
+        "solutionCount": 1,
+        "solutionCountCapped": false,
+        "searchStatus": "exhaustive",
+        "nodes": 14
+      }
+    ],
+    "manualPhoneQA": "pending"
+  }
+}

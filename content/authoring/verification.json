@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-09-15T11:30:42.332Z",
+  "node": "v22.22.2",
+  "commands": [
+    "node scripts/validate-content.js --release",
+    "node --test tests/content-release.test.js tests/levels.test.js tests/engine.test.js"
+  ],
+  "tests": {
+    "passed": 58,
+    "failed": 0,
+    "skipped": 0
+  },
+  "content": {
+    "validated": 124,
+    "uniqueSolutions": 99,
+    "multipleSolutionsAtLeastTwo": 25,
+    "maximumCandidateEvaluations": 32
+  },
+  "manualPhoneQA": "pending",
+  "hashes": {
+    "content/authoring/levels.json": "10abe2f83edfa129a9f400155d6eda97b0a74821b65603e4f72f87deedce8f21",
+    "content/manifest.json": "3cdded3f254200194cdd5451e63393130a3035cf33d350432ee24e84b96dc273",
+    "src/core/engine.js": "50e1c00678f2bda39eb12a8c8e37bcef12a3b5d8754f99bae94bbcad4c105c3c",
+    "scripts/validate-content.js": "47090c4e87135b77bc0ae492e6aa755c0f164fa8ea5a30a74b93e18c4b69d780",
+    "scripts/build-content.js": "28fe059ce7cc017abb0d896379786881bd8158893e64aeb8ed77676deb66381e",
+    "tests/content-release.test.js": "87493bd70a9b1d21e0077d86e4564d1ce6a15ff5045484e27cfb05222ecff91d"
+  }
+}
