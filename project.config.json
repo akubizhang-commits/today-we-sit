@@ -1,8 +1,8 @@
 {
-  "description": "今天怎么坐 · 原创排座解谜原型",
+  "description": "挪个窝 · 原创排座解谜小游戏",
   "compileType": "game",
   "appid": "touristappid",
-  "projectname": "today-we-sit",
+  "projectname": "挪个窝",
   "setting": {
     "es6": true,
     "minified": true

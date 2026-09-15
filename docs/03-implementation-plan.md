@@ -1,4 +1,4 @@
-# 今天怎么坐 Implementation Plan
+# 挪个窝 Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development to implement this plan task-by-task.
 

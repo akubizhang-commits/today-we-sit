@@ -18,7 +18,7 @@ function navigation(p,l,current){
 }
 function home(p,app,l){
  const {ctx,button}=p,r=l.pageBody;
- icon(ctx,'chair',l.header.x+20,l.header.y+23,28);text(ctx,'今天怎么坐',l.header.x+44,l.header.y+(app.statusNote?16:23),20,C.ink,'700');
+ icon(ctx,'chair',l.header.x+20,l.header.y+23,28);text(ctx,'挪个窝',l.header.x+44,l.header.y+(app.statusNote?16:23),20,C.ink,'700');
  if(app.statusNote)text(ctx,app.statusNote,l.header.x+44,l.header.y+38,12,C.muted);
  const done=completedCount(app),total=app.levels.length;
  text(ctx,'给每个人',r.x+6,r.y+23,30,C.ink,'700');text(ctx,'一个好位置。',r.x+6,r.y+61,30,C.ink,'700');
