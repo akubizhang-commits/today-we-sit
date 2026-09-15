@@ -45,16 +45,20 @@ function person(ctx,x,y,size,color,identity=0,mood='neutral') {
     ctx.beginPath();ctx.moveTo(11,22);ctx.quadraticCurveTo(30,24,22,9);ctx.strokeStyle=dark;ctx.lineWidth=6;ctx.lineCap='round';ctx.stroke();
     if(id==='fox')oval(23,13,4,6,'#F6EADA');
   }
-  oval(0,20,14,13,fur);oval(0,21,9,10,'#FFF6E088');
-  oval(-9,30,7,4,fur);oval(9,30,7,4,fur);
+  oval(0,21,13,11,fur);oval(0,22,8,8,'#FFF6E099');
+  oval(-8,29,6.5,4.5,fur);oval(8,29,6.5,4.5,fur);
   // Ears and horns are drawn behind the head, with different silhouettes per species.
   if(['cat','fox'].includes(id)){
-    triangle(-17,-9,-18,-29,-3,-17,fur);triangle(17,-9,18,-29,3,-17,fur);
-    triangle(-14,-15,-15,-24,-8,-17,'#D69491');triangle(14,-15,15,-24,8,-17,'#D69491');
+    for(const side of [-1,1]){
+      ctx.beginPath();ctx.moveTo(side*17,-8);ctx.quadraticCurveTo(side*20,-17,side*18,-27);
+      ctx.quadraticCurveTo(side*17,-30,side*14,-26);ctx.lineTo(side*4,-16);ctx.closePath();ctx.fillStyle=fur;ctx.fill();
+      triangle(side*14,-15,side*15,-23,side*8,-17,'#E3ACA6');
+    }
   }else if(id==='rabbit'){
     oval(-9,-23,6,12,fur);oval(9,-23,6,12,fur);oval(-9,-24,2.5,8,'#DAA3A0');oval(9,-24,2.5,8,'#DAA3A0');
   }else if(id==='dog'){
-    oval(-16,-6,7,15,dark);oval(16,-6,7,15,dark);
+    oval(-17,-5,7.5,14,dark);oval(17,-5,7.5,14,dark);
+    oval(-18,-8,3,7,'#FFFFFF18');oval(18,-8,3,7,'#FFFFFF18');
   }else if(id==='cow'){
     triangle(-15,-17,-14,-29,-7,-19,'#C4A372');triangle(15,-17,14,-29,7,-19,'#C4A372');
     oval(-19,-13,7,4,fur);oval(19,-13,7,4,fur);
@@ -68,10 +72,12 @@ function person(ctx,x,y,size,color,identity=0,mood='neutral') {
     circle(ctx,-13,-19,radius,id==='panda'?dark:fur);circle(ctx,13,-19,radius,id==='panda'?dark:fur);
     if(id!=='panda'){circle(ctx,-13,-19,radius*.55,id==='mouse'?'#DBB4B7':dark);circle(ctx,13,-19,radius*.55,id==='mouse'?'#DBB4B7':dark);}
   }
-  oval(0,-4,17,17,fur);
+  // Fuller cheeks and a slightly larger head keep the existing drawing envelope.
+  oval(0,-3,19,17.5,fur);
+  oval(-12,4,7.5,7,fur);oval(12,4,7.5,7,fur);
   if(id==='sheep'){
     for(let i=0;i<7;i++){const a=Math.PI+i*Math.PI/6;circle(ctx,Math.cos(a)*13,-8+Math.sin(a)*12,6,'#FFF9E8');}
-    oval(0,-1,12,13,'#DCC9AB');
+    oval(0,0,13,13,'#E2CFB3');
   }
   if(id==='tiger'){
     for(const side of [-1,1]){line(ctx,side*16,-8,side*12,-5,dark,2.5);line(ctx,side*16,-1,side*13,1,dark,2.5);}
@@ -83,24 +89,35 @@ function person(ctx,x,y,size,color,identity=0,mood='neutral') {
   if(id==='raccoon'){oval(-7,-4,9,6,dark);oval(7,-4,9,6,dark);}
   if(id==='fox'){oval(-7,3,9,7,'#FFF0D7');oval(7,3,9,7,'#FFF0D7');}
   if(['bear','dog','tiger'].includes(id))oval(0,4,9,7,'#F7E6CA');
-  const eyes=id==='panda'||id==='raccoon'?'#FFF9EB':'#35483F';
+  const masked=id==='panda'||id==='raccoon',eyes=masked?'#FFF9EB':'#35483F';
+  oval(-12,5,3.6,2.4,'#DE969477');oval(12,5,3.6,2.4,'#DE969477');
   if(mood==='satisfied'){
-    for(const eye of [-6,6]){ctx.beginPath();ctx.moveTo(eye-2,-3);ctx.quadraticCurveTo(eye,-6,eye+2,-3);ctx.strokeStyle=eyes;ctx.lineWidth=1.7;ctx.stroke();}
-  }else{circle(ctx,-6,-4,1.8,eyes);circle(ctx,6,-4,1.8,eyes);}
-  if(mood==='conflict'){line(ctx,-9,-9,-4,-7,dark,1.5);line(ctx,4,-7,9,-9,dark,1.5);}
-  if(id==='pig'||id==='cow'){
-    oval(0,4,id==='cow'?10:8,6,id==='pig'?'#D98D98':'#E7B7AF');circle(ctx,-3,3,1.5,dark);circle(ctx,3,3,1.5,dark);
+    for(const eye of [-6.5,6.5]){ctx.beginPath();ctx.moveTo(eye-2.6,-1.5);ctx.quadraticCurveTo(eye,-5.5,eye+2.6,-1.5);ctx.strokeStyle=eyes;ctx.lineWidth=1.8;ctx.lineCap='round';ctx.stroke();}
   }else{
-    triangle(-3,1,3,1,0,4,id==='mouse'?'#C68C96':dark);
-    if(['cat','mouse','tiger'].includes(id))for(const side of [-1,1]){line(ctx,side*9,2,side*19,0,dark,1);line(ctx,side*10,5,side*19,6,dark,1);}
+    for(const eye of [-6.5,6.5]){
+      if(masked)oval(eye,-3,3.2,3.8,'#FFF9EB');
+      oval(eye,-2.8,2.25,2.9,'#35483F');
+      circle(ctx,eye-.65,-3.9,.8,'#FFFDF2');
+    }
+  }
+  // A worried, upward brow reads as asking for help instead of looking angry.
+  if(mood==='conflict'){line(ctx,-9,-8,-4,-9.5,dark,1.4);line(ctx,4,-9.5,9,-8,dark,1.4);}
+  if(id==='pig'||id==='cow'){
+    oval(0,5,id==='cow'?9:7.5,5.5,id==='pig'?'#DD9DA5':'#E7B7AF');circle(ctx,-2.8,4.5,1.1,dark);circle(ctx,2.8,4.5,1.1,dark);
+  }else{
+    oval(0,2.5,2.3,1.5,id==='mouse'?'#C68C96':dark);
+    if(['cat','mouse','tiger'].includes(id))for(const side of [-1,1]){line(ctx,side*11,2,side*18,1,dark,.8);line(ctx,side*12,5,side*18,6,dark,.8);}
   }
   ctx.beginPath();ctx.strokeStyle='#5E6250';ctx.lineWidth=1.3;
   if(mood==='conflict'){ctx.moveTo(-3,11);ctx.quadraticCurveTo(0,7,3,11);}
-  else{ctx.moveTo(-3,8);ctx.quadraticCurveTo(0,12,3,8);}
+  else{ctx.moveTo(-3.5,8);ctx.quadraticCurveTo(0,11.5,3.5,8);}
   ctx.stroke();
+  if(mood==='satisfied'&&['cat','dog','fox'].includes(id))oval(0,10.2,1.6,1.5,'#D69596');
   // Character-specific scarf helps distinguish friends of the same species.
-  round(ctx,-11,13,22,5,2,color||'#8DAA96');triangle(4,16,12,16,9,24,color||'#8DAA96');
-  oval(-12,23,4,6,fur);oval(12,23,4,6,fur);
+  round(ctx,-11,14,22,5,2.5,color||'#8DAA96');round(ctx,5,17,6,8,2,color||'#8DAA96');
+  circle(ctx,6,16,2.8,color||'#8DAA96');
+  oval(-10,23,4.5,5,fur);oval(10,23,4.5,5,fur);
+  oval(-8.5,30,2.5,1.4,'#FFF3DF55');oval(8.5,30,2.5,1.4,'#FFF3DF55');
   ctx.restore();
 }
 
