@@ -27,12 +27,16 @@ test('release contains 90 campaign, 14 independent daily and 20 reserve puzzles'
   assert.ok(result.report.levels.every(l => l.solutionCount >= 1 && l.searchStatus !== 'budgetExceeded'));
   assert.equal(manifest.dailyCycleAnchorDay, '2026-09-15');
 });
-test('all legacy geometry, person identities, rules and reference placements are unchanged', () => {
+test('legacy save semantics survive the intentional pet-theme prose migration', () => {
   const { levels } = read();
   for (const old of require('../src/content/levels').levels) {
     const chapter = ['bus', 'garden', 'cinema'][old.chapter];
     const level = levels.find(l => l.id === `${chapter}-${String((old.id - 1) % 10 + 1).padStart(3, '0')}`);
-    for (const key of ['chapter', 'title', 'intro', 'seats', 'adjacency', 'people', 'reference']) assert.deepEqual(level[key], old[key], `${level.id}.${key}`);
+    // 1.1.0 intentionally replaces title/intro/rule.text/designIntent.
+    for (const key of ['chapter', 'seats', 'adjacency', 'reference']) assert.deepEqual(level[key], old[key], `${level.id}.${key}`);
+    const peopleSemantics = people => people.map(p => ({ ...p, rules: p.rules.map(({ text, ...rule }) => rule) }));
+    assert.deepEqual(peopleSemantics(level.people), peopleSemantics(old.people), `${level.id}.people semantics`);
+    assert.equal(level.revision, 1);
   }
 });
 test('real engine solves every puzzle and a finite forward hint path completes it', { timeout: 60000 }, () => {

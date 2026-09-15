@@ -1,100 +1,100 @@
-# id|chapter|difficulty|layout|title|reference seat numbers (person order)|rules (+N adjacent, !N apart, * empty neighbor, @zone, -notTag)|designIntent
+# id|chapter|difficulty|layout|title|reference seat numbers (person order)|rules (+N adjacent, !N apart, * empty neighbor, @zone, -notTag)|designIntent|petStory ({0} = stable species + first nickname)
 # Bus: longer benches and short end rows. Each line is a deliberately chosen constraint graph.
-bus-011|bus|easy|A|中间递来的车票|2,1,6|@front +2;window;@back right|相邻关系把前排中席与窗边连起来，后排右席是独立锚点。
-bus-012|bus|easy|B|雨伞只占一边|3,5,1|@middle window *;@middle right;@front -right|中排两端可以共用中间空席；前排禁右侧条件确定窗边。
-bus-013|bus|easy|F|短排先上车|1,2,4|@front window;+1;@back center *|先填满短排，长排内侧可以从两边选择空邻。
-bus-014|bus|easy|I|后排的两本书|5,6,2|@back window;+1 *;door|后排窗边带出中席同伴，中席另一侧必须留下空位。
-bus-015|bus|easy|A|窗边不挨窗边|1,4,5|window @front;window !1;+2|两处窗边本来分排，给后排窗边安排同伴不影响前排。
-bus-016|bus|easy|B|车门边的花束|2,3,4|door *;window @middle;+2|前排花束独占短排，中排才容得下相邻二人。
-bus-017|bus|easy|F|两端看风景|3,6,1|@back window *;@back right *;@front window|四席长排两端的空邻是两个不同席，不可误用共享空位思路。
-bus-018|bus|easy|I|第三排的三明治|6,5,7|@back +2 +3;window;right|双相邻把主角固定在唯一三席排中央，两端标签确定方向。
-bus-019|bus|easy|A|从门口传过来|3,2,4|door;+1 -window;@back window *|从前排右端向内安排搭档，后排窗边还需保护空邻。
-bus-020|bus|easy|B|留给中排的风|4,3,7|@middle center *;+1;@back right|中排中心既靠朋友又靠空席，后排右席不能算它的邻居。
-bus-021|bus|easy|F|不坐同一头|4,5,2|@back center +2;center;door|两个内侧标签加相邻关系把两人收进长排中央。
-bus-022|bus|easy|I|隔一席的背包|5,7,3|@back window *;@back !1;@middle window|后排两人不相邻但仍同排，空席落在两端之间。
-bus-023|bus|normal|A|三人借一排|2,1,3,4,6|+2 +3;window;door;@back window *;@back right *|门边和窗边夹住三人组，另一排的两份空邻由一席同时满足。
-bus-024|bus|normal|B|先听中排的故事|4,3,5,1,7|+2 +3;@middle window;right;@front window *;@back right *|唯一中心席容纳双邻主角，两端短排分别承担空邻需求。
-bus-025|bus|normal|F|长椅上的传话|3,4,5,6,2|@back window;+1 +3;center +4;right;door *|四人链只能放入长排，门边独坐的空位不能借给链条。
-bus-026|bus|normal|I|两张票和一个纸袋|1,2,3,5,6|window @front;+1;@middle window *;@back window;+4 *|前排搭档填满短排；中排与后排空位分别由不同人物保护。
-bus-027|bus|normal|B|三排三种距离|1,2,3,5,6,7|@front window;+1;@middle window *;@middle !3;@back window;+5 !4|前后排各成对，中排两端分坐共享唯一空席。
-bus-028|bus|normal|F|先决定哪边留空|3,4,6,1,2|@back window;+1 *;@back right *;@front window;+4 !3|长排中席与右端共享空席，短排的搭档不能占用它。
-bus-029|bus|challenge|I|串起来的返程票|6,5,7,1,2,3|+2 +3;window -front -middle;right;window @front;+4;@middle window *|双邻链反推后排，再以排除标签给两条短排分工。
-bus-030|bus|challenge|B|最后一站的回声|4,3,5,2,6,7|+2 +3;window !5;right -back;door *;window -front;+5|中心三人组占中排，窗边不邻限制与门边空邻共同确定另外两排。
+bus-011|bus|easy|A|小爪递来的车票|2,1,6|@front +2;window;@back right|相邻关系把前排中席与窗边连起来，后排右席是独立锚点。|{0}把车票递给{1}，一起在萌宠巴士上找座位，后排还有一位等着出发的伙伴。
+bus-012|bus|easy|B|雨伞上的小耳朵|3,5,1|@middle window *;@middle right;@front -right|中排两端可以共用中间空席；前排禁右侧条件确定窗边。|{0}收好印着耳朵图案的雨伞，邀请另外两位伙伴上车，听听它们对座位的想法。
+bus-013|bus|easy|F|短排的软软靠垫|1,2,4|@front window;+1;@back center *|先填满短排，长排内侧可以从两边选择空邻。|{0}摸摸短排的新靠垫，和{1}结伴入座；后排伙伴还想让身旁空着一席。
+bus-014|bus|easy|I|两本动物绘本|5,6,2|@back window;+1 *;door|后排窗边带出中席同伴，中席另一侧必须留下空位。|{0}带着两本绘本坐车，打算和{1}靠在一起翻看，另一侧的空位按条件保留。
+bus-015|bus|easy|A|两扇窗里的小鼻尖|1,4,5|window @front;window !1;+2|两处窗边本来分排，给后排窗边安排同伴不影响前排。|{0}和{1}分别看中了窗边，窗玻璃上很快映出不同的小鼻尖。
+bus-016|bus|easy|B|迎接小伙伴的花束|2,3,4|door *;window @middle;+2|前排花束独占短排，中排才容得下相邻两位伙伴。|{0}带着欢迎花束来到门边，另外两位伙伴也已经上车，准备去接新朋友。
+bus-017|bus|easy|F|车尾两端的毛绒球|3,6,1|@back window *;@back right *;@front window|四席长排两端的空邻是两个不同席，不可误用共享空位思路。|{0}拿着毛绒球上车，另一端的伙伴也在找位置。各自的空邻要求都要单独满足。
+bus-018|bus|easy|I|第三排的玩偶合照|6,5,7|@back +2 +3;window;right|双相邻把主角固定在唯一三席排中央，两端标签确定方向。|{0}想和两位伙伴挨着坐，三只随身玩偶也准备好一起出现在照片里。
+bus-019|bus|easy|A|从车门传来的招呼|3,2,4|door;+1 -window;@back window *|从前排右端向内安排搭档，后排窗边还需保护空邻。|{0}在门边向{1}打招呼，后排伙伴也探出脑袋，等着大家安顿下来。
+bus-020|bus|easy|B|中排的蒲公英贴纸|4,3,7|@middle center *;+1;@back right|中排中心既靠朋友又靠空席，后排右席不能算它的邻居。|{0}展示刚收到的蒲公英贴纸，{1}想挨着看看。别忘记卡片上写着的空位要求。
+bus-021|bus|easy|F|两枚挨着的爪印|4,5,2|@back center +2;center;door|两个内侧标签加相邻关系把两位伙伴收进长排中央。|{0}和{1}各带一枚爪印车票，想在内侧相邻入座，门边还来了一位伙伴。
+bus-022|bus|easy|I|背包里的小铃铛|5,7,3|@back window *;@back !1;@middle window|后排两位伙伴不相邻但仍同排，空席落在两端之间。|{0}把小铃铛收进背包，和另外两位伙伴挑座位。铃铛只是行李，座位仍按卡片判断。
+bus-023|bus|normal|A|三张毛毛通行证|2,1,3,4,6|+2 +3;window;door;@back window *;@back right *|门边和窗边夹住三位伙伴组，另一排的两份空邻由一席同时满足。|{0}想挨着两位伙伴交流新通行证，另一排还有两位各自希望身旁留空的小动物。
+bus-024|bus|normal|B|中排开讲动物故事|4,3,5,1,7|+2 +3;@middle window;right;@front window *;@back right *|唯一中心席容纳双邻主角，两端短排分别承担空邻需求。|{0}带来一则动物故事，想左右都挨着伙伴；前后排的乘客也各有座位偏好。
+bus-025|bus|normal|F|沿长椅传晚安|3,4,5,6,2|@back window;+1 +3;center +4;right;door *|四位伙伴链只能放入长排，门边独坐的空位不能借给链条。|{0}先向身边伙伴说声问好，招呼沿着长椅传下去，门边乘客则希望旁边有空位。
+bus-026|bus|normal|I|车票夹里的小合影|1,2,3,5,6|window @front;+1;@middle window *;@back window;+4 *|前排搭档填满短排；中排与后排空位分别由不同伙伴保护。|{0}把合影放进车票夹，和{1}一起坐前排，其余伙伴慢慢安顿自己的座位。
+bus-027|bus|normal|B|三排各有小默契|1,2,3,5,6,7|@front window;+1;@middle window *;@middle !3;@back window;+5 !4|前后排各成对，中排两端分坐共享唯一空席。|{0}已经和{1}约好同行，中后排的伙伴也有各自的相邻与留空要求。
+bus-028|bus|normal|F|靠垫旁的那一席|3,4,6,1,2|@back window;+1 *;@back right *;@front window;+4 !3|长排中席与右端共享空席，短排的搭档不能占用它。|{0}和同伴在长排找到软靠垫，另两位伙伴坐短排，大家一起确认谁身旁需要空席。
+bus-029|bus|challenge|I|回程的项圈小章|6,5,7,1,2,3|+2 +3;window -front -middle;right;window @front;+4;@middle window *|双邻链反推后排，再以排除标签给两条短排分工。|{0}晃晃新领到的小章，想和两位伙伴挨着交换旅途见闻，其他乘客也准备回家。
+bus-030|bus|challenge|B|末站的毛茸茸招手|4,3,5,2,6,7|+2 +3;window !5;right -back;door *;window -front;+5|中心三位伙伴组占中排，窗边不邻限制与门边空邻共同确定另外两排。|{0}向同车伙伴招手，今天的末班萌宠巴士快发车了，照着条件把最后几位安顿好。
 # Garden: three/four-seat tables and a third serving row.
-garden-011|garden|easy|C|长桌的一碗汤|2,1,7|@garden +2;shade;@kitchen serving|树荫锚点传递花园区域，四席长桌不把第三席误认成端点。
-garden-012|garden|easy|D|灯笼左边的客人|5,4,3|lantern;+1 shade;@garden serving|从灯笼往树荫侧找同伴，取餐客人仍可坐另一排。
-garden-013|garden|easy|J|最下面的薄荷|7,8,3|row3 shade;+1 *;row1 serving|第三排也属餐台侧，必须用排标签区分两处餐台树荫。
-garden-014|garden|easy|C|两份果酱之间|1,3,4|@garden shade *;@garden center *;+2 serving|花园第一与第三席共享空席，第三席另一边仍能接取餐同伴。
-garden-015|garden|easy|D|长桌中央的小碟|5,6,1|lantern +2;center;@garden shade *|灯笼的中心同伴只能在长桌另一内侧，短桌树荫另留空位。
-garden-016|garden|easy|J|两盏茶不碰杯|4,6,2|row2 shade *;row2 serving *;row1 center|第二排两端共享灯笼空席，前排中心座不受影响。
-garden-017|garden|easy|A|取餐顺手的两人|3,2,5|serving @garden;+1 -shade;lantern *|取餐端带出中央同伴，灯笼独坐者可从左右两边选择空邻。
-garden-018|garden|easy|D|把小桌留给花|1,2,3,7|@garden shade;+1 +3;serving;@kitchen serving *|三人链填短桌，长桌取餐端仍可向内留空。
-garden-019|garden|normal|C|四只碗的接力|1,2,3,4,6|shade @garden;+1 +3;center +4;serving;lantern *|四人链只有长桌能装下，灯笼独坐的空邻允许两种方向。
-garden-020|garden|normal|J|花园的空中心|1,3,5,4,6|row1 shade *;row1 serving *;lantern +4 +5;shade;serving|前排共享空中心，灯笼双邻占满第二排，第三排保持可用但无须坐满。
-garden-021|garden|normal|D|别把面包递太远|4,5,6,1,3|shade @kitchen;+1 +3;center *;@garden shade *;@garden !4|三人接力从长桌树荫侧展开，最内端的空邻把取餐席留出。
-garden-022|garden|normal|C|两侧都能添饭|4,3,7,6,5|serving @garden;+1 *;serving @kitchen;+3 +5;shade|短桌三人组坐满，长桌取餐搭档的空邻向另一内侧延伸。
-garden-023|garden|normal|J|分三次端上来|1,2,4,5,8,9|row1 shade;+1 *;row2 shade;+3;row3 center *;+5 serving|三组搭档的空位各在本排，最后一组方向与前两组相反。
-garden-024|garden|normal|A|灯笼不是空位|5,4,6,1,3|lantern +2 +3;shade;serving;@garden shade *;@garden !4|灯笼组占整排，花园两人必须隔开，不能把灯笼当共享空席。
-garden-025|garden|normal|D|左右都留一口香|4,6,7,2,1|@kitchen shade *;@kitchen center *;+2 serving;@garden center *;+4 shade|长桌共享一个空席，短桌主角另需空席，同样条件在两排产生不同布局。
-garden-026|garden|normal|C|餐巾挡住灯光|6,5,2,1,3|lantern *;+1 shade;@garden center +4 +5;shade;center *|灯笼一侧给朋友另一侧留空，长桌三人链的末端也需要一个空席。
-garden-027|garden|challenge|J|三桌之间的邀请|2,1,3,5,4,8,9|+2 +3;row1 shade;serving;lantern *;+4 -serving;row3 center *;+6|双邻先占前排；灯笼和第三排中心各要朋友与空位，方向由不同端点确定。
-garden-028|garden|challenge|D|最后两盘青菜|5,4,6,7,1,3|lantern +2 +3;shade;center +4;serving;@garden shade *;@garden !5|长桌四人链的中央连接不能错位，短桌端点共享仅剩的空席。
-garden-029|garden|challenge|C|把长桌认出来|2,1,3,4,6,5|+2 +3;shade @garden;center +4;serving;lantern *;+5 -serving|双中心延伸成长链占花园桌，灯笼搭档受禁取餐约束向左展开。
-garden-030|garden|challenge|J|院门关上之前|5,4,6,1,2,7,9|lantern +2 +3;shade;serving;row1 shade;+4 *;row3 shade *;row3 !6|满席的第二排和留白的第一排先分开，第三排两端必须共享中心空席。
+garden-011|garden|easy|C|长桌旁的小汤碗|2,1,7|@garden +2;shade;@kitchen serving|遮光位锚点传递窗边区区域，四席长桌不把第三席误认成端点。|{0}抱着自己的小汤碗，想在窗边区挨着{1}坐，取餐侧的伙伴已经准备好了。
+garden-012|garden|easy|D|暖灯左边的小围兜|5,4,3|lantern;+1 shade;@garden serving|从暖灯往遮光位侧找同伴，取餐客人仍可坐另一排。|{0}穿着新围兜来到暖灯旁，{1}想坐在身边，两位伙伴一起等第三位落座。
+garden-013|garden|easy|J|第三桌的耳朵标牌|7,8,3|row3 shade;+1 *;row1 serving|第三排也属取餐侧，必须用排标签区分两处取餐侧遮光位。|{0}找到了第三排的耳朵标牌，想和{1}挨着吃饭，第一排还有伙伴等着取餐。
+garden-014|garden|easy|C|两块餐垫之间|1,3,4|@garden shade *;@garden center *;+2 serving|窗边区第一与第三席共享空席，第三席另一边仍能接取餐同伴。|{0}铺好自己的餐垫，另一位伙伴也想挨着空席，取餐一端的朋友则想结伴坐。
+garden-015|garden|easy|D|暖灯旁的双份餐巾|5,6,1|lantern +2;center;@garden shade *|暖灯的中心同伴只能在长桌另一内侧，短桌遮光位另留空位。|{0}拿来两张爪印餐巾，邀请{1}挨着坐在内侧，窗边区另有一位小伙伴。
+garden-016|garden|easy|J|不碰响两只餐碗|4,6,2|row2 shade *;row2 serving *;row1 center|第二排两端共享暖灯空席，前排中心座不受影响。|{0}和{1}轻轻放下餐碗，各自希望身旁有空位，前排伙伴正坐着等它们。
+garden-017|garden|easy|A|开饭铃响两声|3,2,5|serving @garden;+1 -shade;lantern *|取餐端带出中央同伴，暖灯独坐者可从左右两边选择空邻。|{0}听到开饭铃，想和{1}在取餐端附近结伴入座，暖灯旁的伙伴希望挨着空席。
+garden-018|garden|easy|D|小桌上的爪印餐布|1,2,3,7|@garden shade;+1 +3;serving;@kitchen serving *|三位伙伴链填短桌，长桌取餐端仍可向内留空。|{0}带来新的爪印餐布，想挨着两位朋友吃饭，长桌的取餐端也有伙伴落座。
+garden-019|garden|normal|C|四只碗沿桌排|1,2,3,4,6|shade @garden;+1 +3;center +4;serving;lantern *|四位伙伴链只有长桌能装下，暖灯独坐的空邻允许两种方向。|{0}端起自己的碗，和三位朋友约好挨着坐，暖灯下的伙伴则想旁边空一席。
+garden-020|garden|normal|J|前桌的小空席|1,3,5,4,6|row1 shade *;row1 serving *;lantern +4 +5;shade;serving|前排共享空中心，暖灯双邻占满第二排，第三排保持可用但无须坐满。|{0}和另一位伙伴在前桌找位置，暖灯旁三位朋友等着结伴开饭。
+garden-021|garden|normal|D|餐巾递到第三位|4,5,6,1,3|shade @kitchen;+1 +3;center *;@garden shade *;@garden !4|三位伙伴接力从长桌遮光位侧展开，最内端的空邻把取餐席留出。|{0}把餐巾递向身边的伙伴，三位朋友想连着坐，另桌的伙伴还要照顾自己的空邻需求。
+garden-022|garden|normal|C|两端都有取餐盘|4,3,7,6,5|serving @garden;+1 *;serving @kitchen;+3 +5;shade|短桌三位伙伴组坐满，长桌取餐搭档的空邻向另一内侧延伸。|{0}从一端叫来{1}，另一排也有朋友在取餐端结伴，看看两桌各能怎样安排。
+garden-023|garden|normal|J|三桌的毛毛午餐|1,2,4,5,8,9|row1 shade;+1 *;row2 shade;+3;row3 center *;+5 serving|三组搭档的空位各在本排，最后一组方向与前两组相反。|{0}带着同伴走向第一桌，另外两组也找到了自己的排号，萌宠午餐要开始了。
+garden-024|garden|normal|A|暖灯下坐满朋友|5,4,6,1,3|lantern +2 +3;shade;serving;@garden shade *;@garden !4|暖灯组占整排，窗边区两位伙伴必须隔开，不能把暖灯当共享空席。|{0}想和两位朋友围着暖灯吃饭，窗边区的伙伴则想分开一点坐。
+garden-025|garden|normal|D|餐垫旁留一点空|4,6,7,2,1|@kitchen shade *;@kitchen center *;+2 serving;@garden center *;+4 shade|长桌共享一个空席，短桌主角另需空席，同样条件在两排产生不同布局。|{0}铺好餐垫后看看身旁，另一位伙伴也需要邻接空席，小桌的朋友还有自己的搭档。
+garden-026|garden|normal|C|餐巾绣着小月亮|6,5,2,1,3|lantern *;+1 shade;@garden center +4 +5;shade;center *|暖灯一侧给朋友另一侧留空，长桌三位伙伴链的末端也需要一个空席。|{0}展示月亮餐巾，想在暖灯旁挨着{1}坐；另一桌三位伙伴也想结伴。
+garden-027|garden|challenge|J|三桌互相挥小爪|2,1,3,5,4,8,9|+2 +3;row1 shade;serving;lantern *;+4 -serving;row3 center *;+6|双邻先占前排；暖灯和第三排中心各要朋友与空位，方向由不同端点确定。|{0}和两位朋友互相招呼，暖灯与第三桌的伙伴都想同时拥有同伴和空邻。
+garden-028|garden|challenge|D|最后两只小餐碗|5,4,6,7,1,3|lantern +2 +3;shade;center +4;serving;@garden shade *;@garden !5|长桌四位伙伴链的中央连接不能错位，短桌端点共享仅剩的空席。|{0}在暖灯旁等朋友端碗过来，长桌这一组想连着坐，小桌另两位也有留空要求。
+garden-029|garden|challenge|C|长桌的毛毛队伍|2,1,3,4,6,5|+2 +3;shade @garden;center +4;serving;lantern *;+5 -serving|双中心延伸成长链占窗边区桌，暖灯搭档受禁取餐约束向左展开。|{0}和两位同伴先找位置，招呼顺着长桌继续传过去，暖灯旁还有一对等开饭的朋友。
+garden-030|garden|challenge|J|食堂打烊前的拥抱|5,4,6,1,2,7,9|lantern +2 +3;shade;serving;row1 shade;+4 *;row3 shade *;row3 !6|满席的第二排和留白的第一排先分开，第三排两端必须共享中心空席。|{0}和两位朋友坐在暖灯附近，其余伙伴按排号找座，吃完饭再一起道别。
 # Cinema: screen/rear, edge/interior and genuinely different row capacities.
-cinema-011|cinema|easy|G|小银幕的第一束光|2,1,5|screen +2;left;row2 speaker|三席银幕排从左端推中央，后排只有两席仍按自己的端点标记。
-cinema-012|cinema|easy|H|三排中的树影|5,6,4|shade edge;+1;speaker screen *|树荫只在第二排，第三排左端不可混用，银幕音箱侧另需空席。
-cinema-013|cinema|easy|D|不挡住那束光|1,3,5|screen left *;screen speaker *;shade center|短前排两端共享中央空位，后排树荫内侧仍能坐人。
-cinema-014|cinema|easy|E|把笑声放中间|2,3,5|screen center +2;center;shade edge *|两个内侧同伴在银幕排成对，树荫边座不能用前排空位满足。
-cinema-015|cinema|easy|H|最后一排的合影|7,8,2|row3 left;+1;screen center *|末排搭档先填满短排，银幕中央观众允许向任一侧留空。
-cinema-016|cinema|normal|D|树影里递来的票|4,5,6,3|shade edge;+1 +3;center *;screen speaker *|后排三人链从树影端展开，第三人的空邻迫使音箱席空出。
-cinema-017|cinema|normal|E|一排两头的约定|1,2,4,5,8|screen left;+1 *;screen speaker *;@rear left *;@rear speaker *|前排两人共用第三席空位，后排两端则各需要不同空邻。
-cinema-018|cinema|normal|G|短后排的两张票|4,5,1,3|@rear left;+1;screen left *;screen speaker *|后排两人填满，前排两端用唯一中间席满足空邻。
-cinema-019|cinema|normal|H|第三排不在树下|7,8,5,1,2|row3 left;+1 !3;shade edge *;screen left;+4 *|第三排搭档不能误放树影排；第二排独坐，前排搭档末端留空。
-cinema-020|cinema|normal|E|中间空一张票|5,7,8,2,1|@rear left *;@rear center *;+2 speaker;screen center *;+4 left|后排第二席共享留空，前排中心同伴与空邻另占一段。
-cinema-021|cinema|normal|D|三张连号的票|2,1,3,4,7|screen +2 +3;left;speaker;@rear left *;@rear speaker *|短前排双邻填满，长后排两个端点分别保护一个内侧空位。
-cinema-022|cinema|normal|H|风吹到最后一排|2,1,3,6,7|screen +2 +3;left;center *;row2 speaker *;row3 left *|银幕三人链末端需空邻；两条短后排各只能独坐一人。
-cinema-023|cinema|normal|E|音箱两边不同排|4,3,8,7,6|speaker screen;+1 *;speaker @rear;+3 +5;shade *|前排音箱搭档与后排三人链方向相同，但保留空位的位置不同。
-cinema-024|cinema|normal|D|只剩内侧能递糖|5,4,6,7,1|shade center +2 +3;left;center +4;speaker;screen left *|树影中央向两边连接后再延伸一人，形成填满长后排的四人链。
-cinema-025|cinema|challenge|E|四人链与两份空白|2,1,3,4,5,7,8|screen +2 +3;left;center +4;speaker;@rear left *;@rear center *;+6 speaker|银幕四人链占满，后排七人局唯一空席被两个人共同需要。
-cinema-026|cinema|challenge|H|三排票根的顺序|3,4,2,1,5,7,8|screen center +2 +3;speaker;center +4;left;shade edge *;row3 left;+6|前排链从右侧往左推，树影短排必须独坐，最后短排必须结伴。
-cinema-027|cinema|challenge|D|短排留给留白|4,5,6,7,1,3|@rear left;+1 +3;center +4;speaker;screen left *;screen !5|长链挤满后排，前排两端共享空席，不能把空邻安排到满排。
-cinema-028|cinema|challenge|E|两个人都要靠里面|2,3,1,4,6,5,7|screen center +2 +3;center +4;left;speaker;shade center +6 +7;edge;center *|两排都从内侧双邻开始，后排第三人的空邻排除音箱端落座。
-cinema-029|cinema|challenge|H|电影散场的脚步|1,2,3,4,5,6,8|screen left;+1 +3;center +4;speaker;shade edge;+5;row3 speaker *|八席七人的长短排分工：前排四连，树荫二连，唯一空席在末排。
-cinema-030|cinema|challenge|E|把片尾曲听完|3,4,2,1,7,8,6,5|screen center +2 +3;speaker;center +4;left;@rear center +6 +7;speaker;shade +8;edge !1|两条链都从右内侧反向延伸，树荫条件为后排链定向而非直接指定所有座位。
+cinema-011|cinema|easy|G|晨光摸摸小鼻尖|2,1,5|screen +2;left;row2 speaker|三席晨光区这一排从左端推中央，后排只有两席仍按自己的端点标记。|{0}在晨光区伸个懒腰，{1}想挨着休息，里侧靠轻音乐的位置也来了一位伙伴。
+cinema-012|cinema|easy|H|遮光帘后的毛毛影|5,6,4|shade edge;+1;speaker screen *|遮光位只在第二排，第三排左端不可混用，晨光区轻音乐侧另需空席。|{0}带着{1}寻找遮光位，晨光区轻音乐旁的朋友希望身边留一席空位。
+cinema-013|cinema|easy|D|小毯子晒到太阳|1,3,5|screen left *;screen speaker *;shade center|短前排两端共享中央空位，后排遮光位内侧仍能坐人。|{0}在晨光区铺开小毯子，另一端的伙伴也想邻接空位，里侧还有一位准备歇下。
+cinema-014|cinema|easy|E|两个枕头靠近一点|2,3,5|screen center +2;center;shade edge *|两个内侧同伴在晨光区这一排成对，遮光位边座不能用前排空位满足。|{0}和{1}想挨着坐在内侧，遮光位边上的伙伴则希望旁边有空席。
+cinema-015|cinema|easy|H|末排的一张梦境画|7,8,2|row3 left;+1;screen center *|末排搭档先填满短排，晨光区中央午睡伙伴允许向任一侧留空。|{0}带着梦境画来到最后一排，和{1}结伴休息，晨光区的朋友先打了个哈欠。
+cinema-016|cinema|normal|D|从遮光位传晚安|4,5,6,3|shade edge;+1 +3;center *;screen speaker *|后排三位伙伴链从遮光位端展开，第三位伙伴的空邻迫使轻音乐席空出。|{0}先向同伴说声午安，招呼沿着里侧窝传过去，晨光区轻音乐旁也有朋友歇下。
+cinema-017|cinema|normal|E|两头都放小靠枕|1,2,4,5,8|screen left;+1 *;screen speaker *;@rear left *;@rear speaker *|前排两位伙伴共用第三席空位，后排两端则各需要不同空邻。|{0}在晨光区等{1}靠过来，里侧两端的伙伴各自想邻接空位。
+cinema-018|cinema|normal|G|短排的双份午安|4,5,1,3|@rear left;+1;screen left *;screen speaker *|后排两位伙伴填满，前排两端用唯一中间席满足空邻。|{0}和{1}在里侧短排互道午安，晨光区两端的伙伴则希望旁边留空。
+cinema-019|cinema|normal|H|第三排的梦境本|7,8,5,1,2|row3 left;+1 !3;shade edge *;screen left;+4 *|第三排搭档不能误放遮光位排；第二排独坐，前排搭档末端留空。|{0}抱着梦境本来到第三排，想和{1}挨着休息，遮光位的小伙伴另有自己的偏好。
+cinema-020|cinema|normal|E|软枕之间的小空窝|5,7,8,2,1|@rear left *;@rear center *;+2 speaker;screen center *;+4 left|后排第二席共享留空，前排中心同伴与空邻另占一段。|{0}在里侧左端打哈欠，另外两位伙伴想靠轻音乐结伴，晨光区也有一对朋友。
+cinema-021|cinema|normal|D|三只枕头晒晨光|2,1,3,4,7|screen +2 +3;left;speaker;@rear left *;@rear speaker *|短前排双邻填满，长后排两个端点分别保护一个内侧空位。|{0}想左右都挨着伙伴晒晒晨光，里侧两端的小动物各自照顾自己的空邻需求。
+cinema-022|cinema|normal|H|午安传到最后一排|2,1,3,6,7|screen +2 +3;left;center *;row2 speaker *;row3 left *|晨光区三位伙伴链末端需空邻；两条短后排各只能独坐一位伙伴。|{0}和两位朋友轻轻互道午安，后面两条短排各有一位伙伴想邻接空席。
+cinema-023|cinema|normal|E|轻音乐有两个角落|4,3,8,7,6|speaker screen;+1 *;speaker @rear;+3 +5;shade *|前排轻音乐搭档与后排三位伙伴链方向相同，但保留空位的位置不同。|{0}邀请{1}在晨光区听轻音乐，里侧的三位朋友也想靠在一起休息。
+cinema-024|cinema|normal|D|四只枕头挨个靠|5,4,6,7,1|shade center +2 +3;left;center +4;speaker;screen left *|遮光位中央向两边连接后再延伸一位伙伴，形成填满长后排的四位伙伴链。|{0}在遮光位的内侧招呼朋友，里侧窝的队伍慢慢接起来，晨光区还有一位独自打哈欠。
+cinema-025|cinema|challenge|E|七个哈欠一块留白|2,1,3,4,5,7,8|screen +2 +3;left;center +4;speaker;@rear left *;@rear center *;+6 speaker|晨光区四位伙伴链占满，后排七位伙伴局唯一空席被两位伙伴共同需要。|{0}和朋友们安排好晨光区的枕头，里侧伙伴也陆续来到，别忘记它们的空邻要求。
+cinema-026|cinema|challenge|H|从右边说声午安|3,4,2,1,5,7,8|screen center +2 +3;speaker;center +4;left;shade edge *;row3 left;+6|前排链从右侧往左推，遮光位短排必须独坐，最后短排必须结伴。|{0}向右边和另一侧的朋友招呼，遮光位的伙伴想独享空邻，末排还有结伴而来的同伴。
+cinema-027|cinema|challenge|D|短排的软绒间隔|4,5,6,7,1,3|@rear left;+1 +3;center +4;speaker;screen left *;screen !5|长链挤满后排，前排两端共享空席，不能把空邻安排到满排。|{0}带着朋友们在里侧窝连着休息，晨光区两端的伙伴希望中间留出空席。
+cinema-028|cinema|challenge|E|里面也能挨着朋友|2,3,1,4,6,5,7|screen center +2 +3;center +4;left;speaker;shade center +6 +7;edge;center *|两排都从内侧双邻开始，后排第三位伙伴的空邻排除轻音乐端落座。|{0}和另一位内侧伙伴召集朋友，前后两排都想靠在一起，其中一位还需要空邻。
+cinema-029|cinema|challenge|H|午睡前轻轻落座|1,2,3,4,5,6,8|screen left;+1 +3;center +4;speaker;shade edge;+5;row3 speaker *|八席七位伙伴的长短排分工：前排四连，遮光位二连，唯一空席在末排。|{0}带着同伴安顿晨光区，遮光位的一对朋友已经到了，末排伙伴还想邻接空席。
+cinema-030|cinema|challenge|E|把呼噜声留到梦里|3,4,2,1,7,8,6,5|screen center +2 +3;speaker;center +4;left;@rear center +6 +7;speaker;shade +8;edge !1|两条链都从右内侧反向延伸，遮光位条件为后排链定向而非直接指定所有座位。|{0}从轻音乐一侧招呼朋友，两排的伙伴都想挨着歇下，等安排好了再一起做个软软的梦。
 # Fourteen independently authored daily puzzles; never aliases of campaign IDs.
-daily-001|bus|normal|B|今日的折叠伞|1,3,4,6,7|@front window *;@middle window;+2 *;@back window;+4|前排独坐、中排搭档带空邻、后排满席，三排空位职责不同。
-daily-002|garden|normal|C|青梅分成两盘|1,2,4,5,6|shade @garden;+1 *;serving @garden *;shade @kitchen;+4 *|长前排第三席共享留空，短后排搭档也要从自己的末端留空。
-daily-003|cinema|normal|H|星图里的三个点|1,3,4,6,7|screen left *;screen center *;+2 speaker;row2 speaker *;row3 left *|银幕排共享第二席空位，两条短后排各自保护不同的空邻。
-daily-004|bus|easy|F|两只水壶的距离|3,5,2|@back window *;@back center !1;door *|长排两人隔一个内侧席，门边独坐使短排也留下空邻。
-daily-005|garden|normal|J|灯笼下的拼图|5,6,1,2,8,7|lantern *;+1 serving;row1 shade;+3 *;row3 center *;+5 shade|三组二人用不同端点定向，灯笼组向右而前后两组向左。
-daily-006|cinema|normal|D|留给字幕的安静|2,1,5,4,7|screen center *;+1 left;shade center *;+3 edge;@rear speaker *|前排中心独留右空，后排中心和音箱共享第三席空位。
-daily-007|bus|challenge|I|一份跨排的邀请|1,2,4,6,5,7|@front window;+1;@middle right *;@back center +5 +6;window;right !3|后排三人链不可拆分，前排搭档和中排独坐由窗门方向区分。
-daily-008|garden|easy|D|甜点先到哪一端|3,2,7,6|@garden serving;+1 *;@kitchen serving;+3 *|两个取餐搭档各向内延伸，但长短桌留下的自由座位不同。
-daily-009|cinema|challenge|E|前后排的反向传票|1,2,3,5,6,8|screen left;+1 +3;center *;@rear left;+4 *;@rear speaker *|前排三连末端留空，后排二连与右端共享另一席，空位不在同一列。
-daily-010|bus|normal|A|左右各有一阵风|2,3,4,6|@front center *;+1 door;@back window *;@back !3|前排中心向门边结伴并向窗边留空，后排两端共享中央空席。
-daily-011|garden|challenge|J|三桌接力的终点|2,1,3,4,5,7,8,9|row1 +2 +3;shade;serving;row2 shade;+4 *;row3 shade;+6 +8;serving|前后两桌填满三连，中桌搭档保护唯一空席；排标签防止两条链互换。
-daily-012|cinema|easy|G|短排也有边座|4,2,3|@rear left *;screen center *;+2 speaker|后排只有一名观众时空邻占另一边座，前排中心同伴方向相反。
-daily-013|bus|normal|B|一排一只纸鹤|2,3,5,7|door *;@middle window *;@middle right *;@back right *|前后短排各一只纸鹤，中间两人可以共享空席，不需要四个空位。
-daily-014|garden|challenge|C|月末的最后一口汤|3,4,2,1,5,7|@garden center +2 +3;serving;center +4;shade;@kitchen shade *;@kitchen !5|长桌链从取餐侧向左回推，短桌两端共享灯笼空席。
+daily-001|bus|normal|B|今天带耳朵雨伞|1,3,4,6,7|@front window *;@middle window;+2 *;@back window;+4|前排独坐、中排搭档带空邻、后排满席，三排空位职责不同。|{0}收起耳朵雨伞上车，中排伙伴结伴而来，后排朋友也等着一起出发。
+daily-002|garden|normal|C|爪印餐垫分两桌|1,2,4,5,6|shade @garden;+1 *;serving @garden *;shade @kitchen;+4 *|长前排第三席共享留空，短后排搭档也要从自己的末端留空。|{0}把爪印餐垫放好，前后两桌的伙伴都想结伴开饭，还有自己的空邻要求。
+daily-003|cinema|normal|H|梦境本里的小圆点|1,3,4,6,7|screen left *;screen center *;+2 speaker;row2 speaker *;row3 left *|晨光区这一排共享第二席空位，两条短后排各自保护不同的空邻。|{0}拿出画着小圆点的梦境本，晨光区伙伴想靠轻音乐结伴，后面两排也各有人休息。
+daily-004|bus|easy|F|水壶上的毛毛挂饰|3,5,2|@back window *;@back center !1;door *|长排两位伙伴隔一个内侧席，门边独坐使短排也留下空邻。|{0}带着毛毛挂饰水壶上车，长排的同伴想隔开一点坐，门边伙伴也希望旁边空着。
+daily-005|garden|normal|J|暖灯下的小围兜拼图|5,6,1,2,8,7|lantern *;+1 serving;row1 shade;+3 *;row3 center *;+5 shade|三组两位伙伴用不同端点定向，暖灯组向右而前后两组向左。|{0}展示围兜上的拼图花纹，三组朋友在不同桌边结伴，分别留意自己的空邻条件。
+daily-006|cinema|normal|D|给午睡留一点静|2,1,5,4,7|screen center *;+1 left;shade center *;+3 edge;@rear speaker *|前排中心独留右空，后排中心和轻音乐共享第三席空位。|{0}和{1}在晨光区挑窝位，里侧的朋友也想挨着休息，让每位伙伴的留空愿望都成立。
+daily-007|bus|challenge|I|一张毛毛同行卡|1,2,4,6,5,7|@front window;+1;@middle right *;@back center +5 +6;window;right !3|后排三位伙伴链不可拆分，前排搭档和中排独坐由窗门方向区分。|{0}和{1}拿着同行卡坐前排，后排三位朋友想连着坐，中排伙伴则需要空邻。
+daily-008|garden|easy|D|餐碗先到哪一端|3,2,7,6|@garden serving;+1 *;@kitchen serving;+3 *|两个取餐搭档各向内延伸，但长短桌留下的自由座位不同。|{0}在取餐端等{1}，另一桌也有同样结伴的朋友，各自按卡片挑好位置。
+daily-009|cinema|challenge|E|两排软枕反向摆|1,2,3,5,6,8|screen left;+1 +3;center *;@rear left;+4 *;@rear speaker *|前排三连末端留空，后排二连与右端共享另一席，空位不在同一列。|{0}从晨光区左端向朋友说午安，里侧也有一对伙伴靠在一起，另一端的同伴需要空邻。
+daily-010|bus|normal|A|风吹动耳朵贴纸|2,3,4,6|@front center *;+1 door;@back window *;@back !3|前排中心向门边结伴并向窗边留空，后排两端共享中央空席。|{0}拿着耳朵贴纸坐进巴士，想靠着门边朋友，后排两位则希望彼此不相邻。
+daily-011|garden|challenge|J|三桌小碗都备齐|2,1,3,4,5,7,8,9|row1 +2 +3;shade;serving;row2 shade;+4 *;row3 shade;+6 +8;serving|前后两桌填满三连，中桌搭档保护唯一空席；排标签防止两条链互换。|{0}和两位朋友先找桌位，中桌搭档想留个空邻，第三桌的小伙伴也准备连着坐。
+daily-012|cinema|easy|G|短排的小小枕头|4,2,3|@rear left *;screen center *;+2 speaker|后排只有一名午睡伙伴时空邻占另一边座，前排中心同伴方向相反。|{0}把枕头放进里侧短排，晨光区的两位朋友想靠轻音乐挨着休息。
+daily-013|bus|normal|B|纸鹤停在毛毛包上|2,3,5,7|door *;@middle window *;@middle right *;@back right *|前后短排各一只纸鹤，中间两位伙伴可以共享空席，不需要四个空位。|{0}抱着停着纸鹤的包坐到门边，中排两端和后排的伙伴也都希望邻接空位。
+daily-014|garden|challenge|C|月末洗好小餐碗|3,4,2,1,5,7|@garden center +2 +3;serving;center +4;shade;@kitchen shade *;@kitchen !5|长桌链从取餐侧向左回推，短桌两端共享暖灯空席。|{0}和朋友们把餐碗摆上长桌，短桌两端的伙伴则想在身旁留一席空位。
 # Reserve: authored and automatically checked, not manually phone-accepted or shipped.
-reserve-001|bus|easy|I|早班车的空中排|1,2,5,7|@front window;+1;@back window *;@back right *|前排结伴，后排两端共享中席，完全空着的中排不能当跨排空邻。
-reserve-002|garden|normal|D|把灯笼留在身后|4,6,7,1,2|@kitchen shade *;@kitchen center *;+2 serving;@garden shade;+4 *|长桌灯笼席必须空出，短桌左侧搭档另外保护取餐空席。
-reserve-003|cinema|normal|H|树影里只坐一位|5,7,8,3,4|shade edge *;row3 left;+2;screen center *;+4 speaker|树影短排独坐，最末排成对；银幕音箱搭档向左留空。
-reserve-004|bus|normal|F|窗边三人唱半句|3,4,5,1|@back window;+1 +3;center *;@front window *|长排三连的末端留空，短排窗边也需独占整排容量。
-reserve-005|garden|easy|J|第三桌的两份茶|8,7,5|row3 center *;+1 shade;lantern *|第三排中心以树荫朋友定向，第二排灯笼独坐允许多种空邻。
-reserve-006|cinema|normal|E|音箱暂时没人坐|1,2,3,5,6|screen left;+1 +3;center *;shade edge;+4 *|前排三连保护音箱空席，后排树影二连保护第三席；不是两排复制同一链。
-reserve-007|bus|challenge|B|三排倒着数|5,4,3,1,2,7|@middle right;+1 +3;window;@front window;+4;@back right *|中排链从右端反推，前排填满后，唯一空邻只能交给后排独坐者。
-reserve-008|garden|normal|C|两端都等热汤|1,4,6,5,7|@garden shade *;@garden serving *;lantern +4 +5;shade;serving|长桌两端各留不同空席，短桌灯笼三人组坐满，不能套用三席共享空位。
-reserve-009|cinema|easy|D|前排的两种心情|1,3,6,7|screen left *;screen speaker *;@rear center *;+3 speaker|短前排共享空席，长后排靠音箱搭档向内侧留空。
-reserve-010|bus|normal|I|后排的两份空间|5,7,1,3,4|@back window *;@back right *;@front window *;@middle window;+4|后排共享一个空位，前排另留一个，中排两人坐满不借空间。
-reserve-011|garden|challenge|J|再添一张餐巾|2,1,3,5,6,7,8|row1 center +2 +3;shade;serving;lantern *;+4 serving;row3 shade;+6 *|第一桌三连，第二桌向右二连，第三桌向左二连，空位方向由链端共同确定。
-reserve-012|cinema|normal|G|五张椅子的片尾|1,2,3,4,5|screen left;+1 +3;speaker;@rear left;+4 !3|三席前排三连与两席后排搭档刚好填满，不相邻条件检验排间边界。
-reserve-013|bus|easy|A|门边吹不走的画|3,2,6|door;+1 *;@back right *|门边搭档中席需要窗边留空；后排独坐者只认自己的中席空邻。
-reserve-014|garden|normal|D|树荫往右递两次|1,2,4,5,6|@garden shade;+1 *;@kitchen shade;+3 +5;center *|短桌二连与长桌三连都从树荫起步，但各自留下不同端点空席。
-reserve-015|cinema|challenge|E|两排空位错开|1,3,4,5,6,7|screen left *;screen center *;+2 speaker;@rear left;+4 +6;center *|前排共享第二席空位，后排三连把空位推到音箱，不能按列统一留空。
-reserve-016|bus|normal|B|先把车票放中间|4,5,1,6|@middle center *;+1 right;@front window *;@back window *|中排中心向右结伴向左留空，两条短排各自窗边独坐。
-reserve-017|garden|normal|C|谁来坐灯笼右边|6,7,1,2,3|lantern *;+1 serving;@garden shade;+3 +5;center *|灯笼同伴向取餐侧定位，长桌三连从树荫展开并空出远端。
-reserve-018|cinema|challenge|H|最短的两次告别|1,2,4,5,6,7,8|screen left;+1 *;screen speaker *;shade edge;+4;row3 left;+6 !5|两条短排都填满，前排三人共享唯一空席，空邻排除把二人组挪到前排。
-reserve-019|bus|normal|F|四席里只空一席|3,5,6,1,2|@back window *;@back center *;+2 right;@front window;+4|长排窗端和第三席共享第二席，短排搭档坐满，把唯一空席的位置确定。
-reserve-020|garden|challenge|J|把院子的笑声收好|2,1,3,5,4,6,8,9|row1 center +2 +3;shade;serving;lantern +5 +6;shade;serving;row3 center *;+7 serving|前两桌双邻各填一排，第三桌两人向取餐侧结伴，唯一空席留在树荫。
+reserve-001|bus|easy|I|早班车的毛毛乘客|1,2,5,7|@front window;+1;@back window *;@back right *|前排结伴，后排两端共享中席，完全空着的中排不能当跨排空邻。|{0}和{1}坐上早班车，后排两端的朋友各自找位置，中排暂时还没有伙伴入座。
+reserve-002|garden|normal|D|暖灯映着小围兜|4,6,7,1,2|@kitchen shade *;@kitchen center *;+2 serving;@garden shade;+4 *|长桌暖灯席必须空出，短桌左侧搭档另外保护取餐空席。|{0}和长桌另一位伙伴想邻接空位，小桌的朋友已经约好结伴吃饭。
+reserve-003|cinema|normal|H|遮光位的一声哈欠|5,7,8,3,4|shade edge *;row3 left;+2;screen center *;+4 speaker|遮光位短排独坐，最末排成对；晨光区轻音乐搭档向左留空。|{0}独自来到遮光位，末排两位朋友一起休息，晨光区还有一对靠轻音乐的伙伴。
+reserve-004|bus|normal|F|沿窗边哼毛毛歌|3,4,5,1|@back window;+1 +3;center *;@front window *|长排三连的末端留空，短排窗边也需独占整排容量。|{0}向朋友哼起自编的毛毛歌，三位伙伴想连着坐，前排窗边的乘客还想邻接空位。
+reserve-005|garden|easy|J|第三桌的爪印餐巾|8,7,5|row3 center *;+1 shade;lantern *|第三排中心以遮光位朋友定向，第二排暖灯独坐允许多种空邻。|{0}带来爪印餐巾，在第三桌等{1}坐近一点，暖灯旁的小伙伴希望身边空着。
+reserve-006|cinema|normal|E|轻音乐旁空着一窝|1,2,3,5,6|screen left;+1 +3;center *;shade edge;+4 *|前排三连保护轻音乐空席，后排遮光位二连保护第三席；不是两排复制同一链。|{0}从晨光区左端招呼两位同伴，遮光位的一对朋友也准备好挨着休息。
+reserve-007|bus|challenge|B|倒着数毛毛车票|5,4,3,1,2,7|@middle right;+1 +3;window;@front window;+4;@back right *|中排链从右端反推，前排填满后，唯一空邻只能交给后排独坐者。|{0}从中排右端数起车票，想和朋友们连着坐，前排搭档和后排乘客也等着出发。
+reserve-008|garden|normal|C|两端等着小汤碗|1,4,6,5,7|@garden shade *;@garden serving *;lantern +4 +5;shade;serving|长桌两端各留不同空席，短桌暖灯三位伙伴组坐满，不能套用三席共享空位。|{0}和另一端的伙伴等着自己的汤碗，暖灯下三位朋友则想挨着开饭。
+reserve-009|cinema|easy|D|前排两张哈欠脸|1,3,6,7|screen left *;screen speaker *;@rear center *;+3 speaker|短前排共享空席，长后排靠轻音乐搭档向内侧留空。|{0}在晨光区左端打哈欠，另一端伙伴也需要空邻，里侧有两位想靠轻音乐一起休息。
+reserve-010|bus|normal|I|后排的小软垫间隔|5,7,1,3,4|@back window *;@back right *;@front window *;@middle window;+4|后排共享一个空位，前排另留一个，中排两位伙伴坐满不借空间。|{0}在后排铺好小软垫，另一端伙伴也希望身旁留空，中排朋友则已经约好结伴。
+reserve-011|garden|challenge|J|再带一张耳朵餐巾|2,1,3,5,6,7,8|row1 center +2 +3;shade;serving;lantern *;+4 serving;row3 shade;+6 *|第一桌三连，第二桌向右二连，第三桌向左二连，空位方向由链端共同确定。|{0}带着两位朋友准备开饭，暖灯和第三桌的伙伴也拿好餐巾，等着结伴坐下。
+reserve-012|cinema|normal|G|五只枕头的午安会|1,2,3,4,5|screen left;+1 +3;speaker;@rear left;+4 !3|三席前排三连与两席后排搭档刚好填满，不相邻条件检验排间边界。|{0}召集朋友们开个小小午安会，晨光区三位与里侧两位都想连着休息。
+reserve-013|bus|easy|A|车门边的爪印画|3,2,6|door;+1 *;@back right *|门边搭档中席需要窗边留空；后排独坐者只认自己的中席空邻。|{0}带着爪印画在门边等{1}坐近，后排的伙伴也想找个邻接空席的位置。
+reserve-014|garden|normal|D|从遮光位递餐巾|1,2,4,5,6|@garden shade;+1 *;@kitchen shade;+3 +5;center *|短桌二连与长桌三连都从遮光位起步，但各自留下不同端点空席。|{0}把餐巾递给同桌朋友，另一桌也从遮光位一侧开始结伴，大家都有各自的留空条件。
+reserve-015|cinema|challenge|E|两排错开的梦境|1,3,4,5,6,7|screen left *;screen center *;+2 speaker;@rear left;+4 +6;center *|前排共享第二席空位，后排三连把空位推到轻音乐，不能按列统一留空。|{0}和晨光区另一位伙伴都想邻接空席，里侧三位朋友却想连着休息，各自做自己的梦。
+reserve-016|bus|normal|B|中排的小爪票夹|4,5,1,6|@middle center *;+1 right;@front window *;@back window *|中排中心向右结伴向左留空，两条短排各自窗边独坐。|{0}在中排拿出票夹，想挨着右侧朋友，两条短排的伙伴则各自选了窗边。
+reserve-017|garden|normal|C|暖灯右边的毛毛客|6,7,1,2,3|lantern *;+1 serving;@garden shade;+3 +5;center *|暖灯同伴向取餐侧定位，长桌三连从遮光位展开并空出远端。|{0}在暖灯旁等{1}端碗过来，长桌另外三位伙伴也想连着吃饭。
+reserve-018|cinema|challenge|H|两排小窝都到齐|1,2,4,5,6,7,8|screen left;+1 *;screen speaker *;shade edge;+4;row3 left;+6 !5|两条短排都填满，前排三位伙伴共享唯一空席，空邻排除把两位伙伴组挪到前排。|{0}在晨光区等伙伴靠近，两条短排的朋友已经成对到来，剩下的空位仍要符合条件。
+reserve-019|bus|normal|F|长排那块软软留白|3,5,6,1,2|@back window *;@back center *;+2 right;@front window;+4|长排窗端和第三席共享第二席，短排搭档坐满，把唯一空席的位置确定。|{0}和长排另一位伙伴都想挨着空位，短排的两位朋友则准备一起出发。
+reserve-020|garden|challenge|J|收好食堂的毛毛合影|2,1,3,5,4,6,8,9|row1 center +2 +3;shade;serving;lantern +5 +6;shade;serving;row3 center *;+7 serving|前两桌双邻各填一排，第三桌两位伙伴向取餐侧结伴，唯一空席留在遮光位。|{0}和伙伴们拍完合影，前两桌想坐满朋友，第三桌的两位也要挨着准备开饭。

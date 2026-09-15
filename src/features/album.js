@@ -1,7 +1,7 @@
 'use strict';
 const thresholds = [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 85, 90];
 const scenes = ['bus', 'garden', 'cinema'];
-const titles = ['初次同行', '窗边的云', '一路欢笑', '温柔停靠', '满载回忆', '树下小聚', '花间午后', '庭院晚风', '银幕初亮', '星光相伴', '好戏将至', '我们同坐'];
+const titles = ['第一枚小爪车票', '小鼻尖看云', '毛茸茸的同行', '耳朵贴纸到站', '小碗初次碰面', '爪印餐巾', '暖灯下开饭', '食堂毛毛合影', '晨光里的哈欠', '软枕靠近一点', '梦里轻轻呼噜', '同窝说声午安'];
 const releaseIds = scenes.flatMap(scene => Array.from({ length: 30 }, (_, i) => `${scene}-${String(i + 1).padStart(3, '0')}`));
 /** Cards count unique published campaign completions only; optional manifest membership supports inserted IDs.
  * @param {string[]} completed @param {string[]} claimedIds @param {string[]} [campaignIds]

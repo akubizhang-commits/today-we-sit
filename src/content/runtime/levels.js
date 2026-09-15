@@ -9,8 +9,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "车窗里的云",
-      "intro": "小满想看云。左侧靠窗，右侧是车门旁。",
+      "title": "小猫的第一扇窗",
+      "intro": "小猫小满第一次坐萌宠巴士，鼻尖贴近车窗，想看看云朵是不是也软乎乎的。从前到后每排有2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -67,8 +67,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "早餐别吹凉",
-      "intro": "阿穗想靠窗，阿陶想避开窗边，各找一个座位吧。",
+      "title": "早餐袋上的爪印",
+      "intro": "小狗阿穗抱着自己的早餐袋上车，和小猪阿陶各自挑选喜欢的位置，车窗映出两张毛茸茸的脸。从前到后每排有2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -137,8 +137,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "后排悄悄话",
-      "intro": "把两位朋友安排到后排。同排左右挨着才算相邻。",
+      "title": "后排的小声招呼",
+      "intro": "小老虎圆圆在后排朝小老鼠小岚挥挥手，刚认识的两位伙伴想挨着聊聊今天的出游。从前到后每排有2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -219,7 +219,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         }
@@ -232,8 +232,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "下一站花市",
-      "intro": "花篮已经放好，三位邻居准备去逛花市。",
+      "title": "去领新项圈",
+      "intro": "小牛青禾带着项圈色卡上车，准备和伙伴们一起去挑新的小挂饰。从前到后每排有2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -319,7 +319,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -344,8 +344,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "给纸风车留空",
-      "intro": "小游手里的纸风车需要一点空间，空位也能帮上忙。",
+      "title": "纸风车轻轻转",
+      "intro": "熊猫阿杏领着伙伴们上车，小狐狸小游带来的纸风车正在转；请按各自的条件安排空位。从前到后每排有2、2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -492,8 +492,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "两种聊天声",
-      "intro": "小桥想和豆豆聊天，也想与正在讲电话的阿麦分开。",
+      "title": "两串不同的叫声",
+      "intro": "小浣熊阿麦正在轻声打电话，小羊小桥想和同伴聊聊新玩具。每位伙伴的相邻要求都写在卡片上。从前到后每排有2、2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -606,7 +606,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和阿麦左右相邻"
+              "text": "不和小浣熊阿麦左右相邻"
             }
           ]
         },
@@ -618,7 +618,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和小桥左右相邻"
+              "text": "想和小羊小桥左右相邻"
             }
           ]
         },
@@ -648,8 +648,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "中排的画筒",
-      "intro": "两对朋友各坐一排，把中排的空位留给画筒。",
+      "title": "画筒里的毛毛像",
+      "intro": "小老鼠叶叶带来刚画好的动物合照，两组伙伴结伴上车，中排还有一位想挨着空位。从前到后每排有2、2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -762,7 +762,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和叶叶左右相邻"
+              "text": "想和小老鼠叶叶左右相邻"
             }
           ]
         },
@@ -807,7 +807,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和洛洛左右相邻"
+              "text": "想和熊猫洛洛左右相邻"
             }
           ]
         }
@@ -820,8 +820,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "三组同行人",
-      "intro": "座位刚好坐满。先找到中排的搭档，再安排其他两组。",
+      "title": "三对爪爪一起出发",
+      "intro": "小狗阿棠招呼另外两对伙伴上车，大家都坐下后，就能一起出发去看新开的萌宠商店。从前到后每排有2、2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -934,7 +934,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿棠左右相邻"
+              "text": "想和小狗阿棠左右相邻"
             }
           ]
         },
@@ -963,7 +963,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和小北左右相邻"
+              "text": "想和小猫小北左右相邻"
             },
             {
               "type": "zone",
@@ -985,7 +985,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和阿棠左右相邻"
+              "text": "不和小狗阿棠左右相邻"
             }
           ]
         },
@@ -997,7 +997,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p5",
-              "text": "想和知夏左右相邻"
+              "text": "想和小猪知夏左右相邻"
             },
             {
               "type": "notTag",
@@ -1015,8 +1015,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "两份小小留白",
-      "intro": "前排和中排各有人需要空位，后排的朋友正好结伴。",
+      "title": "纸袋沙沙响",
+      "intro": "小兔阿黎抱着纸袋找座位，另一位伙伴也想邻接空位；让结伴同行的小动物坐得如愿。从前到后每排有2、2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -1161,12 +1161,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和松松左右相邻"
+              "text": "想和熊猫松松左右相邻"
             },
             {
               "type": "apart",
               "person": "p2",
-              "text": "不和可可左右相邻"
+              "text": "不和熊猫可可左右相邻"
             }
           ]
         }
@@ -1179,8 +1179,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "开往周末",
-      "intro": "五位乘客只留一个空位。让它留在需要它的人身旁。",
+      "title": "周末的毛毛巴士",
+      "intro": "小兔小禾拿出周末车票，五位伙伴兴冲冲上车。最后的空位也要符合它们的小偏好。从前到后每排有2、2、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -1281,7 +1281,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和阿朔左右相邻"
+              "text": "想和小狐狸阿朔左右相邻"
             }
           ]
         },
@@ -1310,7 +1310,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和小禾左右相邻"
+              "text": "不和小兔小禾左右相邻"
             }
           ]
         },
@@ -1322,7 +1322,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和雨点左右相邻"
+              "text": "想和小狗雨点左右相邻"
             },
             {
               "type": "notTag",
@@ -1356,8 +1356,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "中间递来的车票",
-      "intro": "本场从前到后各排有3、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "小爪递来的车票",
+      "intro": "小猫小满把车票递给小狗阿穗，一起在萌宠巴士上找座位，后排还有一位等着出发的伙伴。从前到后每排有3、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "A",
       "seats": [
         {
@@ -1462,7 +1462,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             }
           ]
         },
@@ -1504,8 +1504,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "雨伞只占一边",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "雨伞上的小耳朵",
+      "intro": "小狗阿穗收好印着耳朵图案的雨伞，邀请另外两位伙伴上车，听听它们对座位的想法。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -1673,8 +1673,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "短排先上车",
-      "intro": "本场从前到后各排有2、4席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "短排的软软靠垫",
+      "intro": "小猪阿陶摸摸短排的新靠垫，和小老虎圆圆结伴入座；后排伙伴还想让身旁空着一席。从前到后每排有2、4个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "F",
       "seats": [
         {
@@ -1791,7 +1791,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             }
           ]
         },
@@ -1825,8 +1825,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "后排的两本书",
-      "intro": "本场从前到后各排有2、2、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "两本动物绘本",
+      "intro": "小老虎圆圆带着两本绘本坐车，打算和小老鼠小岚靠在一起翻看，另一侧的空位按条件保留。从前到后每排有2、2、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "I",
       "seats": [
         {
@@ -1955,7 +1955,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -1984,8 +1984,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "窗边不挨窗边",
-      "intro": "本场从前到后各排有3、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "两扇窗里的小鼻尖",
+      "intro": "小老鼠小岚和小牛青禾分别看中了窗边，窗玻璃上很快映出不同的小鼻尖。从前到后每排有3、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "A",
       "seats": [
         {
@@ -2107,7 +2107,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "xiaolan",
-              "text": "不和小岚左右相邻"
+              "text": "不和小老鼠小岚左右相邻"
             }
           ]
         },
@@ -2119,7 +2119,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         }
@@ -2132,8 +2132,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "车门边的花束",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "迎接小伙伴的花束",
+      "intro": "小牛青禾带着欢迎花束来到门边，另外两位伙伴也已经上车，准备去接新朋友。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -2278,7 +2278,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             }
           ]
         }
@@ -2291,8 +2291,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "两端看风景",
-      "intro": "本场从前到后各排有2、4席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "车尾两端的毛绒球",
+      "intro": "小羊阿榆拿着毛绒球上车，另一端的伙伴也在找位置。各自的空邻要求都要单独满足。从前到后每排有2、4个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "F",
       "seats": [
         {
@@ -2452,8 +2452,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "第三排的三明治",
-      "intro": "本场从前到后各排有2、2、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "第三排的玩偶合照",
+      "intro": "小兔林叔想和两位伙伴挨着坐，三只随身玩偶也准备好一起出现在照片里。从前到后每排有2、2、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "I",
       "seats": [
         {
@@ -2570,12 +2570,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -2612,8 +2612,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "从门口传过来",
-      "intro": "本场从前到后各排有3、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "从车门传来的招呼",
+      "intro": "熊猫阿杏在门边向小狐狸小游打招呼，后排伙伴也探出脑袋，等着大家安顿下来。从前到后每排有3、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "A",
       "seats": [
         {
@@ -2725,7 +2725,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "notTag",
@@ -2764,8 +2764,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "留给中排的风",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "中排的蒲公英贴纸",
+      "intro": "小狐狸小游展示刚收到的蒲公英贴纸，小熊苏苏想挨着看看。别忘记卡片上写着的空位要求。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -2898,7 +2898,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -2928,8 +2928,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "不坐同一头",
-      "intro": "本场从前到后各排有2、4席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "两枚挨着的爪印",
+      "intro": "小熊苏苏和小老虎安姨各带一枚爪印车票，想在内侧相邻入座，门边还来了一位伙伴。从前到后每排有2、4个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "F",
       "seats": [
         {
@@ -3039,7 +3039,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -3076,8 +3076,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "隔一席的背包",
-      "intro": "本场从前到后各排有2、2、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "背包里的小铃铛",
+      "intro": "小老虎安姨把小铃铛收进背包，和另外两位伙伴挑座位。铃铛只是行李，座位仍按卡片判断。从前到后每排有2、2、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "I",
       "seats": [
         {
@@ -3215,7 +3215,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "an-yi",
-              "text": "不和安姨左右相邻"
+              "text": "不和小老虎安姨左右相邻"
             }
           ]
         },
@@ -3245,8 +3245,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "三人借一排",
-      "intro": "本场从前到后各排有3、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "三张毛毛通行证",
+      "intro": "小猫小满想挨着两位伙伴交流新通行证，另一排还有两位各自希望身旁留空的小动物。从前到后每排有3、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "A",
       "seats": [
         {
@@ -3346,12 +3346,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             },
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             }
           ]
         },
@@ -3430,8 +3430,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "先听中排的故事",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "中排开讲动物故事",
+      "intro": "小狗阿穗带来一则动物故事，想左右都挨着伙伴；前后排的乘客也各有座位偏好。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -3543,12 +3543,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         },
@@ -3632,8 +3632,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "长椅上的传话",
-      "intro": "本场从前到后各排有2、4席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "沿长椅传晚安",
+      "intro": "小猪阿陶先向身边伙伴说声问好，招呼沿着长椅传下去，门边乘客则希望旁边有空位。从前到后每排有2、4个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "F",
       "seats": [
         {
@@ -3750,12 +3750,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             }
           ]
         },
@@ -3772,7 +3772,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -3813,8 +3813,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "两张票和一个纸袋",
-      "intro": "本场从前到后各排有2、2、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "车票夹里的小合影",
+      "intro": "小老虎圆圆把合影放进车票夹，和小老鼠小岚一起坐前排，其余伙伴慢慢安顿自己的座位。从前到后每排有2、2、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "I",
       "seats": [
         {
@@ -3943,7 +3943,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         },
@@ -3993,7 +3993,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -4010,8 +4010,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "三排三种距离",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "三排各有小默契",
+      "intro": "小老鼠小岚已经和小牛青禾约好同行，中后排的伙伴也有各自的相邻与留空要求。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -4140,7 +4140,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             }
           ]
         },
@@ -4178,7 +4178,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "ayu",
-              "text": "不和阿榆左右相邻"
+              "text": "不和小羊阿榆左右相邻"
             }
           ]
         },
@@ -4207,12 +4207,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "apart",
               "person": "linshu",
-              "text": "不和林叔左右相邻"
+              "text": "不和小兔林叔左右相邻"
             }
           ]
         }
@@ -4225,8 +4225,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "先决定哪边留空",
-      "intro": "本场从前到后各排有2、4席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "靠垫旁的那一席",
+      "intro": "小牛青禾和同伴在长排找到软靠垫，另两位伙伴坐短排，大家一起确认谁身旁需要空席。从前到后每排有2、4个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "F",
       "seats": [
         {
@@ -4343,7 +4343,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -4397,12 +4397,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "apart",
               "person": "linshu",
-              "text": "不和林叔左右相邻"
+              "text": "不和小兔林叔左右相邻"
             }
           ]
         }
@@ -4415,8 +4415,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "串起来的返程票",
-      "intro": "本场从前到后各排有2、2、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "回程的项圈小章",
+      "intro": "小羊阿榆晃晃新领到的小章，想和两位伙伴挨着交换旅途见闻，其他乘客也准备回家。从前到后每排有2、2、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "I",
       "seats": [
         {
@@ -4528,12 +4528,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "linshu",
-              "text": "想和林叔左右相邻"
+              "text": "想和小兔林叔左右相邻"
             },
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             }
           ]
         },
@@ -4596,7 +4596,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -4630,8 +4630,8 @@ module.exports = {
       "chapter": 0,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "最后一站的回声",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "末站的毛茸茸招手",
+      "intro": "小兔林叔向同车伙伴招手，今天的末班萌宠巴士快发车了，照着条件把最后几位安顿好。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -4743,12 +4743,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -4765,7 +4765,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "an-yi",
-              "text": "不和安姨左右相邻"
+              "text": "不和小老虎安姨左右相邻"
             }
           ]
         },
@@ -4827,7 +4827,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         }
@@ -4840,8 +4840,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "树下开席",
-      "intro": "两排野餐席每排三个座位：左侧树荫，右侧取餐，中间能邻接两人。",
+      "title": "小碗排队开饭",
+      "intro": "小熊小桑把自己的餐碗摆好，和小猪阿贝一起等开饭，另一位伙伴想坐在方便取餐的位置。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -4942,7 +4942,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -4954,7 +4954,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和小桑左右相邻"
+              "text": "想和小熊小桑左右相邻"
             }
           ]
         },
@@ -4966,12 +4966,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和小桑左右相邻"
+              "text": "不和小熊小桑左右相邻"
             }
           ]
         }
@@ -4984,8 +4984,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "花香和饭香",
-      "intro": "第一排朝花园，第二排靠餐台。灯笼挂在第二排中间。",
+      "title": "窗边闻到饭香",
+      "intro": "小老鼠阿芷在萌宠食堂闻到热饭香，窗边区和取餐侧都有座位，伙伴们正挑选各自喜欢的地方。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -5086,12 +5086,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -5103,7 +5103,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿芷左右相邻"
+              "text": "想和小老鼠阿芷左右相邻"
             }
           ]
         },
@@ -5115,12 +5115,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -5132,12 +5132,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -5150,8 +5150,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "给面包篮让座",
-      "intro": "小麦要挨着朋友坐，还想让另一侧留空。",
+      "title": "面包篮上的耳朵结",
+      "intro": "小浣熊小麦带来系着耳朵结的篮子，想挨着小猫阿桃，还希望另一侧有空位。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -5252,7 +5252,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "emptyNeighbor",
@@ -5268,7 +5268,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和小麦左右相邻"
+              "text": "想和小浣熊小麦左右相邻"
             }
           ]
         },
@@ -5280,12 +5280,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             }
           ]
         },
@@ -5297,12 +5297,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             }
           ]
         }
@@ -5315,8 +5315,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "夹在笑声中间",
-      "intro": "小芽想同时挨着两位朋友。哪一个中间位还能留给她？",
+      "title": "两边都是毛毛朋友",
+      "intro": "小羊小芽想左右都挨着朋友吃饭，暖灯旁也来了一位伙伴，食堂热闹起来了。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -5417,12 +5417,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和阿茉左右相邻"
+              "text": "想和小猪阿茉左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿栗左右相邻"
+              "text": "想和小老鼠阿栗左右相邻"
             }
           ]
         },
@@ -5434,7 +5434,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -5446,7 +5446,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -5458,7 +5458,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             }
           ]
         },
@@ -5470,12 +5470,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和小夕左右相邻"
+              "text": "想和小熊小夕左右相邻"
             },
             {
               "type": "notTag",
               "value": "shade",
-              "text": "不坐树荫下的位置"
+              "text": "不坐遮光位的位置"
             }
           ]
         }
@@ -5488,8 +5488,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "同排也能不相邻",
-      "intro": "花园侧两端隔着一个座位；不相邻的人也可以坐在同一排。",
+      "title": "隔一席也能碰眼神",
+      "intro": "小猪阿蓝朝窗边区的伙伴眨眨眼，即使不相邻也能同桌；其余小动物围着暖灯找位置。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -5590,12 +5590,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -5607,12 +5607,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和阿蓝左右相邻"
+              "text": "不和小猪阿蓝左右相邻"
             }
           ]
         },
@@ -5624,7 +5624,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             }
           ]
         },
@@ -5636,12 +5636,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿萤左右相邻"
+              "text": "想和小狐狸阿萤左右相邻"
             },
             {
               "type": "notTag",
               "value": "serving",
-              "text": "不坐取餐侧的位置"
+              "text": "不坐取餐位的位置"
             }
           ]
         }
@@ -5654,8 +5654,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "共用一格晚风",
-      "intro": "花园侧的两人都想邻接空位，餐台侧则要坐满。",
+      "title": "餐碗之间的小留白",
+      "intro": "小兔阿蒲和同区伙伴都希望邻接空位，暖灯这边则有三位朋友等着坐下开饭。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -5756,12 +5756,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -5777,7 +5777,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "emptyNeighbor",
@@ -5793,7 +5793,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             }
           ]
         },
@@ -5805,12 +5805,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和暖暖左右相邻"
+              "text": "想和小猫暖暖左右相邻"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -5822,12 +5822,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和暖暖左右相邻"
+              "text": "想和小猫暖暖左右相邻"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -5840,8 +5840,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "传一盘青梅",
-      "intro": "餐台侧需要三个人连着坐，另一排的两个人还想留一点空。",
+      "title": "沿桌传来餐巾包",
+      "intro": "小羊阿梅把爪印餐巾包递给同伴，取餐侧的朋友想连着坐，另一边还想留些空位。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -5942,12 +5942,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和小枫左右相邻"
+              "text": "想和小猫小枫左右相邻"
             }
           ]
         },
@@ -5959,7 +5959,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -5971,12 +5971,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿梅左右相邻"
+              "text": "想和小羊阿梅左右相邻"
             },
             {
               "type": "notTag",
               "value": "shade",
-              "text": "不坐树荫下的位置"
+              "text": "不坐遮光位的位置"
             }
           ]
         },
@@ -5988,7 +5988,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "emptyNeighbor",
@@ -6004,12 +6004,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "apart",
               "person": "p4",
-              "text": "不和小露左右相邻"
+              "text": "不和小浣熊小露左右相邻"
             }
           ]
         }
@@ -6022,8 +6022,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "餐巾的顺序",
-      "intro": "六人满席。灯笼和花园里的树荫，是两条线索的起点。",
+      "title": "六只碗的一顿饭",
+      "intro": "小老鼠阿荷带伙伴们走进食堂，六只餐碗已经备好；从遮光位与暖灯的提示开始安排吧。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -6124,12 +6124,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -6141,12 +6141,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿荷左右相邻"
+              "text": "想和小老鼠阿荷左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿栀左右相邻"
+              "text": "想和小牛阿栀左右相邻"
             }
           ]
         },
@@ -6158,7 +6158,7 @@ module.exports = {
             {
               "type": "notTag",
               "value": "shade",
-              "text": "不坐树荫下的位置"
+              "text": "不坐遮光位的位置"
             }
           ]
         },
@@ -6170,7 +6170,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             }
           ]
         },
@@ -6182,12 +6182,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和小灯左右相邻"
+              "text": "想和小猫小灯左右相邻"
             },
             {
               "type": "notTag",
               "value": "serving",
-              "text": "不坐取餐侧的位置"
+              "text": "不坐取餐位的位置"
             }
           ]
         },
@@ -6199,12 +6199,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和小灯左右相邻"
+              "text": "想和小猫小灯左右相邻"
             },
             {
               "type": "apart",
               "person": "p2",
-              "text": "不和小舟左右相邻"
+              "text": "不和小老鼠小舟左右相邻"
             }
           ]
         }
@@ -6217,8 +6217,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "灯下留个位置",
-      "intro": "灯笼旁的人既要挨着朋友，也要挨着空位。",
+      "title": "暖灯下等朋友",
+      "intro": "小熊阿萱在暖灯旁等小牛小茴，想一边挨着朋友、一边挨着空位，其他伙伴也陆续端碗过来。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -6319,7 +6319,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -6335,12 +6335,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿萱左右相邻"
+              "text": "想和小熊阿萱左右相邻"
             },
             {
               "type": "notTag",
               "value": "serving",
-              "text": "不坐取餐侧的位置"
+              "text": "不坐取餐位的位置"
             }
           ]
         },
@@ -6352,7 +6352,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -6364,12 +6364,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿芒左右相邻"
+              "text": "想和小老虎阿芒左右相邻"
             },
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和阿萱左右相邻"
+              "text": "不和小熊阿萱左右相邻"
             }
           ]
         },
@@ -6381,12 +6381,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "apart",
               "person": "p2",
-              "text": "不和小茴左右相邻"
+              "text": "不和小牛小茴左右相邻"
             }
           ]
         }
@@ -6399,8 +6399,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "最后一道甜汤",
-      "intro": "两排都坐满：一排由灯笼定中心，另一排从树荫传到取餐侧。",
+      "title": "收好最后一张餐巾",
+      "intro": "熊猫小糯和两位同伴围着暖灯找位置，另一组朋友也想连着坐，大家准备一起开饭。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -6501,17 +6501,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和阿枣左右相邻"
+              "text": "想和熊猫阿枣左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和小莲左右相邻"
+              "text": "想和小浣熊小莲左右相邻"
             }
           ]
         },
@@ -6523,7 +6523,7 @@ module.exports = {
             {
               "type": "notTag",
               "value": "serving",
-              "text": "不坐取餐侧的位置"
+              "text": "不坐取餐位的位置"
             }
           ]
         },
@@ -6535,7 +6535,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "p4",
-              "text": "不和阿茶左右相邻"
+              "text": "不和小浣熊阿茶左右相邻"
             }
           ]
         },
@@ -6547,12 +6547,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -6564,12 +6564,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和阿茶左右相邻"
+              "text": "想和小浣熊阿茶左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p6",
-              "text": "想和阿糖左右相邻"
+              "text": "想和小浣熊阿糖左右相邻"
             }
           ]
         },
@@ -6581,12 +6581,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "apart",
               "person": "p2",
-              "text": "不和阿枣左右相邻"
+              "text": "不和熊猫阿枣左右相邻"
             }
           ]
         }
@@ -6599,8 +6599,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "长桌的一碗汤",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "长桌旁的小汤碗",
+      "intro": "熊猫阿杏抱着自己的小汤碗，想在窗边区挨着小狐狸小游坐，取餐侧的伙伴已经准备好了。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -6717,12 +6717,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -6734,7 +6734,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -6746,12 +6746,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -6764,8 +6764,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "灯笼左边的客人",
-      "intro": "本场从前到后各排有3、4席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "暖灯左边的小围兜",
+      "intro": "小狐狸小游穿着新围兜来到暖灯旁，小熊苏苏想坐在身边，两位伙伴一起等第三位落座。从前到后每排有3、4个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -6882,7 +6882,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             }
           ]
         },
@@ -6894,12 +6894,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -6911,12 +6911,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -6929,8 +6929,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "最下面的薄荷",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "第三桌的耳朵标牌",
+      "intro": "小熊苏苏找到了第三排的耳朵标牌，想和小老虎安姨挨着吃饭，第一排还有伙伴等着取餐。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -7080,7 +7080,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -7092,7 +7092,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -7113,7 +7113,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -7126,8 +7126,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "两份果酱之间",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "两块餐垫之间",
+      "intro": "小老虎安姨铺好自己的餐垫，另一位伙伴也想挨着空席，取餐一端的朋友则想结伴坐。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -7244,12 +7244,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -7265,7 +7265,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
@@ -7286,12 +7286,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -7304,8 +7304,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "长桌中央的小碟",
-      "intro": "本场从前到后各排有3、4席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "暖灯旁的双份餐巾",
+      "intro": "小猫小满拿来两张爪印餐巾，邀请小狗阿穗挨着坐在内侧，窗边区另有一位小伙伴。从前到后每排有3、4个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -7422,12 +7422,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             }
           ]
         },
@@ -7451,12 +7451,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -7473,8 +7473,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "两盏茶不碰杯",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "不碰响两只餐碗",
+      "intro": "小狗阿穗和小猪阿陶轻轻放下餐碗，各自希望身旁有空位，前排伙伴正坐着等它们。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -7624,7 +7624,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -7645,7 +7645,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -7679,8 +7679,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "取餐顺手的两人",
-      "intro": "本场从前到后各排有3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "开饭铃响两声",
+      "intro": "小猪阿陶听到开饭铃，想和小老虎圆圆在取餐端附近结伴入座，暖灯旁的伙伴希望挨着空席。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "A",
       "seats": [
         {
@@ -7782,12 +7782,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -7799,12 +7799,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "notTag",
               "value": "shade",
-              "text": "不坐树荫下的位置"
+              "text": "不坐遮光位的位置"
             }
           ]
         },
@@ -7816,7 +7816,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -7833,8 +7833,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "把小桌留给花",
-      "intro": "本场从前到后各排有3、4席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "小桌上的爪印餐布",
+      "intro": "小老虎圆圆带来新的爪印餐布，想挨着两位朋友吃饭，长桌的取餐端也有伙伴落座。从前到后每排有3、4个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -7951,12 +7951,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -7968,12 +7968,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -7985,7 +7985,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -7997,12 +7997,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -8019,8 +8019,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "四只碗的接力",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "四只碗沿桌排",
+      "intro": "小老鼠小岚端起自己的碗，和三位朋友约好挨着坐，暖灯下的伙伴则想旁边空一席。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -8137,12 +8137,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -8154,12 +8154,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             }
           ]
         },
@@ -8176,7 +8176,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "linshu",
-              "text": "想和林叔左右相邻"
+              "text": "想和小兔林叔左右相邻"
             }
           ]
         },
@@ -8188,7 +8188,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -8200,7 +8200,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -8217,8 +8217,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "花园的空中心",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "前桌的小空席",
+      "intro": "小牛青禾和另一位伙伴在前桌找位置，暖灯旁三位朋友等着结伴开饭。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -8368,7 +8368,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -8389,7 +8389,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -8405,17 +8405,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -8427,7 +8427,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -8439,7 +8439,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -8452,8 +8452,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "别把面包递太远",
-      "intro": "本场从前到后各排有3、4席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "餐巾递到第三位",
+      "intro": "小羊阿榆把餐巾递向身边的伙伴，三位朋友想连着坐，另桌的伙伴还要照顾自己的空邻需求。从前到后每排有3、4个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -8570,12 +8570,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             }
           ]
         },
@@ -8587,12 +8587,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             },
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             }
           ]
         },
@@ -8620,12 +8620,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -8641,12 +8641,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "apart",
               "person": "xiaoyou",
-              "text": "不和小游左右相邻"
+              "text": "不和小狐狸小游左右相邻"
             }
           ]
         }
@@ -8659,8 +8659,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "两侧都能添饭",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "两端都有取餐盘",
+      "intro": "小兔林叔从一端叫来熊猫阿杏，另一排也有朋友在取餐端结伴，看看两桌各能怎样安排。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -8777,12 +8777,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -8794,7 +8794,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "linshu",
-              "text": "想和林叔左右相邻"
+              "text": "想和小兔林叔左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -8810,12 +8810,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             }
           ]
         },
@@ -8827,12 +8827,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             },
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -8844,7 +8844,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         }
@@ -8857,8 +8857,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "分三次端上来",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "三桌的毛毛午餐",
+      "intro": "熊猫阿杏带着同伴走向第一桌，另外两组也找到了自己的排号，萌宠午餐要开始了。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -9008,7 +9008,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -9020,7 +9020,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -9041,7 +9041,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -9053,7 +9053,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             }
           ]
         },
@@ -9086,12 +9086,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -9104,8 +9104,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "灯笼不是空位",
-      "intro": "本场从前到后各排有3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "暖灯下坐满朋友",
+      "intro": "小狐狸小游想和两位朋友围着暖灯吃饭，窗边区的伙伴则想分开一点坐。从前到后每排有3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "A",
       "seats": [
         {
@@ -9207,17 +9207,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -9229,7 +9229,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -9241,7 +9241,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -9253,12 +9253,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -9274,12 +9274,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "apart",
               "person": "xiaoman",
-              "text": "不和小满左右相邻"
+              "text": "不和小猫小满左右相邻"
             }
           ]
         }
@@ -9292,8 +9292,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "左右都留一口香",
-      "intro": "本场从前到后各排有3、4席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "餐垫旁留一点空",
+      "intro": "小熊苏苏铺好餐垫后看看身旁，另一位伙伴也需要邻接空席，小桌的朋友还有自己的搭档。从前到后每排有3、4个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -9410,12 +9410,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -9431,7 +9431,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
@@ -9452,12 +9452,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -9469,7 +9469,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
@@ -9490,12 +9490,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         }
@@ -9508,8 +9508,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "餐巾挡住灯光",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "餐巾绣着小月亮",
+      "intro": "小老虎安姨展示月亮餐巾，想在暖灯旁挨着小猫小满坐；另一桌三位伙伴也想结伴。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -9626,7 +9626,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -9642,12 +9642,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -9659,7 +9659,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
@@ -9669,12 +9669,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         },
@@ -9686,7 +9686,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -9715,8 +9715,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "三桌之间的邀请",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "三桌互相挥小爪",
+      "intro": "小猫小满和两位朋友互相招呼，暖灯与第三桌的伙伴都想同时拥有同伴和空邻。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -9861,12 +9861,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             },
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             }
           ]
         },
@@ -9883,7 +9883,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -9895,7 +9895,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -9907,7 +9907,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -9923,12 +9923,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "notTag",
               "value": "serving",
-              "text": "不坐取餐侧的位置"
+              "text": "不坐取餐位的位置"
             }
           ]
         },
@@ -9961,7 +9961,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         }
@@ -9974,8 +9974,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "最后两盘青菜",
-      "intro": "本场从前到后各排有3、4席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "最后两只小餐碗",
+      "intro": "小狗阿穗在暖灯旁等朋友端碗过来，长桌这一组想连着坐，小桌另两位也有留空要求。从前到后每排有3、4个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -10092,17 +10092,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         },
@@ -10114,7 +10114,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -10131,7 +10131,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             }
           ]
         },
@@ -10143,7 +10143,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -10155,12 +10155,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -10176,12 +10176,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "apart",
               "person": "qinghe",
-              "text": "不和青禾左右相邻"
+              "text": "不和小牛青禾左右相邻"
             }
           ]
         }
@@ -10194,8 +10194,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "把长桌认出来",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "长桌的毛毛队伍",
+      "intro": "小猪阿陶和两位同伴先找位置，招呼顺着长桌继续传过去，暖灯旁还有一对等开饭的朋友。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -10312,12 +10312,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             }
           ]
         },
@@ -10329,12 +10329,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -10351,7 +10351,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -10363,7 +10363,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -10375,7 +10375,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -10391,12 +10391,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             },
             {
               "type": "notTag",
               "value": "serving",
-              "text": "不坐取餐侧的位置"
+              "text": "不坐取餐位的位置"
             }
           ]
         }
@@ -10409,8 +10409,8 @@ module.exports = {
       "chapter": 1,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "院门关上之前",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "食堂打烊前的拥抱",
+      "intro": "小老虎圆圆和两位朋友坐在暖灯附近，其余伙伴按排号找座，吃完饭再一起道别。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -10555,17 +10555,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -10577,7 +10577,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -10589,7 +10589,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -10606,7 +10606,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -10618,7 +10618,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -10639,7 +10639,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -10660,7 +10660,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "axing",
-              "text": "不和阿杏左右相邻"
+              "text": "不和熊猫阿杏左右相邻"
             }
           ]
         }
@@ -10673,8 +10673,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "银幕刚刚亮",
-      "intro": "每排四个座位。第一排靠银幕，每排最右侧靠音箱，两端有边座标记。",
+      "title": "晨光里的第一声哈欠",
+      "intro": "小羊小影来到呼噜午睡屋，在晨光区找个窝位，小牛阿映也想挨着一起歇一会儿。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -10812,12 +10812,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             }
           ]
         },
@@ -10829,7 +10829,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和小影左右相邻"
+              "text": "想和小羊小影左右相邻"
             }
           ]
         },
@@ -10841,12 +10841,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "notTag",
               "value": "speaker",
-              "text": "不坐音箱旁的位置"
+              "text": "不坐轻音乐旁的位置"
             }
           ]
         },
@@ -10858,12 +10858,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "apart",
               "person": "p3",
-              "text": "不和小幕左右相邻"
+              "text": "不和小熊小幕左右相邻"
             }
           ]
         }
@@ -10876,8 +10876,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "后排树影",
-      "intro": "后排左边两个座位在树荫下。两位朋友想一起坐在那里。",
+      "title": "遮光帘下的小耳朵",
+      "intro": "小猪阿杉钻进遮光帘旁的小窝，想和小熊小杉挨着休息，其余伙伴也在晨光和轻音乐旁找位置。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -11015,12 +11015,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
               "value": "edge",
-              "text": "想坐排的两端的位置"
+              "text": "想坐每排两端的位置"
             }
           ]
         },
@@ -11032,7 +11032,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿杉左右相邻"
+              "text": "想和小猪阿杉左右相邻"
             }
           ]
         },
@@ -11044,12 +11044,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "notTag",
               "value": "edge",
-              "text": "不坐排的两端的位置"
+              "text": "不坐每排两端的位置"
             }
           ]
         },
@@ -11061,12 +11061,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿远左右相邻"
+              "text": "想和小狐狸阿远左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -11078,17 +11078,17 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和阿杉左右相邻"
+              "text": "不和小猪阿杉左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -11101,8 +11101,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "一串爆米花",
-      "intro": "三位朋友想连成一串，坐中间的阿米要同时挨着另外两人。",
+      "title": "三个枕头连成串",
+      "intro": "熊猫阿米带来自己的枕头，想左右都挨着朋友，里侧窝的伙伴也有留空偏好。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -11240,17 +11240,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和小苞左右相邻"
+              "text": "想和小老虎小苞左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿粒左右相邻"
+              "text": "想和小老虎阿粒左右相邻"
             }
           ]
         },
@@ -11262,7 +11262,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             }
           ]
         },
@@ -11274,7 +11274,7 @@ module.exports = {
             {
               "type": "notTag",
               "value": "speaker",
-              "text": "不坐音箱旁的位置"
+              "text": "不坐轻音乐旁的位置"
             }
           ]
         },
@@ -11286,12 +11286,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -11307,12 +11307,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             }
           ]
         }
@@ -11325,8 +11325,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "前排的一格空白",
-      "intro": "前排三人中有两人需要空位，试着让同一个空位照顾他们。",
+      "title": "把哈欠留在中间",
+      "intro": "小老虎小帆打了个小哈欠，晨光区另一位伙伴也想邻接空位，里侧的同伴正在安顿。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -11464,12 +11464,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -11485,12 +11485,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "notTag",
               "value": "edge",
-              "text": "不坐排的两端的位置"
+              "text": "不坐每排两端的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -11506,12 +11506,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和阿航左右相邻"
+              "text": "想和小兔阿航左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -11523,12 +11523,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -11540,12 +11540,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和阿汐左右相邻"
+              "text": "想和小牛阿汐左右相邻"
             },
             {
               "type": "notTag",
               "value": "edge",
-              "text": "不坐排的两端的位置"
+              "text": "不坐每排两端的位置"
             }
           ]
         },
@@ -11557,12 +11557,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -11575,8 +11575,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "音箱边的搭档",
-      "intro": "两对朋友都需要内侧座位，后排还有一位想挨着空位的观众。",
+      "title": "轻音乐旁的小靠枕",
+      "intro": "小兔阿弦听着轻音乐找位置，想和小猫小音挨着休息，另一对伙伴和里侧的小动物也准备午睡。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -11714,12 +11714,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             }
           ]
         },
@@ -11731,12 +11731,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿弦左右相邻"
+              "text": "想和小兔阿弦左右相邻"
             },
             {
               "type": "apart",
               "person": "p3",
-              "text": "不和阿拍左右相邻"
+              "text": "不和小羊阿拍左右相邻"
             }
           ]
         },
@@ -11748,12 +11748,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             }
           ]
         },
@@ -11765,7 +11765,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿拍左右相邻"
+              "text": "想和小羊阿拍左右相邻"
             }
           ]
         },
@@ -11777,12 +11777,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
               "value": "edge",
-              "text": "想坐排的两端的位置"
+              "text": "想坐每排两端的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -11798,12 +11798,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -11816,8 +11816,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "后排四人组",
-      "intro": "一条四人链要放进后排。前排的空位可以留在不同方向。",
+      "title": "里侧窝的悄悄话",
+      "intro": "小老虎小松想和三位朋友在里侧窝连着休息，晨光区的伙伴则希望旁边还能空着。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -11955,12 +11955,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             }
           ]
         },
@@ -11972,12 +11972,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和小松左右相邻"
+              "text": "想和小老虎小松左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和小梧左右相邻"
+              "text": "想和小猫小梧左右相邻"
             }
           ]
         },
@@ -11989,12 +11989,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和阿桐左右相邻"
+              "text": "想和小狗阿桐左右相邻"
             },
             {
               "type": "notTag",
               "value": "speaker",
-              "text": "不坐音箱旁的位置"
+              "text": "不坐轻音乐旁的位置"
             }
           ]
         },
@@ -12006,12 +12006,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -12023,7 +12023,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -12039,12 +12039,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "apart",
               "person": "p5",
-              "text": "不和小榕左右相邻"
+              "text": "不和小熊小榕左右相邻"
             }
           ]
         }
@@ -12057,8 +12057,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "七张电影票",
-      "intro": "只有一个空位：先安顿树影下的两个人，再考虑前排的四位朋友。",
+      "title": "七只毛团等午睡",
+      "intro": "小老鼠阿星轻轻放下枕头，晨光区的朋友想连着坐，遮光位附近还有伙伴需要空邻。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -12196,12 +12196,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             }
           ]
         },
@@ -12213,12 +12213,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿星左右相邻"
+              "text": "想和小老鼠阿星左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿辰左右相邻"
+              "text": "想和小狗阿辰左右相邻"
             }
           ]
         },
@@ -12230,12 +12230,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和小晖左右相邻"
+              "text": "想和小兔小晖左右相邻"
             },
             {
               "type": "notTag",
               "value": "edge",
-              "text": "不坐排的两端的位置"
+              "text": "不坐每排两端的位置"
             }
           ]
         },
@@ -12247,12 +12247,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -12264,12 +12264,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
               "value": "edge",
-              "text": "想坐排的两端的位置"
+              "text": "想坐每排两端的位置"
             }
           ]
         },
@@ -12281,7 +12281,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p5",
-              "text": "想和阿夜左右相邻"
+              "text": "想和小狐狸阿夜左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -12297,12 +12297,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -12315,8 +12315,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "同一片空座",
-      "intro": "后排两个人都想邻接空位，其中一位还想挨着朋友。",
+      "title": "两声哈欠共一席",
+      "intro": "小狐狸小墨和里侧的另一位伙伴都想挨着空位，其中一位还想挨着朋友一起听轻音乐。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -12454,12 +12454,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -12475,12 +12475,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "notTag",
               "value": "edge",
-              "text": "不坐排的两端的位置"
+              "text": "不坐每排两端的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -12489,7 +12489,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和小宣左右相邻"
+              "text": "想和小老鼠小宣左右相邻"
             }
           ]
         },
@@ -12501,7 +12501,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -12513,12 +12513,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             }
           ]
         },
@@ -12530,12 +12530,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和阿笔左右相邻"
+              "text": "想和小牛阿笔左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p6",
-              "text": "想和阿页左右相邻"
+              "text": "想和小猪阿页左右相邻"
             }
           ]
         },
@@ -12547,7 +12547,7 @@ module.exports = {
             {
               "type": "notTag",
               "value": "speaker",
-              "text": "不坐音箱旁的位置"
+              "text": "不坐轻音乐旁的位置"
             }
           ]
         },
@@ -12559,12 +12559,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -12577,8 +12577,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "满场之前",
-      "intro": "八人全部入座。两条朋友链从左端展开，注意谁不能挨着谁。",
+      "title": "八只枕头都到齐",
+      "intro": "小牛阿晨带着伙伴们走进午睡屋，两组朋友想挨着休息，八只枕头很快就能各就各位。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -12716,12 +12716,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             }
           ]
         },
@@ -12733,12 +12733,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p1",
-              "text": "想和阿晨左右相邻"
+              "text": "想和小牛阿晨左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p3",
-              "text": "想和阿曜左右相邻"
+              "text": "想和小狗阿曜左右相邻"
             }
           ]
         },
@@ -12750,7 +12750,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和小灿左右相邻"
+              "text": "想和小老鼠小灿左右相邻"
             }
           ]
         },
@@ -12762,12 +12762,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "apart",
               "person": "p2",
-              "text": "不和小曦左右相邻"
+              "text": "不和小兔小曦左右相邻"
             }
           ]
         },
@@ -12779,12 +12779,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
               "value": "edge",
-              "text": "想坐排的两端的位置"
+              "text": "想坐每排两端的位置"
             }
           ]
         },
@@ -12796,12 +12796,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p5",
-              "text": "想和阿宁左右相邻"
+              "text": "想和小熊阿宁左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p7",
-              "text": "想和阿悠左右相邻"
+              "text": "想和小狗阿悠左右相邻"
             }
           ]
         },
@@ -12813,12 +12813,12 @@ module.exports = {
             {
               "type": "notTag",
               "value": "speaker",
-              "text": "不坐音箱旁的位置"
+              "text": "不坐轻音乐旁的位置"
             },
             {
               "type": "apart",
               "person": "p1",
-              "text": "不和阿晨左右相邻"
+              "text": "不和小牛阿晨左右相邻"
             }
           ]
         },
@@ -12830,12 +12830,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p7",
-              "text": "想和阿悠左右相邻"
+              "text": "想和小狗阿悠左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -12848,8 +12848,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "星光留给大家",
-      "intro": "两个空位需求、两组同行人，只有一格能留空。先找出它该在哪一排。",
+      "title": "最后一块软软留白",
+      "intro": "小兔小禾和同伴在晨光区找窝位，两位伙伴都需要空邻，里侧还有一组等着结伴入座。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "seats": [
         {
           "id": "s1",
@@ -12987,17 +12987,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "left",
-              "text": "想坐最左侧的位置"
+              "text": "想坐每排最左侧的位置"
             },
             {
               "type": "adjacent",
               "person": "p2",
-              "text": "想和阿朔左右相邻"
+              "text": "想和小狐狸阿朔左右相邻"
             }
           ]
         },
@@ -13009,7 +13009,7 @@ module.exports = {
             {
               "type": "notTag",
               "value": "edge",
-              "text": "不坐排的两端的位置"
+              "text": "不坐每排两端的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -13025,7 +13025,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -13041,12 +13041,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
               "value": "edge",
-              "text": "想坐排的两端的位置"
+              "text": "想坐每排两端的位置"
             }
           ]
         },
@@ -13058,12 +13058,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "p4",
-              "text": "想和阿简左右相邻"
+              "text": "想和小牛阿简左右相邻"
             },
             {
               "type": "adjacent",
               "person": "p6",
-              "text": "想和小糯左右相邻"
+              "text": "想和熊猫小糯左右相邻"
             }
           ]
         },
@@ -13075,12 +13075,12 @@ module.exports = {
             {
               "type": "notTag",
               "value": "speaker",
-              "text": "不坐音箱旁的位置"
+              "text": "不坐轻音乐旁的位置"
             },
             {
               "type": "adjacent",
               "person": "p7",
-              "text": "想和阿茶左右相邻"
+              "text": "想和小浣熊阿茶左右相邻"
             }
           ]
         },
@@ -13092,12 +13092,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "apart",
               "person": "p5",
-              "text": "不和星子左右相邻"
+              "text": "不和小狗星子左右相邻"
             }
           ]
         }
@@ -13110,8 +13110,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "小银幕的第一束光",
-      "intro": "本场从前到后各排有3、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "晨光摸摸小鼻尖",
+      "intro": "小老鼠小岚在晨光区伸个懒腰，小牛青禾想挨着休息，里侧靠轻音乐的位置也来了一位伙伴。从前到后每排有3、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "G",
       "seats": [
         {
@@ -13204,12 +13204,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -13238,7 +13238,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -13251,8 +13251,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "三排中的树影",
-      "intro": "本场从前到后各排有4、2、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "遮光帘后的毛毛影",
+      "intro": "小牛青禾带着小羊阿榆寻找遮光位，晨光区轻音乐旁的朋友希望身边留一席空位。从前到后每排有4、2、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "H",
       "seats": [
         {
@@ -13390,7 +13390,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -13407,7 +13407,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -13419,12 +13419,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -13441,8 +13441,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "不挡住那束光",
-      "intro": "本场从前到后各排有3、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "小毯子晒到太阳",
+      "intro": "小羊阿榆在晨光区铺开小毯子，另一端的伙伴也想邻接空位，里侧还有一位准备歇下。从前到后每排有3、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -13565,7 +13565,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -13586,12 +13586,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -13607,7 +13607,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -13625,8 +13625,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "把笑声放中间",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "两个枕头靠近一点",
+      "intro": "小兔林叔和熊猫阿杏想挨着坐在内侧，遮光位边上的伙伴则希望旁边有空席。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -13765,7 +13765,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -13775,7 +13775,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             }
           ]
         },
@@ -13799,7 +13799,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -13821,8 +13821,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "easy",
-      "title": "最后一排的合影",
-      "intro": "本场从前到后各排有4、2、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "末排的一张梦境画",
+      "intro": "熊猫阿杏带着梦境画来到最后一排，和小狐狸小游结伴休息，晨光区的朋友先打了个哈欠。从前到后每排有4、2、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "H",
       "seats": [
         {
@@ -13977,7 +13977,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             }
           ]
         },
@@ -13989,7 +13989,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -14011,8 +14011,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "树影里递来的票",
-      "intro": "本场从前到后各排有3、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "从遮光位传晚安",
+      "intro": "小狐狸小游先向同伴说声午安，招呼沿着里侧窝传过去，晨光区轻音乐旁也有朋友歇下。从前到后每排有3、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -14135,7 +14135,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -14152,12 +14152,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             },
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -14185,12 +14185,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -14207,8 +14207,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "一排两头的约定",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "两头都放小靠枕",
+      "intro": "小熊苏苏在晨光区等小老虎安姨靠过来，里侧两端的伙伴各自想邻接空位。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -14347,7 +14347,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -14364,7 +14364,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -14380,12 +14380,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -14401,7 +14401,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -14422,12 +14422,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -14444,8 +14444,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "短后排的两张票",
-      "intro": "本场从前到后各排有3、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "短排的双份午安",
+      "intro": "小老虎安姨和小猫小满在里侧短排互道午安，晨光区两端的伙伴则希望旁边留空。从前到后每排有3、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "G",
       "seats": [
         {
@@ -14538,7 +14538,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -14555,7 +14555,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -14567,7 +14567,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -14588,12 +14588,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -14610,8 +14610,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "第三排不在树下",
-      "intro": "本场从前到后各排有4、2、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "第三排的梦境本",
+      "intro": "小猫小满抱着梦境本来到第三排，想和小狗阿穗挨着休息，遮光位的小伙伴另有自己的偏好。从前到后每排有4、2、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "H",
       "seats": [
         {
@@ -14766,12 +14766,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             },
             {
               "type": "apart",
               "person": "atao",
-              "text": "不和阿陶左右相邻"
+              "text": "不和小猪阿陶左右相邻"
             }
           ]
         },
@@ -14783,7 +14783,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -14804,7 +14804,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -14821,7 +14821,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -14838,8 +14838,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "中间空一张票",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "软枕之间的小空窝",
+      "intro": "小狗阿穗在里侧左端打哈欠，另外两位伙伴想靠轻音乐结伴，晨光区也有一对朋友。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -14978,7 +14978,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -14999,7 +14999,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -15020,12 +15020,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -15037,7 +15037,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -15058,7 +15058,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "tag",
@@ -15076,8 +15076,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "三张连号的票",
-      "intro": "本场从前到后各排有3、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "三只枕头晒晨光",
+      "intro": "小猪阿陶想左右都挨着伙伴晒晒晨光，里侧两端的小动物各自照顾自己的空邻需求。从前到后每排有3、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -15200,17 +15200,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             }
           ]
         },
@@ -15234,7 +15234,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -15246,7 +15246,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -15267,12 +15267,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -15289,8 +15289,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "风吹到最后一排",
-      "intro": "本场从前到后各排有4、2、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "午安传到最后一排",
+      "intro": "小老虎圆圆和两位朋友轻轻互道午安，后面两条短排各有一位伙伴想邻接空席。从前到后每排有4、2、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "H",
       "seats": [
         {
@@ -15428,17 +15428,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -15483,7 +15483,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -15521,8 +15521,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "音箱两边不同排",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "轻音乐有两个角落",
+      "intro": "小老鼠小岚邀请小牛青禾在晨光区听轻音乐，里侧的三位朋友也想靠在一起休息。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -15661,12 +15661,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             }
           ]
         },
@@ -15678,7 +15678,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -15694,12 +15694,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             }
           ]
         },
@@ -15711,12 +15711,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             },
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             }
           ]
         },
@@ -15728,7 +15728,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -15745,8 +15745,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "normal",
-      "title": "只剩内侧能递糖",
-      "intro": "本场从前到后各排有3、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "四只枕头挨个靠",
+      "intro": "小牛青禾在遮光位的内侧招呼朋友，里侧窝的队伍慢慢接起来，晨光区还有一位独自打哈欠。从前到后每排有3、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -15869,7 +15869,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -15879,12 +15879,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             },
             {
               "type": "adjacent",
               "person": "linshu",
-              "text": "想和林叔左右相邻"
+              "text": "想和小兔林叔左右相邻"
             }
           ]
         },
@@ -15913,7 +15913,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             }
           ]
         },
@@ -15925,7 +15925,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -15937,7 +15937,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -15959,8 +15959,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "四人链与两份空白",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "七个哈欠一块留白",
+      "intro": "小羊阿榆和朋友们安排好晨光区的枕头，里侧伙伴也陆续来到，别忘记它们的空邻要求。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -16099,17 +16099,17 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "adjacent",
               "person": "linshu",
-              "text": "想和林叔左右相邻"
+              "text": "想和小兔林叔左右相邻"
             },
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             }
           ]
         },
@@ -16138,7 +16138,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -16150,7 +16150,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -16162,7 +16162,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -16183,7 +16183,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -16204,12 +16204,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -16222,8 +16222,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "三排票根的顺序",
-      "intro": "本场从前到后各排有4、2、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "从右边说声午安",
+      "intro": "小兔林叔向右边和另一侧的朋友招呼，遮光位的伙伴想独享空邻，末排还有结伴而来的同伴。从前到后每排有4、2、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "H",
       "seats": [
         {
@@ -16361,7 +16361,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -16371,12 +16371,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             }
           ]
         },
@@ -16388,7 +16388,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -16405,7 +16405,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             }
           ]
         },
@@ -16429,7 +16429,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -16467,7 +16467,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             }
           ]
         }
@@ -16480,8 +16480,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "短排留给留白",
-      "intro": "本场从前到后各排有3、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "短排的软绒间隔",
+      "intro": "熊猫阿杏带着朋友们在里侧窝连着休息，晨光区两端的伙伴希望中间留出空席。从前到后每排有3、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -16604,7 +16604,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -16621,12 +16621,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             }
           ]
         },
@@ -16643,7 +16643,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -16655,7 +16655,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -16667,7 +16667,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -16688,12 +16688,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "apart",
               "person": "xiaoman",
-              "text": "不和小满左右相邻"
+              "text": "不和小猫小满左右相邻"
             }
           ]
         }
@@ -16706,8 +16706,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "两个人都要靠里面",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "里面也能挨着朋友",
+      "intro": "小狐狸小游和另一位内侧伙伴召集朋友，前后两排都想靠在一起，其中一位还需要空邻。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -16846,7 +16846,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -16856,12 +16856,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -16878,7 +16878,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             }
           ]
         },
@@ -16902,7 +16902,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -16914,7 +16914,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -16924,12 +16924,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         },
@@ -16970,8 +16970,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "电影散场的脚步",
-      "intro": "本场从前到后各排有4、2、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "午睡前轻轻落座",
+      "intro": "小熊苏苏带着同伴安顿晨光区，遮光位的一对朋友已经到了，末排伙伴还想邻接空席。从前到后每排有4、2、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "H",
       "seats": [
         {
@@ -17109,7 +17109,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -17126,12 +17126,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             }
           ]
         },
@@ -17148,7 +17148,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             }
           ]
         },
@@ -17160,7 +17160,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -17172,7 +17172,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -17189,7 +17189,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             }
           ]
         },
@@ -17206,7 +17206,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -17223,8 +17223,8 @@ module.exports = {
       "chapter": 2,
       "kind": "campaign",
       "difficulty": "challenge",
-      "title": "把片尾曲听完",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "把呼噜声留到梦里",
+      "intro": "小老虎安姨从轻音乐一侧招呼朋友，两排的伙伴都想挨着歇下，等安排好了再一起做个软软的梦。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -17363,7 +17363,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -17373,12 +17373,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             },
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             }
           ]
         },
@@ -17390,7 +17390,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -17407,7 +17407,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             }
           ]
         },
@@ -17431,7 +17431,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -17441,12 +17441,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -17458,7 +17458,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -17470,12 +17470,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             }
           ]
         },
@@ -17492,7 +17492,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "an-yi",
-              "text": "不和安姨左右相邻"
+              "text": "不和小老虎安姨左右相邻"
             }
           ]
         }
@@ -17505,8 +17505,8 @@ module.exports = {
       "chapter": 0,
       "kind": "daily",
       "difficulty": "normal",
-      "title": "今日的折叠伞",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "今天带耳朵雨伞",
+      "intro": "小猫小满收起耳朵雨伞上车，中排伙伴结伴而来，后排朋友也等着一起出发。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -17656,7 +17656,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -17689,7 +17689,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         }
@@ -17702,8 +17702,8 @@ module.exports = {
       "chapter": 1,
       "kind": "daily",
       "difficulty": "normal",
-      "title": "青梅分成两盘",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "爪印餐垫分两桌",
+      "intro": "小狗阿穗把爪印餐垫放好，前后两桌的伙伴都想结伴开饭，还有自己的空邻要求。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -17820,12 +17820,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             }
           ]
         },
@@ -17837,7 +17837,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -17853,12 +17853,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             },
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "emptyNeighbor",
@@ -17874,12 +17874,12 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             }
           ]
         },
@@ -17891,7 +17891,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -17908,8 +17908,8 @@ module.exports = {
       "chapter": 2,
       "kind": "daily",
       "difficulty": "normal",
-      "title": "星图里的三个点",
-      "intro": "本场从前到后各排有4、2、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "梦境本里的小圆点",
+      "intro": "小猪阿陶拿出画着小圆点的梦境本，晨光区伙伴想靠轻音乐结伴，后面两排也各有人休息。从前到后每排有4、2、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "H",
       "seats": [
         {
@@ -18047,7 +18047,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -18068,7 +18068,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -18089,12 +18089,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         },
@@ -18111,7 +18111,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -18149,8 +18149,8 @@ module.exports = {
       "chapter": 0,
       "kind": "daily",
       "difficulty": "easy",
-      "title": "两只水壶的距离",
-      "intro": "本场从前到后各排有2、4席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "水壶上的毛毛挂饰",
+      "intro": "小老虎圆圆带着毛毛挂饰水壶上车，长排的同伴想隔开一点坐，门边伙伴也希望旁边空着。从前到后每排有2、4个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "F",
       "seats": [
         {
@@ -18281,7 +18281,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "yuanyuan",
-              "text": "不和圆圆左右相邻"
+              "text": "不和小老虎圆圆左右相邻"
             }
           ]
         },
@@ -18310,8 +18310,8 @@ module.exports = {
       "chapter": 1,
       "kind": "daily",
       "difficulty": "normal",
-      "title": "灯笼下的拼图",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "暖灯下的小围兜拼图",
+      "intro": "小老鼠小岚展示围兜上的拼图花纹，三组朋友在不同桌边结伴，分别留意自己的空邻条件。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -18456,7 +18456,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "lantern",
-              "text": "想坐灯笼旁的位置"
+              "text": "想坐暖灯旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -18472,12 +18472,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -18494,7 +18494,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -18506,7 +18506,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -18543,12 +18543,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         }
@@ -18561,8 +18561,8 @@ module.exports = {
       "chapter": 2,
       "kind": "daily",
       "difficulty": "normal",
-      "title": "留给字幕的安静",
-      "intro": "本场从前到后各排有3、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "给午睡留一点静",
+      "intro": "小牛青禾和小羊阿榆在晨光区挑窝位，里侧的朋友也想挨着休息，让每位伙伴的留空愿望都成立。从前到后每排有3、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -18685,7 +18685,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -18706,7 +18706,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             },
             {
               "type": "tag",
@@ -18723,7 +18723,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "tag",
@@ -18744,7 +18744,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "linshu",
-              "text": "想和林叔左右相邻"
+              "text": "想和小兔林叔左右相邻"
             },
             {
               "type": "tag",
@@ -18761,12 +18761,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -18783,8 +18783,8 @@ module.exports = {
       "chapter": 0,
       "kind": "daily",
       "difficulty": "challenge",
-      "title": "一份跨排的邀请",
-      "intro": "本场从前到后各排有2、2、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "一张毛毛同行卡",
+      "intro": "小羊阿榆和小兔林叔拿着同行卡坐前排，后排三位朋友想连着坐，中排伙伴则需要空邻。从前到后每排有2、2、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "I",
       "seats": [
         {
@@ -18913,7 +18913,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "ayu",
-              "text": "想和阿榆左右相邻"
+              "text": "想和小羊阿榆左右相邻"
             }
           ]
         },
@@ -18956,12 +18956,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             }
           ]
         },
@@ -18990,7 +18990,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "axing",
-              "text": "不和阿杏左右相邻"
+              "text": "不和熊猫阿杏左右相邻"
             }
           ]
         }
@@ -19003,8 +19003,8 @@ module.exports = {
       "chapter": 1,
       "kind": "daily",
       "difficulty": "easy",
-      "title": "甜点先到哪一端",
-      "intro": "本场从前到后各排有3、4席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "餐碗先到哪一端",
+      "intro": "小兔林叔在取餐端等熊猫阿杏，另一桌也有同样结伴的朋友，各自按卡片挑好位置。从前到后每排有3、4个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "D",
       "seats": [
         {
@@ -19121,12 +19121,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -19138,7 +19138,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "linshu",
-              "text": "想和林叔左右相邻"
+              "text": "想和小兔林叔左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -19154,12 +19154,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -19171,7 +19171,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -19188,8 +19188,8 @@ module.exports = {
       "chapter": 2,
       "kind": "daily",
       "difficulty": "challenge",
-      "title": "前后排的反向传票",
-      "intro": "本场从前到后各排有4、4席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "两排软枕反向摆",
+      "intro": "熊猫阿杏从晨光区左端向朋友说午安，里侧也有一对伙伴靠在一起，另一端的同伴需要空邻。从前到后每排有4、4个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "E",
       "seats": [
         {
@@ -19328,7 +19328,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -19345,12 +19345,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "axing",
-              "text": "想和阿杏左右相邻"
+              "text": "想和熊猫阿杏左右相邻"
             },
             {
               "type": "adjacent",
               "person": "susu",
-              "text": "想和苏苏左右相邻"
+              "text": "想和小熊苏苏左右相邻"
             }
           ]
         },
@@ -19378,7 +19378,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -19395,7 +19395,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -19411,12 +19411,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -19433,8 +19433,8 @@ module.exports = {
       "chapter": 0,
       "kind": "daily",
       "difficulty": "normal",
-      "title": "左右各有一阵风",
-      "intro": "本场从前到后各排有3、3席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "风吹动耳朵贴纸",
+      "intro": "小狐狸小游拿着耳朵贴纸坐进巴士，想靠着门边朋友，后排两位则希望彼此不相邻。从前到后每排有3、3个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "A",
       "seats": [
         {
@@ -19555,7 +19555,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoyou",
-              "text": "想和小游左右相邻"
+              "text": "想和小狐狸小游左右相邻"
             },
             {
               "type": "tag",
@@ -19598,7 +19598,7 @@ module.exports = {
             {
               "type": "apart",
               "person": "an-yi",
-              "text": "不和安姨左右相邻"
+              "text": "不和小老虎安姨左右相邻"
             }
           ]
         }
@@ -19611,8 +19611,8 @@ module.exports = {
       "chapter": 1,
       "kind": "daily",
       "difficulty": "challenge",
-      "title": "三桌接力的终点",
-      "intro": "本场从前到后各排有3、3、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "三桌小碗都备齐",
+      "intro": "小熊苏苏和两位朋友先找桌位，中桌搭档想留个空邻，第三桌的小伙伴也准备连着坐。从前到后每排有3、3、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "J",
       "seats": [
         {
@@ -19762,12 +19762,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "an-yi",
-              "text": "想和安姨左右相邻"
+              "text": "想和小老虎安姨左右相邻"
             },
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             }
           ]
         },
@@ -19779,7 +19779,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -19791,7 +19791,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -19808,7 +19808,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -19820,7 +19820,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "asui",
-              "text": "想和阿穗左右相邻"
+              "text": "想和小狗阿穗左右相邻"
             },
             {
               "type": "emptyNeighbor",
@@ -19841,7 +19841,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -19853,12 +19853,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             },
             {
               "type": "adjacent",
               "person": "qinghe",
-              "text": "想和青禾左右相邻"
+              "text": "想和小牛青禾左右相邻"
             }
           ]
         },
@@ -19870,7 +19870,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         }
@@ -19883,8 +19883,8 @@ module.exports = {
       "chapter": 2,
       "kind": "daily",
       "difficulty": "easy",
-      "title": "短排也有边座",
-      "intro": "本场从前到后各排有3、2席。第一排靠银幕，每排最右侧靠音箱；第二排左起两席有树荫。只有同排左右紧邻才算相邻。",
+      "title": "短排的小小枕头",
+      "intro": "小老虎安姨把枕头放进里侧短排，晨光区的两位朋友想靠轻音乐挨着休息。从前到后每排有3、2个位置。第一排是晨光区，其余排是里侧窝；每排最右侧有轻音乐，第二排左起两席为遮光位。只有同排左右紧邻才算相邻。",
       "layoutVariant": "G",
       "seats": [
         {
@@ -19977,7 +19977,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "rear",
-              "text": "想坐观影后排"
+              "text": "想坐里侧窝"
             },
             {
               "type": "tag",
@@ -19998,7 +19998,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "screen",
-              "text": "想坐银幕前排的位置"
+              "text": "想坐晨光区的位置"
             },
             {
               "type": "tag",
@@ -20019,12 +20019,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaoman",
-              "text": "想和小满左右相邻"
+              "text": "想和小猫小满左右相邻"
             },
             {
               "type": "tag",
               "value": "speaker",
-              "text": "想坐音箱旁的位置"
+              "text": "想坐轻音乐旁的位置"
             }
           ]
         }
@@ -20037,8 +20037,8 @@ module.exports = {
       "chapter": 0,
       "kind": "daily",
       "difficulty": "normal",
-      "title": "一排一只纸鹤",
-      "intro": "本场从前到后各排有2、3、2席。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
+      "title": "纸鹤停在毛毛包上",
+      "intro": "小猫小满抱着停着纸鹤的包坐到门边，中排两端和后排的伙伴也都希望邻接空位。从前到后每排有2、3、2个位置。每排左侧靠窗，第一排最右侧靠车门。只有同排左右紧邻才算相邻。",
       "layoutVariant": "B",
       "seats": [
         {
@@ -20230,8 +20230,8 @@ module.exports = {
       "chapter": 1,
       "kind": "daily",
       "difficulty": "challenge",
-      "title": "月末的最后一口汤",
-      "intro": "本场从前到后各排有4、3席。每排左侧有树荫，最右侧可取餐；第二排左起第二席挂着灯笼。只有同排左右紧邻才算相邻。",
+      "title": "月末洗好小餐碗",
+      "intro": "小狗阿穗和朋友们把餐碗摆上长桌，短桌两端的伙伴则想在身旁留一席空位。从前到后每排有4、3个位置。第一排是窗边区，其余排在取餐侧；每排左端为遮光位、右端为取餐位，暖灯在第二排左起第二席。只有同排左右紧邻才算相邻。",
       "layoutVariant": "C",
       "seats": [
         {
@@ -20348,7 +20348,7 @@ module.exports = {
             {
               "type": "zone",
               "value": "garden",
-              "text": "想坐花园侧"
+              "text": "想坐窗边区"
             },
             {
               "type": "tag",
@@ -20358,12 +20358,12 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "atao",
-              "text": "想和阿陶左右相邻"
+              "text": "想和小猪阿陶左右相邻"
             },
             {
               "type": "adjacent",
               "person": "yuanyuan",
-              "text": "想和圆圆左右相邻"
+              "text": "想和小老虎圆圆左右相邻"
             }
           ]
         },
@@ -20375,7 +20375,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "serving",
-              "text": "想坐取餐侧的位置"
+              "text": "想坐取餐位的位置"
             }
           ]
         },
@@ -20392,7 +20392,7 @@ module.exports = {
             {
               "type": "adjacent",
               "person": "xiaolan",
-              "text": "想和小岚左右相邻"
+              "text": "想和小老鼠小岚左右相邻"
             }
           ]
         },
@@ -20404,7 +20404,7 @@ module.exports = {
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             }
           ]
         },
@@ -20416,12 +20416,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "tag",
               "value": "shade",
-              "text": "想坐树荫下的位置"
+              "text": "想坐遮光位的位置"
             },
             {
               "type": "emptyNeighbor",
@@ -20437,12 +20437,12 @@ module.exports = {
             {
               "type": "zone",
               "value": "kitchen",
-              "text": "想坐餐台侧"
+              "text": "想坐取餐侧"
             },
             {
               "type": "apart",
               "person": "qinghe",
-              "text": "不和青禾左右相邻"
+              "text": "不和小牛青禾左右相邻"
             }
           ]
         }

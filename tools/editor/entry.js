@@ -6,7 +6,7 @@ const STORAGE = 'today-we-sit.editor.draft.v1';
 let level=model.createDemo(), placement={}, personId=level.people[0].id, seatId=level.seats[0].id;
 let mode='inspect', cols=4, rows=3, paint='window', dirty=true, pending=false, storageAvailable=true;
 const statusNames={pending:'待安排',conflict:'不满足',satisfied:'已满足'};
-const names={tag:'需要指定标签',notTag:'避开指定标签',zone:'位于指定区域',adjacent:'与指定人物相邻',apart:'不与指定人物相邻',emptyNeighbor:'身旁至少有一个空位'};
+const names={tag:'需要指定标签',notTag:'避开指定标签',zone:'位于指定区域',adjacent:'与指定小动物相邻',apart:'不与指定小动物相邻',emptyNeighbor:'身旁至少有一个空位'};
 function notice(message, error=false) { $('notice').textContent=message; $('notice').className=error?'error':''; }
 function safe(action) { return (...args)=>{try{action(...args);}catch(error){notice(error.message,true);}}; }
 function node(tag, label, className) { const el=document.createElement(tag); if(label!==undefined)el.textContent=label; if(className)el.className=className; return el; }
@@ -41,11 +41,12 @@ function renderMetadata() {
   field(box,'关卡标题',level.title,value=>edit(l=>{l.title=value;}));
   field(box,'关卡 ID',level.id,value=>edit(l=>{l.id=value;}));
   field(box,'章节 ID',level.chapterId,value=>edit(l=>{l.chapterId=value;}));
+  box.append(node('p',`当前场景：${model.displayLabel('chapter',level.chapterId)}。章节 ID 仅用于标识，显示名称不会改写存档。`,'help'));
   field(box,'章节编号（0–99）',level.chapter,value=>edit(l=>{l.chapter=Number(value);}));
   field(box,'关卡介绍',level.intro,value=>edit(l=>{l.intro=value;}));
 }
 function renderBoard() {
-  $('counts').textContent=`${level.seats.length}/12 个座位 · ${level.people.length}/8 位人物`;
+  $('counts').textContent=`${level.seats.length}/12 个座位 · ${level.people.length}/8 位小动物`;
   const modes=$('modes');modes.replaceChildren();
   for(const [value,label] of [['inspect','查看座位'],['seats','增删座位'],['labels','涂改标签'],['preview','试坐预览']]) {
     const b=button(label,()=>{mode=value;renderBoard();});b.setAttribute('aria-pressed',String(mode===value));modes.append(b);
@@ -54,8 +55,11 @@ function renderBoard() {
   const sizes=Array.from({length:8},(_,i)=>[String(i+1),String(i+1)]);
   field(options,'网格列数',cols,value=>{const n=Number(value);if(level.seats.some(s=>s.x>=n))throw Error('请先移除缩小后会落在网格外的座位。');cols=n;renderBoard();},sizes);
   field(options,'网格行数',rows,value=>{const n=Number(value);if(level.seats.some(s=>s.y>=n))throw Error('请先移除缩小后会落在网格外的座位。');rows=n;renderBoard();},sizes);
-  if(mode==='labels')field(options,'点击时添加或移除的标签',paint,value=>{paint=value.trim();});
-  $('board-help').textContent={inspect:'点击座位，在右侧编辑座位名称、标签和区域。',seats:'点击空格添加座位；点击已有座位，移除该座位及其相邻连线。',labels:'点击座位，添加或移除上方输入的标签。英文标签区分大小写。',preview:'先选择下方人物，再点击座位安排入座。再次点击其座位可让人物回到候场区。'}[mode];
+  if(mode==='labels'){
+    field(options,'点击时添加或移除的标签',paint,value=>{paint=value.trim();renderBoard();});
+    options.append(node('p',`场景中的称呼：${model.displayLabel('tag',paint)||'未设置'}。标签值保持不变。`,'help'));
+  }
+  $('board-help').textContent={inspect:'点击座位，在右侧编辑座位名称、标签和区域。',seats:'点击空格添加座位；点击已有座位，移除该座位及其相邻连线。',labels:'点击座位，添加或移除上方输入的标签。英文标签区分大小写。',preview:'先选择下方小动物，再点击座位安排入座。再次点击其座位可让小动物回到候场区。'}[mode];
   const board=$('board');board.replaceChildren();board.style.gridTemplateColumns=`repeat(${cols}, minmax(58px, 1fr))`;
   for(let y=0;y<rows;y++)for(let x=0;x<cols;x++) {
     const seat=level.seats.find(s=>s.x===x&&s.y===y);
@@ -66,12 +70,12 @@ function renderBoard() {
       seatId=seat.id;
       if(mode==='labels'){if(!paint)throw Error('请先输入要涂改的标签。');edit(l=>{const s=l.seats.find(s=>s.id===seat.id);s.tags=s.tags.includes(paint)?s.tags.filter(t=>t!==paint):[...s.tags,paint];});}
       else if(mode==='preview'){
-        if(!personId)throw Error('请先添加并选择一位人物。');
+        if(!personId)throw Error('请先添加并选择一位小动物。');
         placement=model.assignPerson(level,placement,personId,placement[personId]===seat.id?null:seat.id);renderBoard();renderPeople();renderSeat();
       }else{renderBoard();renderSeat();}
     },`cell${seat?' seat':''}${seat?.id===seatId?' selected':''}${occupant?' occupied':''}`);
     cell.setAttribute('aria-label',seat?`${seat.label||seat.id}，第 ${y+1} 行第 ${x+1} 列${occupant?`，${occupant.name}已入座`:''}`:`在第 ${y+1} 行第 ${x+1} 列添加座位`);
-    if(seat){cell.append(node('small',seat.id),node('strong',occupant?occupant.name:seat.label||'空座'),node('small',seat.tags.join(' · ')||'无标签'));}
+    if(seat){cell.append(node('small',seat.id),node('strong',occupant?occupant.name:seat.label||'空座'),node('small',seat.tags.map(tag=>model.displayLabel('tag',tag)).join(' · ')||'无标签'));}
     else{cell.append(node('span','+'),node('small',`${x+1}, ${y+1}`));if(mode!=='seats')cell.disabled=true;}
     board.append(cell);
   }
@@ -95,7 +99,9 @@ function renderSeat() {
   box.append(node('p',`第 ${s.y+1} 行 · 第 ${s.x+1} 列`,'help'));
   field(box,'座位名称',s.label||'',value=>edit(l=>{l.seats.find(s=>s.id===seatId).label=value;}));
   field(box,'座位标签（用逗号分隔）',s.tags.join(', '),value=>edit(l=>{l.seats.find(s=>s.id===seatId).tags=value.split(/[,，]/).map(t=>t.trim()).filter(Boolean);}));
+  box.append(node('p',`标签展示：${s.tags.map(tag=>model.displayLabel('tag',tag)).join('、')||'无标签'}。上方编辑的是内部值，自定义标签原样显示。`,'help'));
   field(box,'所属区域',s.zone,value=>edit(l=>{l.seats.find(s=>s.id===seatId).zone=value;}));
+  box.append(node('p',`区域展示：${model.displayLabel('zone',s.zone)||'未设置'}。改变显示名称不改变区域匹配规则。`,'help'));
   box.append(button('移除此座位',()=>commit(model.toggleSeat(level,s.x,s.y)),'danger'));
 }
 function renderPeople() {
@@ -105,30 +111,31 @@ function renderPeople() {
     b.setAttribute('aria-pressed',String(p.id===personId));const dot=node('span',undefined,'dot');dot.style.backgroundColor=p.color;b.prepend(dot);people.append(b);
   }
   const result=engine.evaluate(level,placement), evaluation=$('evaluation');evaluation.replaceChildren();
-  evaluation.append(node('p',level.people.length?(result.complete?'所有人物已入座，全部规则均满足':`${result.satisfied}/${result.total} 条规则已满足 · ${Object.keys(placement).length}/${level.people.length} 位人物已入座`):'添加人物后即可试坐预览。'));
-  for(const p of level.people){const status=result.people[p.id];const row=node('div',undefined,`status-row ${status.status}`);row.append(node('strong',`${p.name||p.id} · ${statusNames[status.status]}`));for(let i=0;i<status.rules.length;i++){const r=status.rules[i],rule=p.rules[i];row.append(node('div',`${statusNames[r.status]} — ${r.text||names[rule.type]}${rule.value?` (${rule.value})`:rule.person?` (${rule.person})`:''}`));}evaluation.append(row);}
+  evaluation.append(node('p',level.people.length?(result.complete?'所有小动物已入座，全部规则均满足':`${result.satisfied}/${result.total} 条规则已满足 · ${Object.keys(placement).length}/${level.people.length} 位小动物已入座`):'添加小动物后即可试坐预览。'));
+  for(const p of level.people){const status=result.people[p.id];const row=node('div',undefined,`status-row ${status.status}`);row.append(node('strong',`${p.name||p.id} · ${statusNames[status.status]}`));for(let i=0;i<status.rules.length;i++){const r=status.rules[i],rule=p.rules[i];row.append(node('div',`${statusNames[r.status]} — ${r.text||names[rule.type]}${rule.value?` (${model.displayLabel(rule.type==='zone'?'zone':'tag',rule.value)})`:rule.person?` (${rule.person})`:''}`));}evaluation.append(row);}
   renderPersonInspector();
 }
 function renderPersonInspector(){
   const box=$('person-inspector');box.replaceChildren();$('add-person').disabled=level.people.length>=8;
   const person=level.people.find(p=>p.id===personId);
-  if(!person){box.append(node('p','先添加人物，再逐条设置你希望使用的规则。','help'));return;}
-  field(box,'当前人物',person.id,value=>{personId=value;renderPeople();},level.people.map(p=>[p.id,`${p.name} · ${p.id}`]));
-  field(box,'人物姓名',person.name,value=>edit(l=>{l.people.find(p=>p.id===personId).name=value;}));
-  field(box,'人物 ID',person.id,value=>{const next=model.renamePerson(level,personId,value);personId=model.normalizeId(value);commit(next);});
-  box.append(button('移除人物及以其为目标的规则',()=>commit(model.removePerson(level,personId)),'danger'));
+  if(!person){box.append(node('p','先添加小动物，再逐条设置你希望使用的规则。','help'));return;}
+  field(box,'当前小动物',person.id,value=>{personId=value;renderPeople();},level.people.map(p=>[p.id,`${p.name} · ${p.id}`]));
+  field(box,'小动物姓名',person.name,value=>edit(l=>{l.people.find(p=>p.id===personId).name=value;}));
+  field(box,'小动物 ID',person.id,value=>{const next=model.renamePerson(level,personId,value);personId=model.normalizeId(value);commit(next);});
+  box.append(button('移除小动物及以其为目标的规则',()=>commit(model.removePerson(level,personId)),'danger'));
   const rules=node('div');
   person.rules.forEach((rule,index)=>{
     const row=node('div',undefined,'rule');const change=action=>edit(l=>action(l.people.find(p=>p.id===personId).rules[index]));
     field(row,`规则 ${index+1}`,rule.type,type=>change(r=>{
       const other=level.people.find(p=>p.id!==personId);
-      if(['adjacent','apart'].includes(type)&&!other)throw Error('请先添加另一位人物，再设置人物之间的关系规则。');
+      if(['adjacent','apart'].includes(type)&&!other)throw Error('请先添加另一位小动物，再设置小动物之间的关系规则。');
       delete r.person;delete r.value;r.type=type;
       if(['adjacent','apart'].includes(type))r.person=other.id;
       else if(type!=='emptyNeighbor')r.value=type==='zone'?(level.seats.find(s=>s.zone)?.zone||'front'):(level.seats.flatMap(s=>s.tags)[0]||'window');
     }),model.TYPES.map(t=>[t,names[t]]));
-    if(['adjacent','apart'].includes(rule.type))field(row,'目标人物',rule.person,value=>change(r=>{r.person=value;}),level.people.filter(p=>p.id!==personId).map(p=>[p.id,p.name||p.id]));
+    if(['adjacent','apart'].includes(rule.type))field(row,'目标小动物',rule.person,value=>change(r=>{r.person=value;}),level.people.filter(p=>p.id!==personId).map(p=>[p.id,p.name||p.id]));
     else if(rule.type!=='emptyNeighbor')field(row,rule.type==='zone'?'区域值':'标签值',rule.value,value=>change(r=>{r.value=value;}));
+    if(rule.value)row.append(node('p',`场景中的称呼：${model.displayLabel(rule.type==='zone'?'zone':'tag',rule.value)}。规则仍使用上方内部值。`,'help'));
     field(row,'规则说明',rule.text,value=>change(r=>{r.text=value;}));
     row.append(button('移除此规则',()=>edit(l=>l.people.find(p=>p.id===personId).rules.splice(index,1))));rules.append(row);
   });
@@ -143,8 +150,8 @@ function download(withReference){
 }
 $('horizontal').addEventListener('click',safe(()=>{commit(model.horizontalAdjacency(level));notice('已按同排左右紧邻重新生成全部连线，未自动添加规则或标签。');}));
 $('add-person').addEventListener('click',safe(()=>{
-  if(level.people.length>=8)throw Error('编辑器最多支持 8 位人物。');
-  const id=model.nextId(level.people,'p');personId=id;edit(l=>l.people.push({id,name:`人物 ${l.people.length+1}`,color:'#8FAE92',rules:[]}));
+  if(level.people.length>=8)throw Error('编辑器最多支持 8 位小动物。');
+  const id=model.nextId(level.people,'p');personId=id;edit(l=>l.people.push({id,name:`小动物 ${l.people.length+1}`,color:'#8FAE92',rules:[]}));
 }));
 $('reset-preview').addEventListener('click',()=>{placement={};renderBoard();renderPeople();});
 $('solve').addEventListener('click',safe(()=>{

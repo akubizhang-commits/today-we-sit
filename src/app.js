@@ -37,7 +37,9 @@ class GameApp {
     this.resize(platform.width,platform.height,platform.dpr);
     platform.onPointer(e=>this.pointer(e));
     platform.onResize((w,h,dpr)=>this.resize(w,h,dpr));
-    platform.onHide(()=>{this.drag=null;this.dirty=true;this.audio.suspend();this.persist();});
+    // Mutations already save immediately. An untouched/older preview must not
+    // write its stale snapshot just because it is hidden or closed.
+    platform.onHide(()=>{this.drag=null;this.dirty=true;this.audio.suspend();});
     if(platform.onShow)platform.onShow(()=>{this.audio.resume();this.refreshDaily();this.dirty=true;});
     this.loop=this.loop.bind(this);platform.requestFrame(this.loop);
     this.ready=this.initialize();

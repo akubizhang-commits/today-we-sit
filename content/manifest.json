@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.0.0",
+  "contentVersion": "1.1.0",
   "campaign": [
     "bus-001",
     "bus-002",
@@ -134,20 +134,20 @@
   "chapters": [
     {
       "id": "bus",
-      "title": "社区接驳车",
-      "subtitle": "带着早餐，慢慢出发",
+      "title": "萌宠巴士",
+      "subtitle": "带上小包，毛茸茸地出发",
       "color": "#A8BA99"
     },
     {
       "id": "garden",
-      "title": "庭院野餐",
-      "subtitle": "把晚餐摆到树影下面",
+      "title": "萌宠食堂",
+      "subtitle": "小碗摆好，和伙伴一起开饭",
       "color": "#C66949"
     },
     {
       "id": "cinema",
-      "title": "露天电影",
-      "subtitle": "等星星亮起，一起入座",
+      "title": "呼噜午睡屋",
+      "subtitle": "抱着软枕，把午安说给朋友听",
       "color": "#758CA8"
     }
   ],

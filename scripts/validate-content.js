@@ -4,6 +4,8 @@ const path = require('node:path');
 const { evaluate } = require('../src/core/engine');
 const CHAPTERS = ['bus', 'garden', 'cinema'];
 const KINDS = ['campaign', 'daily', 'reserve'];
+// Explicitly supported content releases; a new version needs deliberate review.
+const RELEASE_CONTENT_VERSIONS = new Set(['1.0.0', '1.1.0']);
 const TAGS = new Set(['window','door','front','middle','back','left','center','right','shade','serving','lantern','screen','speaker','edge','row1','row2','row3']);
 const TYPES = new Set(['tag','notTag','zone','adjacent','apart','emptyNeighbor']);
 const object = v => v !== null && typeof v === 'object' && !Array.isArray(v);
@@ -104,7 +106,7 @@ function validateContent(levels, manifest, options={}) {
     }
   }
   if(options.release) {
-    if(manifest.contentVersion!=='1.0.0')error('manifest','v1 release requires contentVersion 1.0.0');
+    if(!RELEASE_CONTENT_VERSIONS.has(manifest.contentVersion))error('manifest','Unsupported release contentVersion; expected 1.0.0 or 1.1.0');
     for(const [kind,count] of Object.entries({campaign:90,daily:14,reserve:20}))if(report.counts[kind]!==count)error('release-count',`${kind} requires ${count} levels`);
     const expectedCampaign=CHAPTERS.flatMap(c=>Array.from({length:30},(_,i)=>`${c}-${String(i+1).padStart(3,'0')}`));
     if(canonical(manifest.campaign)!==canonical(expectedCampaign))error('manifest','v1 campaign order must contain 30 IDs per chapter');

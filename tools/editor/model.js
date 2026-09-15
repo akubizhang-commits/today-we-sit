@@ -3,6 +3,20 @@
 // Browser-safe authoring boundary: no storage, source-file access, or inferred rules.
 const { evaluate } = require('../../src/core/engine');
 const TYPES = ['tag', 'notTag', 'zone', 'adjacent', 'apart', 'emptyNeighbor'];
+// Display vocabulary only. Never apply these labels to stored IDs or rule values.
+const DISPLAY_LABELS = {
+  chapter: {bus:'萌宠巴士',garden:'萌宠食堂',cinema:'呼噜午睡屋'},
+  tag: {window:'靠窗',door:'门旁',front:'前排',middle:'中排',back:'后排',
+    left:'左侧',center:'中间位',right:'右侧',shade:'遮光位',serving:'取餐侧',
+    lantern:'暖灯',screen:'晨光区',speaker:'轻音乐',edge:'两端位置',
+    row1:'第一排',row2:'第二排',row3:'第三排'},
+  zone: {front:'前排',middle:'中排',back:'后排',garden:'窗边区',kitchen:'取餐侧',
+    screen:'晨光区',rear:'里侧窝'}
+};
+function displayLabel(kind, value) {
+  const labels=Object.prototype.hasOwnProperty.call(DISPLAY_LABELS,kind)?DISPLAY_LABELS[kind]:{};
+  return Object.prototype.hasOwnProperty.call(labels,value)?labels[value]:value;
+}
 const clone = value => JSON.parse(JSON.stringify(value));
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 function check(ok, message) { if (!ok) throw new Error(message); }
@@ -76,7 +90,7 @@ function importLevel(source) {
 }
 function createDemo() {
   // Standalone snapshot of original legacy level 1, without its author reference.
-  return normalizeLevel({id:'custom-001',chapter:0,chapterId:'bus',title:'车窗里的云',intro:'小满想看云。左侧靠窗，右侧是车门旁。',
+  return normalizeLevel({id:'custom-001',chapter:0,chapterId:'bus',title:'车窗里的云',intro:'萌宠巴士出发啦。小满想趴在窗边看云，给小爪子找个舒服的位置吧。左侧靠窗，右侧是车门旁。',
     seats:[{id:'s1',x:0,y:0,tags:['row1','left','front','back','window'],zone:'front'},
       {id:'s2',x:1,y:0,tags:['row1','right','front','back','door'],zone:'front'}],adjacency:[['s1','s2']],
     people:[{id:'p1',name:'小满',color:'#D5986D',rules:[{type:'tag',value:'window',text:'想坐靠窗的位置'}]}]});
@@ -178,4 +192,4 @@ function assignPerson(input, placement, personId, seatId) {
   }
   return next;
 }
-module.exports={TYPES,normalizeId,normalizeLevel,importLevel,createDemo,nextId,toggleSeat,horizontalAdjacency,renamePerson,removePerson,exportLevel,solveLevel,assignPerson,clone};
+module.exports={TYPES,displayLabel,normalizeId,normalizeLevel,importLevel,createDemo,nextId,toggleSeat,horizontalAdjacency,renamePerson,removePerson,exportLevel,solveLevel,assignPerson,clone};

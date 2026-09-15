@@ -1,7 +1,7 @@
 'use strict';
 const {C,text,round,circle,line,person}=require('./draw');
 const {paragraph,lines,progress,icon}=require('./components');
-const {scene,sceneId,boardFrame,environment,seatFeatures}=require('./scenes');
+const {scene,sceneId,boardFrame,seatFurniture,emptyFurniture,environment,seatFeatures,paw}=require('./scenes');
 const {clamp,seatRegions}=require('./layout');
 const completedCount=app=>new Set((app.progress.completed||[]).filter(id=>(app.levels||[]).some(l=>l.id===id))).size;
 const pageIndex=(app,count)=>clamp(Math.floor(app.levelPage||0),0,Math.max(0,count-1));
@@ -18,7 +18,7 @@ function navigation(p,l,current){
 }
 function home(p,app,l){
  const {ctx,button}=p,r=l.pageBody;
- icon(ctx,'chair',l.header.x+20,l.header.y+23,28);text(ctx,'给喵挪个位',l.header.x+44,l.header.y+(app.statusNote?16:23),20,C.ink,'700');
+ paw(ctx,l.header.x+20,l.header.y+23,1.4);text(ctx,'给喵挪个位',l.header.x+44,l.header.y+(app.statusNote?16:23),20,C.ink,'700');
  if(app.statusNote)text(ctx,app.statusNote,l.header.x+44,l.header.y+38,12,C.muted);
  const done=completedCount(app),total=app.levels.length;
  text(ctx,'给小伙伴',r.x+6,r.y+23,30,C.ink,'700');text(ctx,'一个好位置。',r.x+6,r.y+61,30,C.ink,'700');
@@ -72,24 +72,33 @@ function play(p,app,l){
  text(ctx,'›',r.x+r.w-18,r.y+25,24,C.orange,'600','center');p.hit(r,'rulesToggle');
  boardFrame(ctx,l.board,level);
  const regions=seatRegions(l,level.seats);
- for(const [a,b] of level.adjacency||[]){
+ // Show a local neighbor guide only when moving a seated friend.
+ // The full relationship graph remains available in the rule reader.
+ const selectedSeat=selected&&placement[selected.id];
+ for(const [a,b] of app.moveArmed&&selectedSeat?(level.adjacency||[]).filter(([a,b])=>a===selectedSeat||b===selectedSeat):[]){
   const first=regions.find(r=>r.id===a),second=regions.find(r=>r.id===b);
   if(first&&second)line(ctx,first.x+first.w/2,first.y+first.h/2,second.x+second.w/2,second.y+second.h/2,'#A6B699',2);
  }
  regions.forEach((b,i)=>{
   const seat=b.seat,occupant=level.people.find(person=>placement[person.id]===seat.id),state=occupant?(result.people[occupant.id]||{}):{};
   const active=occupant&&occupant.id===app.selected;
-  round(ctx,b.x,b.y,b.w,b.h,10,active?'#FFF0CC':'#FFFEF8E8',state.status==='conflict'?C.red:active?C.orange:'#BBC8B2');
+  seatFurniture(ctx,b,sceneId(level),active,state.status==='conflict');
+  const center=b.x+b.w/2,portraitSize=Math.min(44,(b.h-27)*.72);
+  if(occupant)person(ctx,center,b.y+Math.ceil(portraitSize*.6)+1,portraitSize,occupant.color,occupant,state.status);
+  else emptyFurniture(ctx,b,sceneId(level));
   environment(ctx,b,seat);
-  const center=b.x+b.w/2,compact=b.h<76;
-  if(occupant)person(ctx,center,b.y+(compact?16:24),compact?23:34,occupant.color,occupant,state.status);
-  else icon(ctx,'chair',center,b.y+(compact?16:25),compact?21:30,'#8EA28C');
-  const nameY=b.y+(compact?35:48);
-  text(ctx,occupant?`${i+1} ${occupant.name}`:`${i+1}号空位`,center,nameY,12,C.ink,'500','center');
-  const features=seatFeatures(seat);const label=features.length?features.join('·'):({garden:'花园侧',kitchen:'餐台侧',screen:'银幕前',rear:'后排'}[seat.zone]||`第${seat.y+1}排`);
-  const labelLines=lines(ctx,label,b.w-4,12);labelLines.forEach((row,j)=>text(ctx,row,center,nameY+15+j*13,12,C.muted,'normal','center'));
-  if(state.status==='conflict')text(ctx,'!',b.x+b.w-8,b.y+11,12,C.red,'700','center');
-  if(state.status==='satisfied')text(ctx,'✓',b.x+b.w-8,b.y+11,12,C.ink,'700','center');
+  const nameY=b.y+b.h-20;
+  text(ctx,occupant?`${i+1} ${occupant.name}`:`${i+1}号${sceneId(level)==='cinema'?'小窝':'空位'}`,center,nameY,12,'#14352B','600','center');
+  const features=seatFeatures(seat);let label=features.length?features.join('·'):({garden:'窗边区',kitchen:'取餐侧',screen:'晨光区',rear:'里侧窝'}[seat.zone]||`第${seat.y+1}排`);
+  // Every tag still has its physical badge and a full description in the reader.
+  // Never allow a wrapped caption to overlap another seat on dense boards.
+  if(lines(ctx,label,b.w-4,12).length>1)label=features.length>1?'多标签':label.replace('遮光位','遮光').replace('晨光区','晨光').replace('里侧窝','里侧');
+  text(ctx,label,center,Math.min(b.y+b.h-5,nameY+15),12,'#14352B','normal','center');
+  if(state.status==='conflict'||state.status==='satisfied'){
+   const sx=b.x+b.w-8,sy=b.y+Math.min(33,b.h/2);
+   circle(ctx,sx,sy,7,state.status==='conflict'?'#FDE7DD':'#F5F6DE');
+   text(ctx,state.status==='conflict'?'!':'✓',sx,sy,12,state.status==='conflict'?C.red:C.ink,'700','center');
+  }
   p.hit({x:b.x,y:b.y,w:b.w,h:b.h},'seat',{seatId:seat.id,personId:occupant&&occupant.id});
  });
  const waiting=level.people.filter(person=>!placement[person.id]),w=l.waiting;
