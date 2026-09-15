@@ -1,5 +1,7 @@
 'use strict';
 const {emotionFor}=require('../features/emotions');
+const {ruleFocus}=require('../features/rule-focus');
+const {getFocus}=require('../features/tutorial');
 const {C,text,round,circle,line,person}=require('./draw');
 const {paragraph,lines,progress,icon}=require('./components');
 const {scene,sceneId,boardFrame,seatFurniture,emptyFurniture,seatFeatures,paw}=require('./scenes');
@@ -60,9 +62,19 @@ function play(p,app,l){
  const {ctx,button}=p,level=app.level,result=app.result||{people:{}},placement=app.session.placement;
  const selected=level.people.find(person=>person.id===app.selected),n=app.catalog?app.catalog.displayNumber(level.id):app.levels.indexOf(level)+1;
  heading(p,l,level.title,`${n?`第 ${n} 关 · `:'每日挑战 · '}${result.satisfied||0} / ${result.total||0} 条件满足`,'levels');
+ const focus=ruleFocus(level,placement,app.focusedRule);
  const r=l.rules;
  round(ctx,r.x,r.y,r.w,r.h,14,C.white,C.line);
- if(app.tutorialText&&lines(ctx,app.tutorialText,r.w-40,14).length<=2){
+ if(app.won&&app.completionPending){
+  text(ctx,'都找到喜欢的位置啦！',r.x+12,r.y+17,14,C.ink,'600');
+  text(ctx,'看看伙伴们的表情，稍后展示结算',r.x+12,r.y+37,12,C.muted);
+ }else if(focus){
+  const rows=lines(ctx,focus.text,r.w-62,14);
+  text(ctx,rows.length>1?rows[0].slice(0,-1)+'…':rows[0],r.x+12,r.y+17,14,C.ink,'600');
+  text(ctx,focus.pendingIds.length&&!focus.seatIds.length?'伙伴未齐，先安排相关伙伴':'橙框仅满足此条，仍需兼顾其他偏好',r.x+12,r.y+37,11,C.muted);
+  text(ctx,'×',r.x+r.w-22,r.y+r.h/2,20,C.ink,'600','center');
+  p.hit({x:r.x+r.w-44,y:r.y,w:44,h:r.h},'clearRuleFocus');
+ }else if(app.tutorialText&&lines(ctx,app.tutorialText,r.w-40,14).length<=2){
   const rows=lines(ctx,app.tutorialText,r.w-40,14);
   rows.forEach((row,i)=>text(ctx,row,r.x+12,r.y+(rows.length===1?r.h/2:16+i*20),14,C.ink,'500'));
  }else if(selected){
@@ -72,8 +84,8 @@ function play(p,app,l){
   const reason=lines(ctx,feeling.reason,r.w-80,12);
   text(ctx,reason.length>1?reason[0].slice(0,-1)+'…':reason[0],r.x+48,r.y+37,12,C.muted);
  }else{ text(ctx,app.tutorialText?'新手引导 · 看看下一步':'先听听，大家想坐哪里？',r.x+12,r.y+17,14,C.ink,'600');text(ctx,app.statusNote?'有一条状态说明 · 点此查看':'点选伙伴 · 点空位入座',r.x+12,r.y+37,12,C.muted); }
- text(ctx,'›',r.x+r.w-18,r.y+25,24,C.orange,'600','center');p.hit(r,'rulesToggle');
- boardFrame(ctx,l.board,level);
+ if(!(app.won&&app.completionPending)&&!focus){text(ctx,'›',r.x+r.w-18,r.y+25,24,C.orange,'600','center');p.hit(r,'rulesToggle');}
+ boardFrame(ctx,l.board,level,focus);
  const regions=seatRegions(l,level.seats);
  // Show a local neighbor guide only when moving a seated friend.
  // The full relationship graph remains available in the rule reader.
@@ -85,7 +97,13 @@ function play(p,app,l){
  regions.forEach((b,i)=>{
   const seat=b.seat,occupant=level.people.find(person=>placement[person.id]===seat.id),state=occupant?(result.people[occupant.id]||{}):{};
   const active=occupant&&occupant.id===app.selected;
-  seatFurniture(ctx,b,sceneId(level),active,state.status==='conflict');
+  seatFurniture(ctx,b,sceneId(level),active&&!focus,state.status==='conflict');
+  if(active&&focus)round(ctx,b.x+1,b.y+1,b.w-2,b.h-2,11,null,C.ink);
+  if(focus?.seatIds.includes(seat.id))round(ctx,b.x-1,b.y-1,b.w+2,b.h+2,12,null,C.orange);
+  if(focus?.referenceSeat===seat.id)round(ctx,b.x+2,b.y+2,b.w-4,b.h-4,10,null,'#6081A5');
+  const dragTarget=app.drag&&app.drag.moved&&app.drag.personId&&app.drag.x>=b.x&&app.drag.x<=b.x+b.w&&app.drag.y>=b.y&&app.drag.y<=b.y+b.h;
+  if(dragTarget){round(ctx,b.x-2,b.y-2,b.w+4,b.h+4,12,null,C.ink);}
+
   const center=b.x+b.w/2,portraitSize=Math.min(44,(b.h-27)*.72);
   if(occupant){const feeling=emotionFor(app,occupant.id);person(ctx,center,b.y+Math.ceil(portraitSize*.6)+1,portraitSize,occupant.color,occupant,feeling.mood,feeling.motion);}
   else emptyFurniture(ctx,b,sceneId(level));
@@ -106,8 +124,8 @@ function play(p,app,l){
  const waiting=level.people.filter(person=>!placement[person.id]),w=l.waiting;
  round(ctx,w.x,w.y,w.w,w.h,16,'#ECECDD');
  const max=Math.max(0,waiting.length-l.waitingCapacity),offset=clamp(Math.floor(app.waitingOffset||0),0,max);
- button('‹',{x:w.x,y:w.y+14,w:44,h:48},'waitingPrev',null,'secondary',offset<=0);
- button('›',{x:w.x+w.w-44,y:w.y+14,w:44,h:48},'waitingNext',null,'secondary',offset>=max);
+ if(!(app.won&&app.completionPending))button('‹',{x:w.x,y:w.y+14,w:44,h:48},'waitingPrev',null,'secondary',offset<=0);
+ if(!(app.won&&app.completionPending))button('›',{x:w.x+w.w-44,y:w.y+14,w:44,h:48},'waitingNext',null,'secondary',offset>=max);
  const areaW=w.w-96,cellW=areaW/l.waitingColumns;
  waiting.slice(offset,offset+l.waitingCapacity).forEach((personData,i)=>{
   const b={x:w.x+48+(i%l.waitingColumns)*cellW,y:w.y+4+Math.floor(i/l.waitingColumns)*64,w:cellW-2,h:64};
@@ -116,16 +134,30 @@ function play(p,app,l){
   person(ctx,b.x+b.w/2,b.y+22,32,personData.color,personData,feeling.mood,feeling.motion);text(ctx,personData.name,b.x+b.w/2,b.y+53,12,C.ink,'500','center');
   p.hit(b,'person',personData.id);
  });
- if(!waiting.length){text(ctx,'大家都入座了',w.x+w.w/2,w.y+25,14,C.ink,'600','center');text(ctx,'可选人换位或退回候场',w.x+w.w/2,w.y+49,12,C.muted,'normal','center');}
+ if(!waiting.length){text(ctx,'大家都入座了',w.x+w.w/2,w.y+25,14,C.ink,'600','center');text(ctx,app.won&&app.completionPending?'每个伙伴都找到了喜欢的位置':'可选人换位或退回候场',w.x+w.w/2,w.y+49,12,C.muted,'normal','center');}
  const t=l.toolbar,bw=(t.w-12)/3;
+ if(app.won&&app.completionPending){
+  p.hits.length=0;
+  text(ctx,'这一刻，让毛茸茸们开心一会儿',t.x+t.w/2,t.y+23,14,C.ink,'600','center');
+  button('查看结算',{x:t.x,y:t.y+t.h-48,w:t.w,h:48},'showSettlement',null,'primary');
+  return;
+ }
  button('撤销',{x:t.x,y:t.y,w:bw,h:48},'undo',null,'secondary',!(app.session.history||[]).length);
  button('重新安排',{x:t.x+bw+6,y:t.y,w:bw,h:48},'reset',null,'secondary');
  button('免费读规则',{x:t.x+2*(bw+6),y:t.y,w:bw,h:48},'hint',null,'secondary');
  const placed=selected&&placement[selected.id];
- button(app.moveArmed?'点目标换位':'换个位置',{x:t.x,y:t.y+t.h-48,w:76,h:48},'armMove',null,app.moveArmed?'accent':'secondary',!placed);
+ button(app.moveArmed?'点目标':'换个位置',{x:t.x,y:t.y+t.h-48,w:76,h:48},'armMove',null,app.moveArmed?'accent':'secondary',!placed);
  button('退回候场',{x:t.x+82,y:t.y+t.h-48,w:76,h:48},'unseat',null,'secondary',!placed);
  button(app.hintBusy?'正在准备提示':app.hintLabel||'高级提示',{x:t.x+164,y:t.y+t.h-48,w:t.w-164,h:48},'hintAdvanced',null,'primary',!!app.hintBusy);
- if(app.drag&&app.drag.moved){const personData=level.people.find(person=>person.id===app.drag.personId);if(personData){circle(ctx,app.drag.x,app.drag.y,29,'#FFF1CDDD');person(ctx,app.drag.x,app.drag.y,44,personData.color,personData);}}
+ const teaching=!app.isDaily&&!app.won?getFocus(n,app.progress):null;
+ const guide=teaching==='rules'?p.hits.find(h=>h.action==='rulesToggle'):teaching==='person'||(teaching==='seat'&&!selected)?p.hits.find(h=>h.action==='person'):teaching==='seat'?p.hits.find(h=>h.action==='seat'&&!h.payload.personId):teaching==='swap'?p.hits.find(h=>h.action==='undo'):null;
+ if(guide&&!focus&&!app.drag?.moved)round(ctx,guide.x+1,guide.y+1,guide.w-2,guide.h-2,12,null,C.orange);
+ if(app.drag&&app.drag.moved){
+  const target=regions.find(b=>app.drag.x>=b.x&&app.drag.x<=b.x+b.w&&app.drag.y>=b.y&&app.drag.y<=b.y+b.h);
+  const other=target&&level.people.find(p=>placement[p.id]===target.id&&p.id!==app.drag.personId);
+  round(ctx,l.rules.x,l.rules.y,l.rules.w,l.rules.h,14,C.white,C.line);
+  text(ctx,target?(other?`松手与${other.name}换位`:'松手坐到这里'):'拖到座位，松手安排',l.rules.x+12,l.rules.y+l.rules.h/2,14,C.ink,'600');
+  const personData=level.people.find(person=>person.id===app.drag.personId);if(personData){circle(ctx,app.drag.x,app.drag.y,29,'#FFF1CDDD');person(ctx,app.drag.x,app.drag.y,44,personData.color,personData);}}
 }
 function daily(p,app,l){
  heading(p,l,'每日一席','每天一个小故事，不赶时间。');
@@ -163,10 +195,10 @@ function settings(p,app,l){
   text(ctx,on?'开':'关',b.x+b.w-93,b.y+24,12,C.muted,'normal','center');p.hit(b,'setting',key);
  });
  const y=r.y+(compact?208:224),status=app.serviceStatus||{};
- text(ctx,`云备份：${status.cloud||'未配置'}`,r.x+10,y,12,C.muted);text(ctx,`激励广告：${status.ads||'未配置'}`,r.x+10,y+21,12,C.muted);
+ text(ctx,'存档：仅保存在本机，不提供跨设备恢复',r.x+10,y,12,C.muted);text(ctx,`激励广告：${status.ads||'本版本未开启广告'}`,r.x+10,y+21,12,C.muted);
  text(ctx,'主线进度保存在本机',r.x+10,y+42,12,C.ink);
  const bw=(r.w-8)/2;
  button('玩法帮助',{x:r.x,y:y+58,w:bw,h:48},'help',null,'secondary');button('隐私与数据',{x:r.x+bw+8,y:y+58,w:bw,h:48},'privacy',null,'secondary');
- button('清理本机数据',{x:r.x,y:y+114,w:r.w,h:48},'deleteLocal',null,'secondary');navigation(p,l,'settings');
+ button('清理本机数据',{x:r.x,y:y+114,w:bw,h:48},'deleteLocal',null,'secondary');button('反馈与版本',{x:r.x+bw+8,y:y+114,w:bw,h:48},'feedback',null,'secondary');navigation(p,l,'settings');
 }
 module.exports={home,levels,play,daily,album,settings,heading,navigation,pageIndex,completedCount};

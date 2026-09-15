@@ -25,7 +25,7 @@ npm run build
 
 用微信开发者工具导入 `/Users/zhangnu/WeChatProjects/today-we-sit/dist/wechat`，类型为小游戏。产物是单一打包入口及本地音频，排除储备题、作者参考答案和编辑器。
 
-根目录 `project.config.json` 仍使用 `touristappid`。正式AppID填在源配置后再构建。广告位、服务地址与反馈渠道配置在 `src/config.js`，不要把AppSecret等秘密写入客户端。
+根目录 `project.config.json` 已配置用户提供的 AppID：`wxa6e9ec013ec322d6`，构建时同步到微信导入目录。广告位、服务地址与反馈渠道配置在 `src/config.js`，不要把AppSecret等秘密写入客户端。
 
 ## 开发与检查
 

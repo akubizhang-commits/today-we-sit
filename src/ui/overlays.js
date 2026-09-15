@@ -1,6 +1,8 @@
 'use strict';
 const {C,round,text,circle,person}=require('./draw');
 const {emotionFor}=require('../features/emotions');
+const {preferencePanel}=require('./preference-panel');
+const {sortedRules}=require('../features/rule-focus');
 const {lines,paragraph}=require('./components');
 const {seatDescription,scene,sceneId}=require('./scenes');
 const {pageIndex,heading}=require('./pages');
@@ -15,7 +17,7 @@ const HELP=[
  ['提示由你选择','“免费读规则”只解释条件。高级提示提供一步建议与理由，需要你手动操作。高级提示按钮会显示当前免费权益或广告状态；未配置广告时不宣称可以播放。'],
  ['每日与纪念册','完成五个不同主线关卡后开放每日挑战。纪念卡按主线完成数量解锁，只能领取一次，不需要购买或抽取。']
 ];
-const PRIVACY=[['本机进度','游戏使用本机存档保存主线完成记录、当前排座、每日记录、纪念卡、提示权益和设备设置。清理本机数据会影响这些记录，请先确认。'],['服务状态','云备份与激励广告是否可用，以设置页显示的实际状态为准。未配置的服务不能备份数据或播放真实广告。'],['数据操作','这里不提供虚构的云删除成功提示。需要清理设备记录时，请使用设置中的“清理本机数据”并完成确认。'],['关于这份说明','这是客户端已实现能力的说明。运营主体、联系渠道和平台正式隐私告知应以实际发布配置为准。']];
+const PRIVACY=[['本机进度','游戏使用本机存档保存主线完成记录、当前排座、每日记录、纪念卡、提示权益和设备设置。清理本机数据会影响这些记录，请先确认。'],['本地存档范围','本版本不提供账号登录、云备份或跨设备恢复；进度只保存在这台设备上。当前未开启广告，不上传玩法数据。'],['数据操作','这里不提供虚构的云删除成功提示。需要清理设备记录时，请使用设置中的“清理本机数据”并完成确认。'],['关于这份说明','这是客户端已实现能力的说明。运营主体、联系渠道和平台正式隐私告知应以实际发布配置为准。']];
 function blocksToRows(ctx,blocks,width){
  const rows=[];
  for(const block of blocks){
@@ -46,17 +48,17 @@ function rulesBlocks(app){
  const level=app.level,people=[...level.people];
  people.sort((a,b)=>(b.id===app.selected?1:0)-(a.id===app.selected?1:0));
  const blocks=[];
- if(app.tutorialText)blocks.push(['现在试试',app.tutorialText]);
- if(app.statusNote)blocks.push(['当前状态',app.statusNote]);
- blocks.push([level.title,level.intro]);
+
  for(const person of people){
   const state=(app.result.people||{})[person.id]||{};
   const feeling=emotionFor(app,person.id);
   blocks.push([`${person.name} · ${app.session.placement[person.id]?'已入座':'候场中'}`,`${feeling.label}：${feeling.reason}`]);
   const rules=state.rules||person.rules||[];
   if(!rules.length)blocks.push(['','坐在哪里都可以。']);
-  rules.forEach((rule,i)=>blocks.push(['',`${i+1}. ${rule.status==='satisfied'?'✓ 已满足':rule.status==='conflict'?'! 有冲突':'待安排'}：${rule.text||'请查看本关规则说明'}`,rule.status==='conflict'?C.red:null]));
+  sortedRules(person,state).forEach((rule)=>blocks.push(['',`${rule.index+1}. ${rule.status==='satisfied'?'✓ 已满足':rule.status==='conflict'?'! 有冲突':'待安排'}：${rule.text||'请查看本关规则说明'}`,rule.status==='conflict'?C.red:null]));
  }
+ blocks.push([level.title,level.intro]);
+ if(app.tutorialText)blocks.push(['现在试试',app.tutorialText]);
  blocks.push(['座位环境 · 完整标签','图中每个环境物件只对应带该标签的座位。']);
  level.seats.forEach((seat,i)=>blocks.push([`${i+1}号座位`,seatDescription(seat)]));
  blocks.push(['相邻关系',(level.adjacency||[]).map(([a,b])=>`${level.seats.findIndex(s=>s.id===a)+1}号与${level.seats.findIndex(s=>s.id===b)+1}号`).join('；')||'本关没有相邻座位。']);
@@ -68,7 +70,8 @@ function help(p,app,l){
 }
 function overlay(p,app,l){
  const {ctx,button}=p,toast=app.toast&&Date.now()<app.toastUntil;
- if(!toast&&!app.modal&&!app.rulesExpanded&&!app.won)return;
+ const settlement=app.won&&!app.completionPending;
+ if(!toast&&!app.modal&&!app.rulesExpanded&&!settlement)return;
  p.hits.length=0;
  ctx.fillStyle='#183E34B8';ctx.fillRect(l.viewport.x,l.viewport.y,l.viewport.w,l.viewport.h);
  const r=l.overlay;
@@ -86,10 +89,12 @@ function overlay(p,app,l){
   paragraph(ctx,deleting?'本机关卡进度、纪念卡、每日记录和设置将被清除。此操作不能撤销，也不代表删除了云端数据。':'伙伴会回到候场区。已完成进度会保留，重置后仍可以撤销。',box.x+20,box.y+86,box.w-40,15,C.muted,24);
   button(deleting?'确认清理本机数据':'重新安排',{x:box.x+16,y:box.y+box.h-120,w:box.w-32,h:48},deleting?'confirmDeleteLocal':'confirmReset',null,'accent');
   button(deleting?'保留我的进度':'继续想想',{x:box.x+16,y:box.y+box.h-64,w:box.w-32,h:48},'cancelModal',null,'secondary');
- }else if(app.modal==='privacy')reader(p,app,r,'隐私与本机数据',PRIVACY);
+ }else if(app.modal==='feedback')reader(p,app,r,'反馈与版本',[['反馈渠道',app.config?.feedbackContact||'反馈渠道暂未开放。你可以保留问题截图和下方版本信息，待渠道开放后反馈。'],['版本信息',`版本：${app.config?.buildId||'1.0.0-local'}\n内容：${app.catalog?.contentVersion||'本地内容'}\n关卡：${app.level?.id||'尚未进入关卡'}\n界面：${app.width} × ${app.height}`],['数据说明','这里仅显示问题排查信息，不会自动发送截图、游戏进度或其他数据。']]);
+ else if(app.modal==='privacy')reader(p,app,r,'隐私与本机数据',PRIVACY);
  else if(app.modal==='rules')reader(p,app,r,'排座小手册',HELP);
- else if(app.rulesExpanded)reader(p,app,r,'每个伙伴的小偏好',rulesBlocks(app),'rulesToggle','收起，继续安排',app.level.people.find(p=>p.id===app.selected));
- else if(app.won){
+ else if(app.rulesExpanded&&!app.rulesDetail)preferencePanel(p,app,r);
+ else if(app.rulesExpanded)reader(p,app,r,'每个伙伴的小偏好',rulesBlocks(app),'rulesDetailBack','返回伙伴偏好');
+ else if(settlement){
   round(ctx,r.x,r.y,r.w,r.h,24,C.paper);
   const artH=Math.min(210,Math.max(112,r.h-300));scene(ctx,{x:r.x+14,y:r.y+14,w:r.w-28,h:artH},sceneId(app.level),1,true,sceneId(app.level)==='cinema'?'sleepy':'happy');
   const cast=app.level.people,columns=Math.min(5,cast.length),rows=Math.ceil(cast.length/columns),gap=(r.w-44)/columns;

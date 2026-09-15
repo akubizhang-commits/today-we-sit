@@ -3,11 +3,12 @@
   "updatedAt": "2026-09-15",
   "platformEligibility": false,
   "wechatDevices": false,
+  "feedbackLive": false,
   "adsLive": false,
   "cloudLive": false,
   "manualContentQA": false,
   "rights": false,
   "privacyReview": false,
   "releaseRegression": false,
-  "note": "仅在对应真实验收完成并记录证据后更新；自动化测试和程序生成资源不能替代这些验收。"
+  "note": "首发范围为storageMode=local、adsMode=disabled；cloudLive与adsLive不适用，保留false不代表已验证。其他项目仅在真实验收完成并记录证据后更新；自动化测试和程序生成资源不能替代这些验收。范围详见local-launch-scope.md。"
 }

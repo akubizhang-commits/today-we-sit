@@ -35,7 +35,7 @@ function roomMetrics(b,seats){
  const columns=Math.max(1,new Set(seats.map(s=>s.x)).size),rows=Math.max(1,new Set(seats.map(s=>s.y)).size);
  const bottom=b.h>=300?38:14;
  const side=Math.max(12,Math.min(49,b.w*.13,(b.w-columns*50)/2));
- const top=Math.max(20,Math.min(b.h>=300?102:64,b.h-bottom-rows*50));
+ const top=Math.max(20,Math.min(b.h>=300?102:52,b.h-bottom-rows*50));
  return {side,top,bottom};
 }
 module.exports={computeLayout,seatRegions,roomMetrics,clamp,rect};

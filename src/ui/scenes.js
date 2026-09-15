@@ -41,7 +41,7 @@ function counter(ctx,x,y,w,h){
  round(ctx,x-3,y,w+6,12,5,'#FFF4DA');
  for(let i=1;i<4;i++)line(ctx,x+w*i/4,y+17,x+w*i/4,y+h-5,'#CC9B64',1);
 }
-function boardFrame(ctx,r,level){return drawRoomBoard(ctx,r,level);}
+function boardFrame(ctx,r,level,focus){return drawRoomBoard(ctx,r,level,focus);}
 function seatFurniture(ctx,r,id,active=false,conflict=false){
  const {x,y,w,h}=r,compact=h<76;
  oval(ctx,x+w/2,y+h-4,w*.42,4,'#536C5422');

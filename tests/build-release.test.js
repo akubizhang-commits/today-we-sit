@@ -29,10 +29,10 @@ function request(handler,url,method='GET'){
     try{handler({url,method},res);}catch(error){reject(error);}
   });
 }
-const evidence=Object.fromEntries(['platformEligibility','wechatDevices','adsLive','cloudLive','manualContentQA','rights','privacyReview','releaseRegression'].map(k=>[k,true]));
-function configured(dir){
+const evidence=Object.fromEntries(['platformEligibility','wechatDevices','feedbackLive','adsLive','cloudLive','manualContentQA','rights','privacyReview','releaseRegression'].map(k=>[k,true]));
+function configured(dir,overrides={}){
   write(dir,'project.config.json',JSON.stringify({appid:'wx0123456789abcdef'}));
-  write(dir,'src/config.js',"module.exports={environment:'production',adUnitId:'test-ad-unit',backendUrl:'https://service.example.test',feedbackContact:'test@example.test'};\n");
+  write(dir,'src/config.js',`module.exports=${JSON.stringify({environment:'production',storageMode:'local',adsMode:'disabled',feedbackContact:'test@example.test',...overrides})};\n`);
   write(dir,'docs/v1/release-evidence.json',JSON.stringify(evidence));
 }
 
@@ -93,20 +93,25 @@ test('default release CLI fails with actionable readiness issues',()=>{
   const result=spawnSync(process.execPath,['scripts/check-release.js'],{cwd:root,encoding:'utf8',timeout:5000});
   assert.equal(result.status,1,result.stdout+result.stderr);
   const report=JSON.parse(result.stdout);assert.equal(report.ready,false);
-  for(const diagnostic of [/AppID/,/广告位/,/HTTPS/,/联系方式/,/开发环境/,/真机/,/人工体验/])assert.ok(report.issues.some(s=>diagnostic.test(s)));
+  assert.equal(report.issues.some(s=>/未配置正式小游戏AppID/.test(s)),false);
+  for(const diagnostic of [/联系方式/,/开发环境/,/真机/,/人工体验/])assert.ok(report.issues.some(s=>diagnostic.test(s)));
+  assert.ok(!report.issues.some(s=>/广告位|HTTPS|尚未接入云/.test(s)));
+  assert.deepEqual(report.notApplicable,['cloudLive','adsLive']);
+  assert.equal(report.monetizationCandidate,false);
 });
 
 test('preflight rereads configuration and requires literal true for every evidence item',t=>{
   const dir=temporary(t);configured(dir);
   const checked=checkRelease(dir);
   assert.equal(checked.checklistPassed,true);
-  assert.equal(checked.ready,false,'human checklist cannot approve unimplemented application integration');
+  assert.equal(checked.ready,true,'local release may pass the evidence checklist without cloud or ads');
   assert.equal(checked.serviceConnectivityVerified,false);
-  assert.match(checked.issues.join(' '),/尚未接入云/);
+  assert.deepEqual(checked.issues,[]);
   write(dir,'src/config.js',"module.exports={environment:'development'};");
   assert.equal(checkRelease(dir).checklistPassed,false,'must not reuse a previously approved cached config');
   configured(dir);
   for(const key of Object.keys(evidence)){
+    if(['adsLive','cloudLive'].includes(key))continue;
     write(dir,'docs/v1/release-evidence.json',JSON.stringify({...evidence,[key]:'true'}));
     assert.equal(checkRelease(dir).checklistPassed,false,key);
   }
@@ -119,9 +124,71 @@ test('preflight reports missing/malformed inputs and invalid HTTPS URLs without 
     configured(dir);write(dir,file,value);const result=checkRelease(dir);assert.equal(result.checklistPassed,false,file);assert.ok(result.issues.length>0);
   }
   for(const backendUrl of ['https://','https:// invalid','https://user:password@example.test','http://example.test']){
-    configured(dir);write(dir,'src/config.js',`module.exports=${JSON.stringify({environment:'production',adUnitId:'test',backendUrl,feedbackContact:'test'})};`);
+    configured(dir,{storageMode:'cloud',backendUrl});
     assert.equal(checkRelease(dir).checklistPassed,false,backendUrl);
   }
+});
+
+test('local scope leaves inactive service evidence unverified and cannot monetize',t=>{
+  const dir=temporary(t);configured(dir);
+  const actual={...evidence,cloudLive:false,adsLive:false};
+  write(dir,'docs/v1/release-evidence.json',JSON.stringify(actual));
+  const report=checkRelease(dir);
+  assert.equal(report.ready,true);assert.equal(report.monetizationCandidate,false);
+  assert.deepEqual(report.notApplicable,['cloudLive','adsLive']);
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(dir,'docs/v1/release-evidence.json'),'utf8')),actual);
+  delete actual.cloudLive;delete actual.adsLive;
+  write(dir,'docs/v1/release-evidence.json',JSON.stringify(actual));
+  assert.equal(checkRelease(dir).ready,true,'inactive evidence is optional');
+});
+
+test('cloud mode remains blocked even with a complete checklist',t=>{
+  const dir=temporary(t);configured(dir,{storageMode:'cloud',backendUrl:'https://service.example.test'});
+  const report=checkRelease(dir);
+  assert.equal(report.checklistPassed,true);assert.equal(report.ready,false);
+  assert.match(report.issues.join(' '),/尚未接入云/);
+  assert.deepEqual(report.notApplicable,['adsLive']);
+  write(dir,'docs/v1/release-evidence.json',JSON.stringify({...evidence,cloudLive:'true'}));
+  assert.equal(checkRelease(dir).checklistPassed,false);
+});
+
+test('rewarded ads require explicit mode, ad unit and literal live evidence',t=>{
+  const dir=temporary(t);
+  configured(dir,{adsMode:'rewarded'});
+  assert.equal(checkRelease(dir).ready,false);
+  configured(dir,{adsMode:'rewarded',adUnitId:'test-ad-unit'});
+  for(const adsLive of [false,'true',null]){
+    write(dir,'docs/v1/release-evidence.json',JSON.stringify({...evidence,adsLive}));
+    assert.equal(checkRelease(dir).ready,false);
+  }
+  configured(dir,{adsMode:'rewarded',adUnitId:'test-ad-unit'});
+  assert.equal(checkRelease(dir).ready,true);
+  assert.equal(checkRelease(dir).monetizationCandidate,true);
+  configured(dir,{adUnitId:'test-ad-unit'});
+  assert.equal(checkRelease(dir).ready,false,'disabled release configuration must not retain an ad unit');
+});
+
+test('missing or invalid modes and malformed optional settings fail closed',t=>{
+  const dir=temporary(t);
+  for(const key of ['storageMode','adsMode']){
+    for(const value of [undefined,null,'',false,{},'LOCAL','auto']){
+      configured(dir,{[key]:value});
+      const report=checkRelease(dir);
+      assert.equal(report.ready,false,`${key}: ${JSON.stringify(value)}`);
+      assert.equal(report.checklistPassed,false);
+    }
+  }
+  for(const key of ['adUnitId','backendUrl','feedbackContact']){
+    for(const value of [null,false,123,[],{}]){
+      configured(dir,{[key]:value});
+      assert.equal(checkRelease(dir).ready,false,`${key}: ${JSON.stringify(value)}`);
+    }
+  }
+  for(const feedbackContact of [undefined,'','   ']){
+    configured(dir,{feedbackContact});assert.equal(checkRelease(dir).ready,false);
+  }
+  configured(dir,{adUnitId:'',backendUrl:''});
+  assert.equal(checkRelease(dir).ready,true);
 });
 
 test('static routes serve editor, bundle and assets with correct headers while rejecting path escapes',async t=>{

@@ -16,11 +16,12 @@ async function main(){
  }
  fs.writeFileSync(path.join(dir,'emotion-highlights.png'),sample.toBuffer('image/png'));
 
- for(const [name,width,height,reader,complete] of [['music-conflict',390,844,false,false],['emotion-reader-small',320,568,true,false],['nap-complete-small',320,568,false,true]]){
+ for(const [name,width,height,reader,complete] of [['music-conflict',390,844,false,false],['emotion-reader-small',320,568,true,false],['nap-complete-small',320,568,false,true],['nap-celebration-small',320,568,false,true]]){
   const canvas=createCanvas(width,height),memory=new Map(),platform={canvas,width,height,dpr:1,insets:{top:48,bottom:34},storage:{get:k=>memory.get(k),set:(k,v)=>memory.set(k,structuredClone(v)),remove:k=>memory.delete(k)},onPointer(){},onResize(){},onHide(){},requestFrame(){}};
   const app=new GameApp(platform);await app.ready;app.progress.completed=[...app.catalog.campaignIds];app.startLevel('cinema-001');
   if(complete){for(const [id,seat] of Object.entries(solve(app.level)))app.place(id,seat);}
   else{const seat=app.level.seats.find(s=>s.zone==='rear'&&s.tags.includes('speaker'));app.place('p3',seat.id);app.selected='p3';}
+  if(complete)app.completionPending=name==='nap-celebration-small';
   app.frameNow=Number.MAX_SAFE_INTEGER;app.statusNote='';app.toast='';app.rulesExpanded=reader;app.levelPage=0;
   render(canvas.getContext('2d'),app);await app.pendingSave;
   const file=path.join(dir,`${name}.png`);fs.writeFileSync(file,canvas.toBuffer('image/png'));console.log(file);

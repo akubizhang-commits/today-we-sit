@@ -33,14 +33,14 @@ test('top layer exclusively owns targets: result, reset, rules, privacy, toast',
  }
 });
 test('long rules remain completely available across reading pages',()=>{
- const f=fixture(320,568);f.app.screen='play';f.app.selected=f.app.level.people[0].id;f.app.rulesExpanded=true;
+ const f=fixture(320,568);f.app.rulesDetail=true;f.app.screen='play';f.app.selected=f.app.level.people[0].id;f.app.rulesExpanded=true;
  const rules=Array.from({length:4},(_,i)=>({status:'pending',text:`条件${i}：`+'请照顾窗边每一个人的不同偏好，'.repeat(7)+`结束${i}`}));
  f.app.result.people[f.app.selected].rules=rules;
  for(let p=0;p<20;p++){f.app.levelPage=p;verify(render(f.ctx,f.app),f.app);}
  const printed=f.drawn.map(t=>t.s).join('');for(let i=0;i<4;i++)assert.ok(printed.includes(`结束${i}`));assert.ok(!printed.includes('…'));
 });
 test('settings truthfully show service status and separate hint actions',()=>{
- const f=fixture();f.app.screen='settings';render(f.ctx,f.app);assert.ok(f.drawn.filter(t=>t.s.includes('未配置')).length>=2);
+ const f=fixture();f.app.screen='settings';render(f.ctx,f.app);assert.ok(f.drawn.some(t=>t.s.includes('仅保存在本机')));assert.ok(f.drawn.some(t=>t.s.includes('激励广告：'+f.app.serviceStatus.ads)));
  f.app.screen='play';let hits=render(f.ctx,f.app);assert.ok(hits.some(h=>h.action==='hint'));assert.ok(hits.some(h=>h.action==='hintAdvanced'));f.app.hintBusy=true;hits=render(f.ctx,f.app);assert.ok(!hits.some(h=>h.action==='hintAdvanced'));
 });
 test('all 124 authored regions fit short phones, including 4 by 3 boards',()=>{

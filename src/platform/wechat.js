@@ -17,7 +17,7 @@ function createWechatPlatform(wx,config={}){
     storage:{get:key=>wx.getStorageSync(key)||undefined,set:(key,value)=>wx.setStorageSync(key,value),remove:key=>wx.removeStorageSync(key)},
     createAudio(src){if(!wx.createInnerAudioContext)return null;const audio=wx.createInnerAudioContext();audio.src=src;return audio;},
     vibrate(){if(wx.vibrateShort)wx.vibrateShort({type:'light',fail(){}});},
-    ...(config.adUnitId&&wx.createRewardedVideoAd?{createRewardedAd:()=>wx.createRewardedVideoAd({adUnitId:config.adUnitId,multiton:true})}:{}),
+    ...(config.adsMode==='rewarded'&&config.adUnitId&&wx.createRewardedVideoAd?{createRewardedAd:()=>wx.createRewardedVideoAd({adUnitId:config.adUnitId,multiton:true})}:{}),
     onPointer(fn){
       for(const [method,type] of [['onTouchStart','down'],['onTouchMove','move'],['onTouchEnd','up'],['onTouchCancel','cancel']]){
         wx[method](e=>{

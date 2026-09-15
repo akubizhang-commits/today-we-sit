@@ -1,4 +1,5 @@
 'use strict';
+const publicConfig=require('./config');
 const {catalog:defaultCatalog}=require('./content/current');
 const {evaluate}=require('./core/engine');
 const {getAdvancedHint}=require('./core/hints');
@@ -21,11 +22,11 @@ const uniqueId=()=>`${Date.now().toString(36)}-${Math.random().toString(36).slic
 
 class GameApp {
   constructor(platform,{catalog=defaultCatalog}={}){
-    this.platform=platform;this.ctx=platform.canvas.getContext('2d');this.catalog=catalog;
+    this.config=publicConfig;this.platform=platform;this.ctx=platform.canvas.getContext('2d');this.catalog=catalog;
     this.levels=catalog.campaignIds.map(id=>catalog.get(id));this.chapters=catalog.chapters;
     this.progress=createProgress(catalog);this.loading=true;this.readOnly=false;
     this.screen='home';this.chapter=0;this.levelPage=0;this.selected=null;this.moveArmed=false;
-    this.won=false;this.modal=null;this.rulesExpanded=false;this.waitingOffset=0;
+    this.focusedRule=null;this.rulesDetail=false;this.won=false;this.completionPending=false;this.completionUntil=0;this.completionHiddenAt=null;this.modal=null;this.rulesExpanded=false;this.waitingOffset=0;
     this.emotionReactions={};this.frameNow=Date.now();this.lastEmotionFrame=0;
     this.hits=[];this.drag=null;this.toast='';this.toastUntil=0;this.dirty=true;
     this.hintBusy=false;this.transactionBusy=false;this.pendingSave=Promise.resolve({ok:true});
@@ -34,15 +35,15 @@ class GameApp {
     this.ads=createAdService({createAd:platform.createRewardedAd});
     this.audio=createAudioController({createAudio:platform.createAudio,settings:this.progress.settings});
     this.telemetry=createTelemetry({buildId:'1.0.0-local',contentVersion:catalog.contentVersion,environment:'development'});
-    this.serviceStatus={cloud:'未配置，进度保存在本机',ads:platform.createRewardedAd?'已配置，待真机验收':'未配置，暂无真实广告',feedback:'运营联系方式待配置'};
-    this.statusNote='开发候选版 · 尚未发布';
+    this.serviceStatus={cloud:'仅本机存档，不提供云恢复',ads:platform.createRewardedAd?'已接入，待真机验收':'本版本未开启广告',feedback:publicConfig.feedbackContact||'反馈渠道暂未开放'};
+    this.statusNote=publicConfig.environment==='production'?'':'开发候选版 · 尚未发布';
     this.resize(platform.width,platform.height,platform.dpr);
     platform.onPointer(e=>this.pointer(e));
     platform.onResize((w,h,dpr)=>this.resize(w,h,dpr));
     // Mutations already save immediately. An untouched/older preview must not
     // write its stale snapshot just because it is hidden or closed.
-    platform.onHide(()=>{this.drag=null;this.dirty=true;this.audio.suspend();});
-    if(platform.onShow)platform.onShow(()=>{this.audio.resume();this.refreshDaily();this.dirty=true;});
+    platform.onHide(()=>{if(this.completionPending&&this.completionHiddenAt===null)this.completionHiddenAt=Date.now();this.drag=null;this.dirty=true;this.audio.suspend();});
+    if(platform.onShow)platform.onShow(()=>{if(this.completionPending&&this.completionHiddenAt!==null)this.completionUntil+=Date.now()-this.completionHiddenAt;this.completionHiddenAt=null;this.audio.resume();this.refreshDaily();this.dirty=true;});
     this.loop=this.loop.bind(this);platform.requestFrame(this.loop);
     this.ready=this.initialize();
   }
@@ -62,6 +63,7 @@ class GameApp {
   }
   loop(){
     const now=Date.now();this.frameNow=now;
+    if(this.screen==='play'&&this.won&&this.completionPending&&this.completionHiddenAt===null&&now>=this.completionUntil){this.completionPending=false;this.drag=null;this.dirty=true;}
     const reacting=this.screen==='play'&&!this.progress.settings.reducedMotion&&Object.keys(this.emotionReactions).length>0;
     const animate=reacting&&now-this.lastEmotionFrame>=33;
     if(animate){this.lastEmotionFrame=now;for(const [id,event] of Object.entries(this.emotionReactions))if(now>=event.until)delete this.emotionReactions[id];}
@@ -74,7 +76,11 @@ class GameApp {
     this.platform.requestFrame(this.loop);
   }
   get albumCards(){return album.getCards(this.progress.completed,this.progress.album.claimedIds,this.catalog.campaignIds);}
-  get tutorialText(){return this.screen==='play'&&!this.isDaily&&this.level?tutorial.getText(this.catalog.displayNumber(this.level.id),this.session,this.result,this.progress):'';}
+  get tutorialText(){
+    if(this.screen!=='play'||this.isDaily||!this.level||this.won)return '';
+    const n=this.catalog.displayNumber(this.level.id),step=tutorial.getText(n,this.session,this.result,this.progress);
+    return step||(!Object.keys(this.session.placement).length?tutorial.getIntro(n):'');
+  }
   get hintLabel(){
     if(this.hintBusy)return '正在思考…';
     if(!this.level)return '一步提示';
@@ -136,6 +142,8 @@ class GameApp {
     if(isDaily?(!this.dailyView.available||(resumeDaily?(!oldDaily||oldDaily.levelId!==id||oldDaily.dayKey!==dayKey)
       :id!==this.dailyView.levelId||(dayKey!==null&&dayKey!==this.dailyView.dayKey))):!this.isUnlocked(id))return false;
     this.exitEvent();this.level={...source,chapter:this.chapters.findIndex(c=>c.id===source.chapterId)};
+    this.focusedRule=null;this.rulesDetail=false;
+    this.completionPending=false;this.completionHiddenAt=null;this.completionUntil=0;
     this.emotionReactions={};this.frameNow=Date.now();
     this.chapter=Math.max(0,this.level.chapter);this.screen='play';this.won=false;this.modal=null;
     this.selected=null;this.moveArmed=false;this.drag=null;this.toast='';this.rulesExpanded=false;this.waitingOffset=0;
@@ -202,7 +210,8 @@ class GameApp {
     this.frameNow=Date.now();
     this.emotionReactions=createReactions(this.level,previous,this.result,this.session.placement,this.frameNow);
     if(this.result.complete&&!this.won){
-      this.won=true;this.audio.playEffect('complete');
+      this.won=true;this.completionPending=true;this.completionUntil=this.frameNow+2400;this.completionHiddenAt=null;
+      this.focusedRule=null;this.selected=null;this.drag=null;this.rulesExpanded=false;this.modal=null;this.toast='';this.audio.playEffect('complete');
       if(this.isDaily){
         if(!this.progress.daily.completedDays.includes(this.activeDay))this.progress.daily.completedDays.push(this.activeDay);
         this.event('daily_complete',{levelId:this.level.id,dayKey:this.activeDay});
@@ -221,6 +230,7 @@ class GameApp {
       const occupied=Object.values(this.session.placement).includes(seatId);
       const next=applyMove(this.level,this.session,personId,seatId);
       if(JSON.stringify(next.placement)===JSON.stringify(this.session.placement))return;
+      if(this.focusedRule?.personId!==personId)this.focusedRule=null;
       this.session=next;this.moveRevision++;this.selected=personId;this.moveArmed=false;this.toast='';
       this.learn(occupied?'swap':'place');this.audio.playEffect(occupied?'swap':'place');
       if(this.progress.settings.vibration&&this.platform.vibrate)this.platform.vibrate();
@@ -228,20 +238,17 @@ class GameApp {
     }catch(_){this.message('这个位置暂时不能这样安排，请换一个位置。');}
   }
   selectPerson(id){
+    this.focusedRule=null;this.rulesDetail=false;
     this.selected=id;const person=this.level.people.find(p=>p.id===id);this.audio.playEffect('select');this.learn('select');
     if(this.result.people[id]&&this.result.people[id].status==='conflict')this.learn('conflict');
     for(const r of person.rules){if(['adjacent','apart'].includes(r.type))this.learn('relation');if(r.type==='emptyNeighbor')this.learn('emptyNeighbor');this.learn(`rule:${r.type}`);}
     this.persist();
   }
-  showHint(hint){this.selected=hint.personId;this.moveArmed=true;this.message(hint.text);this.audio.playEffect('hint');}
+  showHint(hint){this.focusedRule=null;this.selected=hint.personId;this.moveArmed=true;this.message(hint.text);this.audio.playEffect('hint');}
   explain(){
     if(!this.selected){const conflict=this.level.people.find(p=>this.result.people[p.id].status!=='satisfied');if(conflict)this.selected=conflict.id;}
     const p=this.level.people.find(p=>p.id===this.selected);if(!p)return;
-    this.rulesExpanded=true;
-    const state=this.result.people[p.id];
-    const i=state.rules.findIndex(r=>r.status==='conflict');
-    if(i>=0)this.message(`${p.name}还不满足：${p.rules[i].text}。点击人物，结合座位环境再看看。`);
-    else this.message(`${p.name}：${p.rules.map(r=>r.text).join('；')}。左右同排的紧邻座位才算相邻。`);
+    this.rulesExpanded=true;this.rulesDetail=false;this.levelPage=0;this.toast='';this.dirty=true;
   }
   async advancedHint(){
     if(this.hintBusy||this.won||this.transactionBusy||this.screen!=='play')return;
@@ -311,7 +318,8 @@ class GameApp {
   }
   action(action,payload){
     if(this.loading||this.transactionBusy)return;
-    if(action==='dismissToast')this.toast='';
+    if(action==='showSettlement'&&this.screen==='play'&&this.won){this.completionPending=false;this.drag=null;}
+    else if(action==='dismissToast')this.toast='';
     else if(action==='pageNext'){const count=payload&&Number.isInteger(payload.pageCount)?payload.pageCount:Math.ceil(this.chapters[this.chapter].levelIds.length/10);this.levelPage=Math.min(Math.max(0,count-1),this.levelPage+1);}
     else if(action==='pagePrev')this.levelPage=Math.max(0,this.levelPage-1);
     else if(action==='cancelModal'){this.modal=null;}
@@ -337,8 +345,8 @@ class GameApp {
     else if(action==='help'){this.returnScreen=this.screen;this.screen='help';this.levelPage=0;this.toast='';}
     else if(action==='privacy'){this.modal='privacy';this.levelPage=0;}
     else if(action==='back'){this.screen=this.returnScreen||'home';this.toast='';}
-    else if(action==='feedback')this.message('公开发布前将配置正式反馈渠道。当前可直接在开发任务中反馈。');
-    else if(action==='cloud')this.message('云环境尚未配置；当前仅保存本机进度，不会上传。');
+    else if(action==='feedback'){this.modal='feedback';this.levelPage=0;}
+    else if(action==='cloud')this.message('本版本仅保存本机进度，不提供跨设备恢复。清理本机数据会删除进度。');
     else if(this.screen==='play'&&!this.won){
       if(action==='person'){this.selectPerson(payload);this.moveArmed=true;}
       else if(action==='armMove')this.moveArmed=true;
@@ -350,7 +358,11 @@ class GameApp {
       else if(action==='reset')this.modal='reset';
       else if(action==='hint')this.explain();
       else if(action==='hintAdvanced'){void this.advancedHint();}
-      else if(action==='rulesToggle'){this.rulesExpanded=!this.rulesExpanded;this.levelPage=0;}
+      else if(action==='rulesToggle'){this.rulesExpanded=!this.rulesExpanded;this.rulesDetail=false;this.levelPage=0;}
+      else if(action==='rulesDetail'){this.rulesExpanded=true;this.rulesDetail=true;this.levelPage=0;}
+      else if(action==='rulesDetailBack'){this.rulesDetail=false;this.levelPage=0;}
+      else if(action==='focusRule'){const pet=this.level.people.find(p=>p.id===payload?.personId);if(pet&&Number.isInteger(payload.index)&&pet.rules[payload.index]){this.focusedRule={personId:pet.id,index:payload.index};this.selected=pet.id;this.moveArmed=true;this.rulesExpanded=false;this.rulesDetail=false;this.levelPage=0;}}
+      else if(action==='clearRuleFocus')this.focusedRule=null;
       else if(action==='waitingPrev')this.waitingOffset=Math.max(0,this.waitingOffset-1);
       else if(action==='waitingNext')this.waitingOffset=Math.min(Math.max(0,this.level.people.filter(p=>!this.session.placement[p.id]).length-1),this.waitingOffset+1);
     }
@@ -368,7 +380,7 @@ class GameApp {
     }else if(event.type==='move'&&this.drag){
       this.drag.x=x;this.drag.y=y;
       if(Math.hypot(x-this.drag.startX,y-this.drag.startY)>8)this.drag.moved=true;
-      if(this.drag.personId&&this.drag.moved)this.selected=this.drag.personId;
+      if(this.drag.personId&&this.drag.moved){if(this.focusedRule?.personId!==this.drag.personId)this.focusedRule=null;this.selected=this.drag.personId;}
       this.dirty=true;
     }else if(event.type==='up'&&this.drag){
       const drag=this.drag;this.drag=null;const end=this.target(x,y);

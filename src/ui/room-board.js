@@ -58,12 +58,15 @@ function drawInfluences(ctx,plan){
   round(ctx,left,top,right-left,bottom-top,18,'#BDA8CE33','#BAA4C344');
  }
 }
-function drawRoomBoard(ctx,board,level){
+function drawRoomBoard(ctx,board,level,focus){
  const plan=createRoomPlan(board,level);
  ctx.save();round(ctx,board.x,board.y,board.w,board.h,22,'#E4E6D7');ctx.clip();
  roomShell(ctx,plan);drawInfluences(ctx,plan);
  // Props live on walls/perimeter, away from seat hit rectangles.
- for(const prop of plan.props)drawRoomProp(ctx,prop);
+ for(const prop of plan.props){
+  drawRoomProp(ctx,prop);
+  if(focus&&focus.condition&&focus.condition===prop.condition){round(ctx,prop.x,prop.y,prop.w,prop.h,5,null,focus.avoid?C.red:C.orange);circle(ctx,prop.x+prop.w-4,prop.y+5,5,focus.avoid?C.red:C.orange);text(ctx,focus.avoid?'×':'✓',prop.x+prop.w-4,prop.y+5,9,C.white,'600','center');}
+ }
  ctx.restore();return plan;
 }
 module.exports={drawRoomBoard};
