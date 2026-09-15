@@ -18,13 +18,13 @@ function navigation(p,l,current){
 }
 function home(p,app,l){
  const {ctx,button}=p,r=l.pageBody;
- icon(ctx,'chair',l.header.x+20,l.header.y+23,28);text(ctx,'挪个窝',l.header.x+44,l.header.y+(app.statusNote?16:23),20,C.ink,'700');
+ icon(ctx,'chair',l.header.x+20,l.header.y+23,28);text(ctx,'给喵挪个位',l.header.x+44,l.header.y+(app.statusNote?16:23),20,C.ink,'700');
  if(app.statusNote)text(ctx,app.statusNote,l.header.x+44,l.header.y+38,12,C.muted);
  const done=completedCount(app),total=app.levels.length;
- text(ctx,'给每个人',r.x+6,r.y+23,30,C.ink,'700');text(ctx,'一个好位置。',r.x+6,r.y+61,30,C.ink,'700');
+ text(ctx,'给小伙伴',r.x+6,r.y+23,30,C.ink,'700');text(ctx,'一个好位置。',r.x+6,r.y+61,30,C.ink,'700');
  text(ctx,'慢慢想，让相遇刚刚好。',r.x+8,r.y+98,14,C.muted);
  const artH=Math.max(72,r.h-280);
- scene(ctx,{x:r.x,y:r.y+119,w:r.w,h:artH},'garden',2,true);
+ scene(ctx,{x:r.x,y:r.y+119,w:r.w,h:artH},'garden',0,true);
  const base=r.y+119+artH;
  text(ctx,`${app.chapters.length} 个场景`,r.x+4,base+23,12,C.muted);
  text(ctx,`${done} / ${total} 已完成`,r.x+r.w-4,base+23,12,C.ink,'600','right');
@@ -42,7 +42,7 @@ function levels(p,app,l){
  const list=app.levels.filter(item=>item.chapterId===chapter.id||item.chapter===selected);
  const count=Math.ceil(list.length/10),page=pageIndex(app,count),gridY=r.y+78;
  const rows=5,gap=6,tileH=(r.h-78-gap*4)/rows,tileW=(r.w-8)/2;
- text(ctx,chapter.subtitle||'每个人，都有自己的小偏好。',r.x+4,r.y+64,12,C.muted);
+ text(ctx,chapter.subtitle||'每只毛茸茸，都有小偏好。',r.x+4,r.y+64,12,C.muted);
  list.slice(page*10,page*10+10).forEach((level,i)=>{
   const b={x:r.x+(i%2)*(tileW+8),y:gridY+Math.floor(i/2)*(tileH+gap),w:tileW,h:tileH};
   const done=app.progress.completed.includes(level.id),locked=!app.isUnlocked(level.id);
@@ -65,10 +65,10 @@ function play(p,app,l){
   const rows=lines(ctx,app.tutorialText,r.w-40,14);
   rows.forEach((row,i)=>text(ctx,row,r.x+12,r.y+(rows.length===1?r.h/2:16+i*20),14,C.ink,'500'));
  }else if(selected){
-  person(ctx,r.x+24,r.y+25,29,selected.color,level.people.indexOf(selected),(result.people[selected.id]||{}).status);
+  person(ctx,r.x+24,r.y+25,29,selected.color,selected,(result.people[selected.id]||{}).status);
   text(ctx,`${selected.name}的小偏好`,r.x+48,r.y+17,14,C.ink,'600');
   text(ctx,'查看全部条件与座位环境',r.x+48,r.y+37,12,C.muted);
- }else{ text(ctx,app.tutorialText?'新手引导 · 看看下一步':'先听听，大家想坐哪里？',r.x+12,r.y+17,14,C.ink,'600');text(ctx,app.statusNote?'有一条状态说明 · 点此查看':'点选人物 · 点空位入座',r.x+12,r.y+37,12,C.muted); }
+ }else{ text(ctx,app.tutorialText?'新手引导 · 看看下一步':'先听听，大家想坐哪里？',r.x+12,r.y+17,14,C.ink,'600');text(ctx,app.statusNote?'有一条状态说明 · 点此查看':'点选伙伴 · 点空位入座',r.x+12,r.y+37,12,C.muted); }
  text(ctx,'›',r.x+r.w-18,r.y+25,24,C.orange,'600','center');p.hit(r,'rulesToggle');
  boardFrame(ctx,l.board,level);
  const regions=seatRegions(l,level.seats);
@@ -82,7 +82,7 @@ function play(p,app,l){
   round(ctx,b.x,b.y,b.w,b.h,10,active?'#FFF0CC':'#FFFEF8E8',state.status==='conflict'?C.red:active?C.orange:'#BBC8B2');
   environment(ctx,b,seat);
   const center=b.x+b.w/2,compact=b.h<76;
-  if(occupant)person(ctx,center,b.y+(compact?16:24),compact?23:34,occupant.color,level.people.indexOf(occupant),state.status);
+  if(occupant)person(ctx,center,b.y+(compact?16:24),compact?23:34,occupant.color,occupant,state.status);
   else icon(ctx,'chair',center,b.y+(compact?16:25),compact?21:30,'#8EA28C');
   const nameY=b.y+(compact?35:48);
   text(ctx,occupant?`${i+1} ${occupant.name}`:`${i+1}号空位`,center,nameY,12,C.ink,'500','center');
@@ -101,7 +101,7 @@ function play(p,app,l){
  waiting.slice(offset,offset+l.waitingCapacity).forEach((personData,i)=>{
   const b={x:w.x+48+(i%l.waitingColumns)*cellW,y:w.y+4+Math.floor(i/l.waitingColumns)*64,w:cellW-2,h:64};
   if(personData.id===app.selected)round(ctx,b.x,b.y,b.w,b.h,12,'#FFF0CC',C.orange);
-  person(ctx,b.x+b.w/2,b.y+22,32,personData.color,level.people.indexOf(personData));text(ctx,personData.name,b.x+b.w/2,b.y+53,12,C.ink,'500','center');
+  person(ctx,b.x+b.w/2,b.y+22,32,personData.color,personData);text(ctx,personData.name,b.x+b.w/2,b.y+53,12,C.ink,'500','center');
   p.hit(b,'person',personData.id);
  });
  if(!waiting.length){text(ctx,'大家都入座了',w.x+w.w/2,w.y+25,14,C.ink,'600','center');text(ctx,'可选人换位或退回候场',w.x+w.w/2,w.y+49,12,C.muted,'normal','center');}
@@ -113,7 +113,7 @@ function play(p,app,l){
  button(app.moveArmed?'点目标换位':'换个位置',{x:t.x,y:t.y+t.h-48,w:76,h:48},'armMove',null,app.moveArmed?'accent':'secondary',!placed);
  button('退回候场',{x:t.x+82,y:t.y+t.h-48,w:76,h:48},'unseat',null,'secondary',!placed);
  button(app.hintBusy?'正在准备提示':app.hintLabel||'高级提示',{x:t.x+164,y:t.y+t.h-48,w:t.w-164,h:48},'hintAdvanced',null,'primary',!!app.hintBusy);
- if(app.drag&&app.drag.moved){const personData=level.people.find(person=>person.id===app.drag.personId);if(personData){circle(ctx,app.drag.x,app.drag.y,29,'#FFF1CDDD');person(ctx,app.drag.x,app.drag.y,44,personData.color,level.people.indexOf(personData));}}
+ if(app.drag&&app.drag.moved){const personData=level.people.find(person=>person.id===app.drag.personId);if(personData){circle(ctx,app.drag.x,app.drag.y,29,'#FFF1CDDD');person(ctx,app.drag.x,app.drag.y,44,personData.color,personData);}}
 }
 function daily(p,app,l){
  heading(p,l,'每日一席','每天一个小故事，不赶时间。');
@@ -123,7 +123,7 @@ function daily(p,app,l){
  let y=r.y+artH+28;
  text(ctx,d.dayKey||'今日挑战',r.x+8,y,20,C.ink,'700');y+=30;
  text(ctx,d.isReplay?'经典回顾 · 熟悉的相遇':'今日故事 · 留一个好位置',r.x+8,y,14,C.orange,'600');y+=30;
- y+=paragraph(ctx,d.available?(d.completed?'今天已完成，仍可以再安排一次。':'安排好每个人，让今天多一点小小的成就感。'):`完成 5 个不同主线关卡后开放。当前 ${done} / 5。`,r.x+8,y,r.w-16,14,C.muted,22);
+ y+=paragraph(ctx,d.available?(d.completed?'今天已完成，仍可以再安排一次。':'安排好每个伙伴，让今天多一点小小的成就感。'):`完成 5 个不同主线关卡后开放。当前 ${done} / 5。`,r.x+8,y,r.w-16,14,C.muted,22);
  if(resume)button(`继续 ${resume.dayKey} 的安排`,{x:r.x,y:r.y+r.h-108,w:r.w,h:48},'resumeDaily',null,'secondary');
  button(d.available?(d.completed?'重温今日挑战':'开始今日挑战'):'先去主线散散步',{x:r.x,y:resume?r.y+r.h-52:Math.max(y+14,r.y+r.h-52),w:r.w,h:48},d.available?'startDaily':'levels',null,'primary');
  navigation(p,l,'daily');

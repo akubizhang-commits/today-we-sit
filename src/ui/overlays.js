@@ -4,12 +4,12 @@ const {lines,paragraph}=require('./components');
 const {seatDescription,scene,sceneId}=require('./scenes');
 const {pageIndex,heading}=require('./pages');
 const HELP=[
- ['慢慢安排，没有倒计时','先点选一个人物，再点空位让他入座。点已入座的人，可以查看他的全部偏好。'],
- ['换位与退回','选中已入座人物，点“换个位置”，再点目标座位；目标有人时会交换。也可以拖动人物换位。点“退回候场”让他暂时离席。'],
+ ['慢慢安排，没有倒计时','先点选一个伙伴，再点空位让他入座。点已入座的人，可以查看他的全部偏好。'],
+ ['换位与退回','选中已入座伙伴，点“换个位置”，再点目标座位；目标有人时会交换。也可以拖动伙伴换位。点“退回候场”让他暂时离席。'],
  ['看懂条件状态','✓ 表示满足；! 表示冲突；尚未入座或关系对象未入座时，条件等待判断。所有人入座并满足全部条件，才算完成。'],
  ['座位标签','窗、门、树荫、取餐、灯笼、音箱标在对应座位内。点偏好卡可查看每个座位的完整区域与标签。没有对应标签的位置不属于该环境。'],
  ['六种小偏好','想坐某个标签、避开某个标签、指定区域、与某人相邻、不与某人相邻、至少留一个相邻空位。相邻关系以关卡连线为准。'],
- ['可以反悔','撤销回到上一步；重新安排会先确认。候场左右箭头可以翻看全部人物，偏好面板的翻页按钮可以阅读完整条件。'],
+ ['可以反悔','撤销回到上一步；重新安排会先确认。候场左右箭头可以翻看全部伙伴，偏好面板的翻页按钮可以阅读完整条件。'],
  ['提示由你选择','“免费读规则”只解释条件。高级提示提供一步建议与理由，需要你手动操作。高级提示按钮会显示当前免费权益或广告状态；未配置广告时不宣称可以播放。'],
  ['每日与纪念册','完成五个不同主线关卡后开放每日挑战。纪念卡按主线完成数量解锁，只能领取一次，不需要购买或抽取。']
 ];
@@ -73,16 +73,16 @@ function overlay(p,app,l){
   const deleting=app.modal==='deleteLocal';
   const box={x:r.x,y:r.y+(r.h-Math.min(352,r.h))/2,w:r.w,h:Math.min(352,r.h)};
   round(ctx,box.x,box.y,box.w,box.h,24,C.paper);text(ctx,deleting?'清理这台设备的进度？':'重新安排这一席？',box.x+20,box.y+40,20,C.ink,'700');
-  paragraph(ctx,deleting?'本机关卡进度、纪念卡、每日记录和设置将被清除。此操作不能撤销，也不代表删除了云端数据。':'人物会回到候场区。已完成进度会保留，重置后仍可以撤销。',box.x+20,box.y+86,box.w-40,15,C.muted,24);
+  paragraph(ctx,deleting?'本机关卡进度、纪念卡、每日记录和设置将被清除。此操作不能撤销，也不代表删除了云端数据。':'伙伴会回到候场区。已完成进度会保留，重置后仍可以撤销。',box.x+20,box.y+86,box.w-40,15,C.muted,24);
   button(deleting?'确认清理本机数据':'重新安排',{x:box.x+16,y:box.y+box.h-120,w:box.w-32,h:48},deleting?'confirmDeleteLocal':'confirmReset',null,'accent');
   button(deleting?'保留我的进度':'继续想想',{x:box.x+16,y:box.y+box.h-64,w:box.w-32,h:48},'cancelModal',null,'secondary');
  }else if(app.modal==='privacy')reader(p,app,r,'隐私与本机数据',PRIVACY);
  else if(app.modal==='rules')reader(p,app,r,'排座小手册',HELP);
- else if(app.rulesExpanded)reader(p,app,r,'每个人的小偏好',rulesBlocks(app),'rulesToggle','收起，继续安排');
+ else if(app.rulesExpanded)reader(p,app,r,'每个伙伴的小偏好',rulesBlocks(app),'rulesToggle','收起，继续安排');
  else if(app.won){
   round(ctx,r.x,r.y,r.w,r.h,24,C.paper);
   const artH=Math.min(210,Math.max(112,r.h-300));scene(ctx,{x:r.x+14,y:r.y+14,w:r.w-28,h:artH},sceneId(app.level),1,true);
-  const y=r.y+artH+48;text(ctx,'每个人，都刚刚好。',r.x+r.w/2,y,22,C.ink,'700','center');
+  const y=r.y+artH+48;text(ctx,'每只毛茸茸，都刚刚好。',r.x+r.w/2,y,22,C.ink,'700','center');
   paragraph(ctx,'这一场相遇，被你安排得很温柔。',r.x+22,y+40,r.w-44,14,C.muted,22);
   const index=app.levels.findIndex(level=>level.id===app.level.id),last=index===app.levels.length-1;
   const chapterEnd=index>=0&&!last&&sceneId(app.levels[index+1])!==sceneId(app.level);

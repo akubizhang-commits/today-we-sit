@@ -1,6 +1,7 @@
 dist/
 web/game.bundle.js
 web/editor.bundle.js
+web/animals.bundle.js
 node_modules/
 .DS_Store
 project.private.config.json

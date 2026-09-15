@@ -1,8 +1,8 @@
 {
-  "description": "挪个窝 · 原创排座解谜小游戏",
+  "description": "给喵挪个位 · 原创排座解谜小游戏",
   "compileType": "game",
   "appid": "touristappid",
-  "projectname": "挪个窝",
+  "projectname": "给喵挪个位",
   "setting": {
     "es6": true,
     "minified": true

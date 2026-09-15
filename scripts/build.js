@@ -35,6 +35,7 @@ function build(){
  const editor=fs.existsSync(path.join(root,'tools/editor/entry.js'))?bundle('tools/editor/entry.js'):null;
  fs.writeFileSync(path.join(root,'web/game.bundle.js'),web.code);
  if(editor)fs.writeFileSync(path.join(root,'web/editor.bundle.js'),editor.code);
+ if(fs.existsSync(path.join(root,'web/animals-entry.js')))fs.writeFileSync(path.join(root,'web/animals.bundle.js'),bundle('web/animals-entry.js').code);
  const dest=path.join(root,'dist/wechat');
  // Only this owned generated directory is replaced. Source and neighboring projects are untouched.
  fs.rmSync(dest,{recursive:true,force:true});fs.mkdirSync(dest,{recursive:true});
