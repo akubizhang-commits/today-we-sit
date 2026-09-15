@@ -1,7 +1,7 @@
 'use strict';
 const {C,text,round,circle,line,person}=require('./draw');
 const {paragraph,lines,progress,icon}=require('./components');
-const {scene,sceneId,boardFrame,seatFurniture,emptyFurniture,environment,seatFeatures,paw}=require('./scenes');
+const {scene,sceneId,boardFrame,seatFurniture,emptyFurniture,seatFeatures,paw}=require('./scenes');
 const {clamp,seatRegions}=require('./layout');
 const completedCount=app=>new Set((app.progress.completed||[]).filter(id=>(app.levels||[]).some(l=>l.id===id))).size;
 const pageIndex=(app,count)=>clamp(Math.floor(app.levelPage||0),0,Math.max(0,count-1));
@@ -86,16 +86,15 @@ function play(p,app,l){
   const center=b.x+b.w/2,portraitSize=Math.min(44,(b.h-27)*.72);
   if(occupant)person(ctx,center,b.y+Math.ceil(portraitSize*.6)+1,portraitSize,occupant.color,occupant,state.status);
   else emptyFurniture(ctx,b,sceneId(level));
-  environment(ctx,b,seat);
   const nameY=b.y+b.h-20;
   text(ctx,occupant?`${i+1} ${occupant.name}`:`${i+1}号${sceneId(level)==='cinema'?'小窝':'空位'}`,center,nameY,12,'#14352B','600','center');
   const features=seatFeatures(seat);let label=features.length?features.join('·'):({garden:'窗边区',kitchen:'取餐侧',screen:'晨光区',rear:'里侧窝'}[seat.zone]||`第${seat.y+1}排`);
-  // Every tag still has its physical badge and a full description in the reader.
+  // Environmental conditions have room props and a full description in the reader.
   // Never allow a wrapped caption to overlap another seat on dense boards.
   if(lines(ctx,label,b.w-4,12).length>1)label=features.length>1?'多标签':label.replace('遮光位','遮光').replace('晨光区','晨光').replace('里侧窝','里侧');
   text(ctx,label,center,Math.min(b.y+b.h-5,nameY+15),12,'#14352B','normal','center');
   if(state.status==='conflict'||state.status==='satisfied'){
-   const sx=b.x+b.w-8,sy=b.y+Math.min(33,b.h/2);
+   const sx=b.x+b.w-8,sy=b.y+Math.min(33,b.h-35);
    circle(ctx,sx,sy,7,state.status==='conflict'?'#FDE7DD':'#F5F6DE');
    text(ctx,state.status==='conflict'?'!':'✓',sx,sy,12,state.status==='conflict'?C.red:C.ink,'700','center');
   }

@@ -12,8 +12,8 @@ const {solve}=require('../src/core/engine');
 const {catalog}=require('../src/content/current');
 const {computeLayout}=require('../src/ui/layout');
 async function main(){
- const dir=path.resolve(__dirname,'../assets/marketing/scenes');fs.mkdirSync(dir,{recursive:true});
- const width=390,height=844,combined=createCanvas(width*3,height);
+ const dir=process.env.SEAT_PREVIEW_DIR||path.resolve(__dirname,'../assets/marketing/scenes');fs.mkdirSync(dir,{recursive:true});
+ const width=Number(process.env.SEAT_PREVIEW_WIDTH)||390,height=Number(process.env.SEAT_PREVIEW_HEIGHT)||844,combined=createCanvas(width*3,height);
  const board=computeLayout({width,height}).board,closeup=createCanvas(width*3,board.h);
  for(const [i,id] of ['bus-006','garden-016','cinema-019'].entries()){
   const canvas=createCanvas(width,height),store=new Map();

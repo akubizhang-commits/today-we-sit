@@ -38,3 +38,14 @@ test('scene glossary exposes actual pet-world meanings while preserving internal
  assert.match(seatDescription({zone:'screen',tags:['speaker','shade']}),/晨光区.*轻音乐.*遮光位/);
  assert.match(seatDescription({zone:'garden',tags:['serving','lantern']}),/窗边区.*取餐.*暖灯/);
 });
+test('occupied compact seats keep status circles above pet names',()=>{
+ const {solve}=require('../src/core/engine');
+ const f=fixture(catalog.get('cinema-019'),320,568);
+ f.app.session.placement=solve(f.app.level);f.app.result=evaluate(f.app.level,f.app.session.placement);
+ const seats=render(f.ctx,f.app).filter(h=>h.action==='seat'&&h.payload.personId);
+ assert.equal(seats.length,f.app.level.people.length);
+ for(const r of seats){
+  const badge=f.draws.find(d=>['✓','!'].includes(d.s)&&d.x===r.x+r.w-8&&d.y>=r.y&&d.y<r.y+r.h);
+  assert.ok(badge);assert.ok(badge.y+7<=r.y+r.h-26,'status circle overlaps pet name');
+ }
+});

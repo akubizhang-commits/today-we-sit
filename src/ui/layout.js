@@ -25,12 +25,17 @@ function computeLayout({width=390,height=844,insets={},waitingCount=0,expandedRu
 function seatRegions(layout,seats){
  if(!seats.length)return[];
  const xs=[...new Set(seats.map(s=>s.x))].sort((a,b)=>a-b),ys=[...new Set(seats.map(s=>s.y))].sort((a,b)=>a-b);
- const b=layout.board,cellW=(b.w-24)/xs.length;
- // Keep compact phones usable, but reserve a proper scene header on taller screens.
- const top=b.h>=300?68:24,bottom=b.h>=300?30:4;
- const areaH=b.h-top-bottom,gridH=Math.min(areaH,ys.length*114);
- const cellH=gridH/ys.length,gridY=b.y+top+(areaH-gridH)/2;
- const w=Math.min(100,cellW-4),h=Math.min(90,cellH-4);
- return seats.map(seat=>({id:seat.id,seat,x:b.x+12+xs.indexOf(seat.x)*cellW+(cellW-w)/2,y:gridY+ys.indexOf(seat.y)*cellH+(cellH-h)/2,w,h}));
+ const b=layout.board,m=roomMetrics(b,seats),cellW=(b.w-m.side*2)/xs.length;
+ const areaH=b.h-m.top-m.bottom,gridH=Math.min(areaH,ys.length*112);
+ const cellH=gridH/ys.length,gridY=b.y+m.top+(areaH-gridH)*.28;
+ const w=Math.min(92,cellW-6),h=Math.min(92,cellH-6);
+ return seats.map(seat=>({id:seat.id,seat,x:b.x+m.side+xs.indexOf(seat.x)*cellW+(cellW-w)/2,y:gridY+ys.indexOf(seat.y)*cellH+(cellH-h)/2,w,h}));
 }
-module.exports={computeLayout,seatRegions,clamp,rect};
+function roomMetrics(b,seats){
+ const columns=Math.max(1,new Set(seats.map(s=>s.x)).size),rows=Math.max(1,new Set(seats.map(s=>s.y)).size);
+ const bottom=b.h>=300?38:14;
+ const side=Math.max(12,Math.min(49,b.w*.13,(b.w-columns*50)/2));
+ const top=Math.max(20,Math.min(b.h>=300?102:64,b.h-bottom-rows*50));
+ return {side,top,bottom};
+}
+module.exports={computeLayout,seatRegions,roomMetrics,clamp,rect};

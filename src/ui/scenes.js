@@ -2,7 +2,7 @@
 // Original pet-world sets drawn from project geometry; no external artwork.
 // Internal chapter/tag IDs are retained so the visual redesign does not alter saved puzzles.
 const {C,round,circle,line,leaf,person,text}=require('./draw');
-const {seatRegions}=require('./layout');
+const {drawRoomBoard}=require('./room-board');
 const themes={bus:'#D6E5DC',garden:'#F0DFBB',cinema:'#DEDCEB'};
 const names={bus:'萌宠巴士',garden:'萌宠食堂',cinema:'呼噜午睡屋'};
 function sceneId(level){return level.chapterId||['bus','garden','cinema'][level.chapter]||'bus';}
@@ -41,74 +41,7 @@ function counter(ctx,x,y,w,h){
  round(ctx,x-3,y,w+6,12,5,'#FFF4DA');
  for(let i=1;i<4;i++)line(ctx,x+w*i/4,y+17,x+w*i/4,y+h-5,'#CC9B64',1);
 }
-function floor(ctx,r,id){
- round(ctx,r.x,r.y,r.w,r.h,23,themes[id]);
- if(id==='bus'){
-  round(ctx,r.x+7,r.y+27,r.w-14,r.h-34,18,'#B1C8BA');
-  round(ctx,r.x+13,r.y+32,r.w-26,r.h-46,13,'#DCE5D1');
-  for(let y=r.y+46;y<r.y+r.h-15;y+=23)line(ctx,r.x+17,y,r.x+r.w-17,y,'#CAD6C0',.8);
- }else if(id==='garden'){
-  round(ctx,r.x+7,r.y+27,r.w-14,r.h-34,17,'#F9ECD0');
-  for(let y=r.y+35;y<r.y+r.h-8;y+=32)for(let x=r.x+10;x<r.x+r.w-9;x+=32){
-   if((Math.floor((x-r.x)/32)+Math.floor((y-r.y)/32))%2===0)round(ctx,x,y,28,28,4,'#EADABD66');
-  }
- }else{
-  round(ctx,r.x+7,r.y+27,r.w-14,r.h-34,17,'#F2E8DB');
-  for(let x=r.x+20;x<r.x+r.w-10;x+=24)line(ctx,x,r.y+33,x,r.y+r.h-12,'#DBC9B744',1);
- }
-}
-function boardFrame(ctx,r,level){
- const id=sceneId(level),regions=seatRegions({board:r},level.seats),tall=r.h>=300;
- ctx.save();round(ctx,r.x,r.y,r.w,r.h,23,themes[id]);ctx.clip();floor(ctx,r,id);
- // A quiet header differentiates the setting without inserting extra rule-bearing seats.
- text(ctx,names[id],r.x+r.w/2,r.y+14,12,C.ink,'600','center');
- paw(ctx,r.x+r.w/2-58,r.y+14,.55,id==='cinema'?'#A091AF':'#809F87');
- if(id==='bus'){
-  if(tall){
-   windowPane(ctx,r.x+22,r.y+29,r.w-44,29);
-   round(ctx,r.x+24,r.y+52,r.w-48,13,5,'#7A9E8B');
-   circle(ctx,r.x+48,r.y+58,8,'#D2DBBE');circle(ctx,r.x+48,r.y+58,5,'#779385');
-   line(ctx,r.x+43,r.y+58,r.x+53,r.y+58,'#547767',2);
-   for(let i=0;i<3;i++)circle(ctx,r.x+r.w-47-i*9,r.y+57,2,i===0?'#E9BA73':'#C6D7BD');
-  }
-  const xs=[...new Set(level.seats.map(s=>s.x))];
-  if(xs.length===2){
-   const center=r.x+r.w/2;round(ctx,center-15,r.y+(tall?72:31),30,r.h-(tall?102:45),12,'#C5D4B8');
-   for(let y=r.y+(tall?86:47);y<r.y+r.h-18;y+=42)paw(ctx,center+(Math.floor(y/42)%2?3:-3),y,.6,'#9BB18E88');
-  }
-  // Physical window/door markers are placed only beside tagged seats.
-  for(const region of regions){
-   if(region.seat.tags.includes('window'))windowPane(ctx,r.x+2,region.y+Math.min(9,region.h*.15),10,Math.max(18,Math.min(33,region.h-12)));
-   if(region.seat.tags.includes('door')){round(ctx,r.x+r.w-12,region.y+4,10,Math.min(42,region.h-8),3,'#7F9D8B');line(ctx,r.x+r.w-7,region.y+8,r.x+r.w-7,region.y+28,'#C9DCCC',1);}
-  }
- }else if(id==='garden'){
-  if(tall){
-   counter(ctx,r.x+32,r.y+30,r.w-64,37);
-   bowl(ctx,r.x+57,r.y+36,.7,'#BFA47A');bowl(ctx,r.x+r.w-57,r.y+36,.7,'#90A087');
-   round(ctx,r.x+r.w/2-23,r.y+31,46,22,4,'#628071');paw(ctx,r.x+r.w/2,r.y+42,.8,'#E4D8B6');
-  }
-  const rows=[...new Set(regions.map(s=>s.seat.y))];
-  for(const row of rows){
-   const seats=regions.filter(s=>s.seat.y===row),left=Math.min(...seats.map(s=>s.x)),right=Math.max(...seats.map(s=>s.x+s.w)),sy=seats[0].y;
-   round(ctx,left-3,sy+12,right-left+6,Math.max(20,seats[0].h-11),14,'#9D704B25');
-   round(ctx,left-5,sy+5,right-left+10,Math.max(20,seats[0].h-13),13,'#D8AF7D');
-   line(ctx,left+3,sy+9,right-3,sy+9,'#F3D6A5',2);
-  }
- }else{
-  if(tall){
-   round(ctx,r.x+27,r.y+29,r.w-54,36,10,'#C8BDD4');
-   round(ctx,r.x+38,r.y+33,40,25,6,'#F5DFA4');circle(ctx,r.x+65,r.y+41,5,'#FFF3CD');
-   for(let i=0;i<3;i++)round(ctx,r.x+92+i*20,r.y+46,16,13,4,['#C39C99','#A5B8AD','#D5BF94'][i]);
-   paw(ctx,r.x+r.w-58,r.y+47,1,'#F5ECDB');
-  }
-  const top=Math.min(...regions.map(s=>s.y))-6,bottom=Math.max(...regions.map(s=>s.y+s.h))+7;
-  round(ctx,r.x+20,top,r.w-40,bottom-top,23,'#BCACCA');round(ctx,r.x+25,top+5,r.w-50,bottom-top-10,19,'#D9CDDF');
-  dash(ctx,r.x+34,top+11,r.x+r.w-34,top+11,'#B4A0C0',1);
-  dash(ctx,r.x+34,bottom-11,r.x+r.w-34,bottom-11,'#B4A0C0',1);
-  if(tall){star(ctx,r.x+17,top+22,3,'#BBA1C3');star(ctx,r.x+r.w-17,bottom-25,3,'#BBA1C3');}
- }
- ctx.restore();
-}
+function boardFrame(ctx,r,level){return drawRoomBoard(ctx,r,level);}
 function seatFurniture(ctx,r,id,active=false,conflict=false){
  const {x,y,w,h}=r,compact=h<76;
  oval(ctx,x+w/2,y+h-4,w*.42,4,'#536C5422');
@@ -192,13 +125,4 @@ const tagNames={window:'靠窗',door:'近门',shade:'遮光位',serving:'取餐'
 const zoneNames={front:'前排',middle:'中排',back:'后排',garden:'窗边区',kitchen:'取餐侧',screen:'晨光区',rear:'里侧窝'};
 function seatDescription(seat){return [...new Set([zoneNames[seat.zone]||seat.zone,...(seat.tags||[]).map(t=>tagNames[t]||t)].filter(Boolean))].join(' · ');}
 function seatFeatures(seat){return (seat.tags||[]).filter(t=>['window','door','shade','serving','lantern','speaker'].includes(t)).map(t=>tagNames[t]);}
-function environment(ctx,r,seat){
- const tags=seat.tags||[],s=r.w<65?.72:.9;
- if(tags.includes('window'))windowPane(ctx,r.x+1,r.y+1,13*s,17*s);
- if(tags.includes('door')){round(ctx,r.x+r.w-14*s,r.y+1,12*s,18*s,3,'#DDE8D4',C.ink);line(ctx,r.x+r.w-7*s,r.y+4,r.x+r.w-7*s,r.y+14,C.ink,1);}
- if(tags.includes('shade')){round(ctx,r.x+1,r.y+1,15*s,17*s,3,'#BCACC9');line(ctx,r.x+5*s,r.y+3,r.x+5*s,r.y+14,'#E8DCEC',1);line(ctx,r.x+10*s,r.y+3,r.x+10*s,r.y+14,'#E8DCEC',1);}
- if(tags.includes('lantern'))lamp(ctx,r.x+r.w-8,r.y+6,.7);
- if(tags.includes('speaker'))musicBox(ctx,r.x+r.w-8,r.y+11,.72);
- if(tags.includes('serving'))bowl(ctx,r.x+r.w-11,r.y+8,.6);
-}
-module.exports={scene,sceneId,boardFrame,seatFurniture,emptyFurniture,environment,seatFeatures,seatDescription,themes,names,paw};
+module.exports={scene,sceneId,boardFrame,seatFurniture,emptyFurniture,seatFeatures,seatDescription,themes,names,paw};
