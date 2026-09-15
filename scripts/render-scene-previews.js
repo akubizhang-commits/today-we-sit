@@ -21,7 +21,7 @@ async function main(){
   const app=new GameApp(platform);await app.ready;app.progress.completed=[...catalog.campaignIds];app.startLevel(id);
   const solution=solve(app.level);
   for(const [p,s] of Object.entries(solution).slice(0,Math.min(3,app.level.people.length-1)))app.place(p,s);
-  app.selected=null;app.toast='';app.statusNote='';app.moveArmed=false;
+  app.frameNow=Number.MAX_SAFE_INTEGER;app.selected=null;app.toast='';app.statusNote='';app.moveArmed=false;
   render(canvas.getContext('2d'),app);await app.pendingSave;
   const file=path.join(dir,`${id}-preview.png`);fs.writeFileSync(file,canvas.toBuffer('image/png'));
   combined.getContext('2d').drawImage(canvas,i*width,0);console.log(file);

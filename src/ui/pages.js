@@ -1,4 +1,5 @@
 'use strict';
+const {emotionFor}=require('../features/emotions');
 const {C,text,round,circle,line,person}=require('./draw');
 const {paragraph,lines,progress,icon}=require('./components');
 const {scene,sceneId,boardFrame,seatFurniture,emptyFurniture,seatFeatures,paw}=require('./scenes');
@@ -65,9 +66,11 @@ function play(p,app,l){
   const rows=lines(ctx,app.tutorialText,r.w-40,14);
   rows.forEach((row,i)=>text(ctx,row,r.x+12,r.y+(rows.length===1?r.h/2:16+i*20),14,C.ink,'500'));
  }else if(selected){
-  person(ctx,r.x+24,r.y+25,29,selected.color,selected,(result.people[selected.id]||{}).status);
-  text(ctx,`${selected.name}的小偏好`,r.x+48,r.y+17,14,C.ink,'600');
-  text(ctx,'查看全部条件与座位环境',r.x+48,r.y+37,12,C.muted);
+  const feeling=emotionFor(app,selected.id);
+  person(ctx,r.x+24,r.y+25,29,selected.color,selected,feeling.mood,feeling.motion);
+  text(ctx,`${selected.name} · ${feeling.label}`,r.x+48,r.y+17,14,C.ink,'600');
+  const reason=lines(ctx,feeling.reason,r.w-80,12);
+  text(ctx,reason.length>1?reason[0].slice(0,-1)+'…':reason[0],r.x+48,r.y+37,12,C.muted);
  }else{ text(ctx,app.tutorialText?'新手引导 · 看看下一步':'先听听，大家想坐哪里？',r.x+12,r.y+17,14,C.ink,'600');text(ctx,app.statusNote?'有一条状态说明 · 点此查看':'点选伙伴 · 点空位入座',r.x+12,r.y+37,12,C.muted); }
  text(ctx,'›',r.x+r.w-18,r.y+25,24,C.orange,'600','center');p.hit(r,'rulesToggle');
  boardFrame(ctx,l.board,level);
@@ -84,7 +87,7 @@ function play(p,app,l){
   const active=occupant&&occupant.id===app.selected;
   seatFurniture(ctx,b,sceneId(level),active,state.status==='conflict');
   const center=b.x+b.w/2,portraitSize=Math.min(44,(b.h-27)*.72);
-  if(occupant)person(ctx,center,b.y+Math.ceil(portraitSize*.6)+1,portraitSize,occupant.color,occupant,state.status);
+  if(occupant){const feeling=emotionFor(app,occupant.id);person(ctx,center,b.y+Math.ceil(portraitSize*.6)+1,portraitSize,occupant.color,occupant,feeling.mood,feeling.motion);}
   else emptyFurniture(ctx,b,sceneId(level));
   const nameY=b.y+b.h-20;
   text(ctx,occupant?`${i+1} ${occupant.name}`:`${i+1}号${sceneId(level)==='cinema'?'小窝':'空位'}`,center,nameY,12,'#14352B','600','center');
@@ -109,7 +112,8 @@ function play(p,app,l){
  waiting.slice(offset,offset+l.waitingCapacity).forEach((personData,i)=>{
   const b={x:w.x+48+(i%l.waitingColumns)*cellW,y:w.y+4+Math.floor(i/l.waitingColumns)*64,w:cellW-2,h:64};
   if(personData.id===app.selected)round(ctx,b.x,b.y,b.w,b.h,12,'#FFF0CC',C.orange);
-  person(ctx,b.x+b.w/2,b.y+22,32,personData.color,personData);text(ctx,personData.name,b.x+b.w/2,b.y+53,12,C.ink,'500','center');
+  const feeling=emotionFor(app,personData.id);
+  person(ctx,b.x+b.w/2,b.y+22,32,personData.color,personData,feeling.mood,feeling.motion);text(ctx,personData.name,b.x+b.w/2,b.y+53,12,C.ink,'500','center');
   p.hit(b,'person',personData.id);
  });
  if(!waiting.length){text(ctx,'大家都入座了',w.x+w.w/2,w.y+25,14,C.ink,'600','center');text(ctx,'可选人换位或退回候场',w.x+w.w/2,w.y+49,12,C.muted,'normal','center');}

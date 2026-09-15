@@ -15,6 +15,7 @@ const {createAdService}=require('./services/ads');
 const {createAudioController}=require('./services/audio');
 const {createTelemetry}=require('./services/telemetry');
 const {render}=require('./ui/renderer');
+const {createReactions}=require('./features/emotions');
 const clone=value=>JSON.parse(JSON.stringify(value));
 const uniqueId=()=>`${Date.now().toString(36)}-${Math.random().toString(36).slice(2,10)}`;
 
@@ -25,6 +26,7 @@ class GameApp {
     this.progress=createProgress(catalog);this.loading=true;this.readOnly=false;
     this.screen='home';this.chapter=0;this.levelPage=0;this.selected=null;this.moveArmed=false;
     this.won=false;this.modal=null;this.rulesExpanded=false;this.waitingOffset=0;
+    this.emotionReactions={};this.frameNow=Date.now();this.lastEmotionFrame=0;
     this.hits=[];this.drag=null;this.toast='';this.toastUntil=0;this.dirty=true;
     this.hintBusy=false;this.transactionBusy=false;this.pendingSave=Promise.resolve({ok:true});
     this.progressGeneration=0;this.resetting=false;
@@ -59,9 +61,12 @@ class GameApp {
     this.platform.canvas.width=Math.round(width*dpr);this.platform.canvas.height=Math.round(height*dpr);this.dirty=true;
   }
   loop(){
-    const now=Date.now();
+    const now=Date.now();this.frameNow=now;
+    const reacting=this.screen==='play'&&!this.progress.settings.reducedMotion&&Object.keys(this.emotionReactions).length>0;
+    const animate=reacting&&now-this.lastEmotionFrame>=33;
+    if(animate){this.lastEmotionFrame=now;for(const [id,event] of Object.entries(this.emotionReactions))if(now>=event.until)delete this.emotionReactions[id];}
     if(!this.loading&&now-(this.lastDayCheck||0)>30000){this.refreshDaily();this.lastDayCheck=now;}
-    if(this.dirty||this.drag||(this.toast&&now>=this.toastUntil)){
+    if(this.dirty||this.drag||animate||(this.toast&&now>=this.toastUntil)){
       if(this.toast&&now>=this.toastUntil)this.toast='';
       this.ctx.setTransform(this.dpr,0,0,this.dpr,0,0);
       this.hits=render(this.ctx,this);this.dirty=false;
@@ -131,6 +136,7 @@ class GameApp {
     if(isDaily?(!this.dailyView.available||(resumeDaily?(!oldDaily||oldDaily.levelId!==id||oldDaily.dayKey!==dayKey)
       :id!==this.dailyView.levelId||(dayKey!==null&&dayKey!==this.dailyView.dayKey))):!this.isUnlocked(id))return false;
     this.exitEvent();this.level={...source,chapter:this.chapters.findIndex(c=>c.id===source.chapterId)};
+    this.emotionReactions={};this.frameNow=Date.now();
     this.chapter=Math.max(0,this.level.chapter);this.screen='play';this.won=false;this.modal=null;
     this.selected=null;this.moveArmed=false;this.drag=null;this.toast='';this.rulesExpanded=false;this.waitingOffset=0;
     this.isDaily=isDaily;this.activeDay=isDaily?(dayKey||this.dailyView.dayKey):null;
@@ -191,7 +197,10 @@ class GameApp {
   exitEvent(){if(this.screen==='play'&&this.level&&!this.won)this.event('level_exit',{levelId:this.level.id,durationMs:Date.now()-(this.startedAt||Date.now()),moveCount:this.moveRevision});}
   learn(action){if(this.level&&!this.isDaily)this.progress=tutorial.advance(this.progress,action,this.catalog.displayNumber(this.level.id));}
   afterChange(){
+    const previous=this.result;
     this.result=evaluate(this.level,this.session.placement);
+    this.frameNow=Date.now();
+    this.emotionReactions=createReactions(this.level,previous,this.result,this.session.placement,this.frameNow);
     if(this.result.complete&&!this.won){
       this.won=true;this.audio.playEffect('complete');
       if(this.isDaily){

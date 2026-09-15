@@ -74,7 +74,7 @@ function emptyFurniture(ctx,r,id){
   circle(ctx,center,y,compact?6:10,'#F8ECD0');circle(ctx,center+4,y-3,compact?5:8,'#EFE0CF');
  }else paw(ctx,center,y,compact?.7:1.1,'#6C957A');
 }
-function scene(ctx,r,id='garden',variant=0,mini=false){
+function scene(ctx,r,id='garden',variant=0,mini=false,mood='neutral'){
  // Composition uses a fixed illustration aspect, so tall/narrow cards never stretch props.
  ctx.save();round(ctx,r.x,r.y,r.w,r.h,22,themes[id]||themes.garden);ctx.clip();
  if(r.w>210&&r.h>300){
@@ -91,7 +91,7 @@ function scene(ctx,r,id='garden',variant=0,mini=false){
   round(ctx,270,64,42,114,10,'#648E7C');round(ctx,276,71,30,51,6,'#BAD6CB');line(ctx,291,72,291,175,'#7FA28F',2);
   round(ctx,58,43,127,12,5,'#496E5C');paw(ctx,228,155,1.7,'#75937A');
   circle(ctx,41,172,5,'#DCA37D');circle(ctx,317,172,5,'#FFF3CC');
-  if(mini){person(ctx,77,99,41,'#C98E72',variant);person(ctx,150,99,41,'#8A9DB6',variant+1);}
+  if(mini){person(ctx,77,99,41,'#C98E72',variant,mood);person(ctx,150,99,41,'#8A9DB6',variant+1,mood);}
   for(let i=0;i<4;i++)round(ctx,165+i*14,178,8,3,1,'#C2A97F');
  }else if(id==='garden'){
   round(ctx,17,19,326,203,22,'#F9EBD0');
@@ -105,7 +105,7 @@ function scene(ctx,r,id='garden',variant=0,mini=false){
    round(ctx,83+i*68,127,49,39,9,'#F8E8C5');bowl(ctx,108+i*68,143,.78,['#D89775','#8BA696','#BBA9C5'][i]);
    round(ctx,90+i*68,198,40,13,6,'#C78267');
   }
-  if(mini){person(ctx,108,112,48,'#93AE9B',variant);person(ctx,245,191,48,'#C98E72',variant+3);}
+  if(mini){person(ctx,108,112,48,'#93AE9B',variant,mood);person(ctx,245,191,48,'#C98E72',variant+3,mood);}
  }else{
   round(ctx,17,19,326,203,22,'#EDE4EC');
   round(ctx,128,30,104,66,14,'#B1A3C0');round(ctx,133,35,94,56,11,'#F3DCA2');
@@ -117,7 +117,7 @@ function scene(ctx,r,id='garden',variant=0,mini=false){
    round(ctx,bx+5,170,60,22,11,'#D0BBDD');
   }
   musicBox(ctx,42,111,1.2);lamp(ctx,316,102,1.4);star(ctx,71,59,5);star(ctx,285,50,4);
-  if(mini){person(ctx,94,153,39,'#8CA895',variant);person(ctx,269,153,39,'#CE9B83',variant+6);}
+  if(mini){person(ctx,94,153,39,'#8CA895',variant,mood);person(ctx,269,153,39,'#CE9B83',variant+6,mood);}
  }
  ctx.restore();
 }

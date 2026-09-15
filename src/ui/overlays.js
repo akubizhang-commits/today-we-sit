@@ -1,5 +1,6 @@
 'use strict';
-const {C,round,text,circle}=require('./draw');
+const {C,round,text,circle,person}=require('./draw');
+const {emotionFor}=require('../features/emotions');
 const {lines,paragraph}=require('./components');
 const {seatDescription,scene,sceneId}=require('./scenes');
 const {pageIndex,heading}=require('./pages');
@@ -7,6 +8,7 @@ const HELP=[
  ['慢慢安排，没有倒计时','先点选一个伙伴，再点空位让他入座。点已入座的人，可以查看他的全部偏好。'],
  ['换位与退回','选中已入座伙伴，点“换个位置”，再点目标座位；目标有人时会交换。也可以拖动伙伴换位。点“退回候场”让他暂时离席。'],
  ['看懂条件状态','✓ 表示满足；! 表示冲突；尚未入座或关系对象未入座时，条件等待判断。所有人入座并满足全部条件，才算完成。'],
+ ['动物的表情','开心表示偏好满足；午睡屋里满足后会安心犯困。委屈或生气表示有具体偏好未满足，点选伙伴查看原因。朋友还没入座时先期待等待；惊喜和难过是换位后的短暂反应。设置中可减少动态效果。'],
  ['座位标签','窗、门、窗帘、取餐柜、暖灯和音响摆在房间里，对应位置保留文字标签；绿植、挂画等装饰不增加条件。座位显示“多标签”时，点偏好卡查看完整环境。'],
  ['六种小偏好','想坐某个标签、避开某个标签、指定区域、与某人相邻、不与某人相邻、至少留一个相邻空位。相邻关系以关卡连线为准。'],
  ['可以反悔','撤销回到上一步；重新安排会先确认。候场左右箭头可以翻看全部伙伴，偏好面板的翻页按钮可以阅读完整条件。'],
@@ -23,10 +25,17 @@ function blocksToRows(ctx,blocks,width){
   rows.push({value:'',size:14});
  }return rows;
 }
-function reader(p,app,r,title,blocks,closeAction='cancelModal',closeLabel='知道了'){
+function reader(p,app,r,title,blocks,closeAction='cancelModal',closeLabel='知道了',pet=null){
  const {ctx,button}=p;round(ctx,r.x,r.y,r.w,r.h,22,C.paper);
  text(ctx,title,r.x+18,r.y+28,19,C.ink,'700');
- const content={x:r.x+18,y:r.y+62,w:r.w-36,h:r.h-190};
+ const extra=pet?74:0;
+ if(pet){
+  const feeling=emotionFor(app,pet.id);
+  person(ctx,r.x+42,r.y+79,48,pet.color,pet,feeling.mood,feeling.motion);
+  text(ctx,`${pet.name} · ${feeling.label}`,r.x+79,r.y+65,15,C.ink,'600');
+  lines(ctx,feeling.reason,r.w-98,12).slice(0,2).forEach((row,i)=>text(ctx,row,r.x+79,r.y+87+i*17,12,C.muted));
+ }
+ const content={x:r.x+18,y:r.y+62+extra,w:r.w-36,h:r.h-190-extra};
  const rows=blocksToRows(ctx,blocks,content.w),capacity=Math.max(1,Math.floor(content.h/22)),count=Math.max(1,Math.ceil(rows.length/capacity)),page=pageIndex(app,count);
  rows.slice(page*capacity,(page+1)*capacity).forEach((row,i)=>text(ctx,row.value,content.x,content.y+i*22,row.size,row.color,row.weight));
  const pager={x:r.x+16,y:r.y+r.h-116,w:r.w-32,h:48};p.pager(pager,page,count);
@@ -42,7 +51,8 @@ function rulesBlocks(app){
  blocks.push([level.title,level.intro]);
  for(const person of people){
   const state=(app.result.people||{})[person.id]||{};
-  blocks.push([`${person.name} · ${app.session.placement[person.id]?'已入座':'候场中'}`,'']);
+  const feeling=emotionFor(app,person.id);
+  blocks.push([`${person.name} · ${app.session.placement[person.id]?'已入座':'候场中'}`,`${feeling.label}：${feeling.reason}`]);
   const rules=state.rules||person.rules||[];
   if(!rules.length)blocks.push(['','坐在哪里都可以。']);
   rules.forEach((rule,i)=>blocks.push(['',`${i+1}. ${rule.status==='satisfied'?'✓ 已满足':rule.status==='conflict'?'! 有冲突':'待安排'}：${rule.text||'请查看本关规则说明'}`,rule.status==='conflict'?C.red:null]));
@@ -78,12 +88,19 @@ function overlay(p,app,l){
   button(deleting?'保留我的进度':'继续想想',{x:box.x+16,y:box.y+box.h-64,w:box.w-32,h:48},'cancelModal',null,'secondary');
  }else if(app.modal==='privacy')reader(p,app,r,'隐私与本机数据',PRIVACY);
  else if(app.modal==='rules')reader(p,app,r,'排座小手册',HELP);
- else if(app.rulesExpanded)reader(p,app,r,'每个伙伴的小偏好',rulesBlocks(app),'rulesToggle','收起，继续安排');
+ else if(app.rulesExpanded)reader(p,app,r,'每个伙伴的小偏好',rulesBlocks(app),'rulesToggle','收起，继续安排',app.level.people.find(p=>p.id===app.selected));
  else if(app.won){
   round(ctx,r.x,r.y,r.w,r.h,24,C.paper);
-  const artH=Math.min(210,Math.max(112,r.h-300));scene(ctx,{x:r.x+14,y:r.y+14,w:r.w-28,h:artH},sceneId(app.level),1,true);
+  const artH=Math.min(210,Math.max(112,r.h-300));scene(ctx,{x:r.x+14,y:r.y+14,w:r.w-28,h:artH},sceneId(app.level),1,true,sceneId(app.level)==='cinema'?'sleepy':'happy');
+  const cast=app.level.people,columns=Math.min(5,cast.length),rows=Math.ceil(cast.length/columns),gap=(r.w-44)/columns;
+  round(ctx,r.x+22,r.y+artH-(rows>1?44:19),r.w-44,rows>1?74:49,15,'#FFF8E9');
+  cast.forEach((pet,i)=>{
+   const feeling=emotionFor(app,pet.id),x=r.x+22+gap*(i%columns+.5),y=r.y+artH+(rows>1?-20+Math.floor(i/columns)*27:0);
+   person(ctx,x,y,rows>1?24:30,pet.color,pet,feeling.mood,feeling.motion);
+   if(sceneId(app.level)==='garden'){round(ctx,x-7,y+9,14,6,3,'#C98D69');round(ctx,x-7,y+8,14,3,1.5,'#FAE7BC');}
+  });
   const y=r.y+artH+48;text(ctx,'每只毛茸茸，都刚刚好。',r.x+r.w/2,y,22,C.ink,'700','center');
-  paragraph(ctx,'这一场相遇，被你安排得很温柔。',r.x+22,y+40,r.w-44,14,C.muted,22);
+  paragraph(ctx,({bus:'大家坐稳啦，带着好心情出发！',garden:'小碗抱好啦，一起开饭吧！',cinema:'偏好都满足了，安心睡个好觉。'})[sceneId(app.level)],r.x+22,y+40,r.w-44,14,C.muted,22);
   const index=app.levels.findIndex(level=>level.id===app.level.id),last=index===app.levels.length-1;
   const chapterEnd=index>=0&&!last&&sceneId(app.levels[index+1])!==sceneId(app.level);
   text(ctx,index<0?'今日的一席，圆满了':last?'已到达主线故事的最后一站':chapterEnd?'这一章的相遇，圆满了':`第 ${app.catalog?app.catalog.displayNumber(app.level.id):index+1} 关完成`,r.x+r.w/2,y+91,13,C.orange,'600','center');
