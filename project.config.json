@@ -1,0 +1,10 @@
+{
+  "description": "今天怎么坐 · 原创排座解谜原型",
+  "compileType": "game",
+  "appid": "touristappid",
+  "projectname": "today-we-sit",
+  "setting": {
+    "es6": true,
+    "minified": true
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#294D43">
+  <title>今天怎么坐 · 每个人，都刚刚好</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23294D43'/%3E%3Cpath d='M19 43V21h26v22M19 36h26M19 43v7m26-7v7' fill='none' stroke='%23F7F3E8' stroke-width='4'/%3E%3C/svg%3E">
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#e9ecdf;color:#294d43;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+    body{min-height:100dvh;display:grid;place-items:center;background-image:radial-gradient(#294d4312 .8px,transparent .8px);background-size:18px 18px}
+    main{display:flex;align-items:center;gap:76px;padding:30px;max-width:1120px}
+    aside{width:360px}.eyebrow{font-size:12px;letter-spacing:3px;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:23px;height:2px;background:#c66949}
+    h1{font-size:52px;line-height:1.3;letter-spacing:-2px;margin:30px 0 22px;font-weight:650}
+    .lead{font-size:15px;line-height:2;color:#677567;max-width:320px}
+    .rule{border-top:1px solid #294d4329;margin-top:44px;padding-top:23px;font-size:13px;color:#667568}
+    .steps{display:flex;gap:19px;margin-top:24px;font-size:12px}.steps span{display:flex;align-items:center;gap:7px}.steps b{display:inline-grid;place-items:center;border:1px solid #bdc7b6;width:25px;height:25px;border-radius:50%;font-weight:500}
+    .note{font-size:11px;color:#71816f;margin-top:56px;letter-spacing:1px}
+    .phone{width:min(390px,calc((100dvh - 60px)*390/844));height:min(844px,calc(100dvh - 60px));border-radius:29px;overflow:hidden;box-shadow:0 25px 65px #24423424,0 0 0 8px #f4f4eb,0 0 0 9px #cdd4c3;background:#f7f3e8;flex:none}
+    canvas{display:block;width:100%;height:100%;touch-action:none;cursor:pointer;outline:none}
+    canvas:focus-visible{outline:3px solid #c66949;outline-offset:-5px}
+    @media(max-width:800px){main{padding:0;display:block}aside{display:none}.phone{width:100vw;height:100dvh;max-width:500px;border-radius:0;box-shadow:none}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <main>
+    <aside aria-label="游戏介绍">
+      <div class="eyebrow">今天怎么坐 · COZY PUZZLES</div>
+      <h1>小小的座位，<br>刚刚好的相遇。</h1>
+      <p class="lead">有人喜欢靠窗，有人想挨着朋友。<br>听听大家的小偏好，把平凡的一天，<br>安排得温柔一点。</p>
+      <div class="rule">不赶时间，也没有标准人生。</div>
+      <div class="steps"><span><b>1</b>听听偏好</span><span><b>2</b>安排座位</span><span><b>3</b>皆大欢喜</span></div>
+      <p class="note">3 个原创场景 / 30 个生活谜题 / 随时保存</p>
+    </aside>
+    <div class="phone">
+      <canvas id="game" tabindex="0" aria-label="今天怎么坐游戏。用鼠标或触控点选人物，再选择座位；也可以拖动人物。Canvas原型暂不支持屏幕阅读器完整操作。"></canvas>
+    </div>
+  </main>
+  <script src="game.bundle.js"></script>
+</body>
+</html>
